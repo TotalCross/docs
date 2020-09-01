@@ -1,5 +1,7 @@
 ---
-description: Learn the steps to generate your custom VM.
+name: How to build TotalCross VM \(WIP\)
+route: /developers-area/hot-to-build-totalcross-vm
+menu: Developers Area
 ---
 
 # How to build TotalCross VM \(WIP\)
@@ -201,4 +203,3 @@ Look to the `bin` folder, now you just need to copy `libtcvm.so` to your valid S
 ```text
 ~TotalCrossVM/builders/gcc-linux-arm/tcvm$ cp bin/libtcvm.so $PATH_TO_VALID_SDK/dist/vm/linux_arm
 ```
-

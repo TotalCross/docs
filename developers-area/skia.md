@@ -1,3 +1,9 @@
+---
+name: Skia
+route: /developers-area/skia
+menu: Developers Area
+---
+
 # Skia
 
 ## Overview
@@ -14,20 +20,17 @@ TotalCross uses [OpenGL ](https://learn.totalcross.com/opengl)in the graphics, b
 
 ### Impact of Skia on TotalCross
 
-Among the many improvements that the implementation of skia has brought to TotalCross are: 
+Among the many improvements that the implementation of skia has brought to TotalCross are:
 
-* General visual quality;
-* Smoothing; 
-* Fonts;
-* Possibility of using fonts direct from `.ttf` \(extension commonly used to make fonts available for free on the internet\); 
-* Velocity; 
-* Memory Usage Optimization; 
-* Easier to improve visual effects in TotalCross internally.
+- General visual quality;
+- Smoothing;
+- Fonts;
+- Possibility of using fonts direct from `.ttf` \(extension commonly used to make fonts available for free on the internet\);
+- Velocity;
+- Memory Usage Optimization;
+- Easier to improve visual effects in TotalCross internally.
 
 ## References
 
-* [Skia Graphics Library](https://skia.org/);
-* [Skia Graphics Engine](https://en.m.wikipedia.org/wiki/Skia_Graphics_Engine);
-
-
-
+- [Skia Graphics Library](https://skia.org/);
+- [Skia Graphics Engine](https://en.m.wikipedia.org/wiki/Skia_Graphics_Engine);

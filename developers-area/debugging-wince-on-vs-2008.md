@@ -1,13 +1,16 @@
 ---
-description: >-
-  Working with WinCE development can be very frustrating, given the devices are
-  mostly slow. This guide will help you debug on WinCE using Visual Studio 2008
-  to speed up your development proccess.
+name: Debugging WinCE on VS 2008
+route: /developers-area/debugging-wince-on-vs-2008
+menu: Developers Area
 ---
 
 # Debugging WinCE on VS 2008
 
 ## Overview
+
+Working with WinCE development can be very frustrating, given the devices are
+mostly slow. This guide will help you debug on WinCE using Visual Studio 2008
+to speed up your development proccess.
 
 This guide will show you how to debug using an emulator on Visual Studio 2008 Professional Edition, it will not only help you see your application running on the device faster, but also help finding and identifying a bug, which should better your experience while using this.
 
@@ -39,13 +42,14 @@ Visual Studio 2008 Professional Edition
 
 **Step 6:** set your application for deployment:`YourApp.tcz|path\to\you\app\tcz|\TotalCross|0 YourApp.exe|path\to\you\app\exe|\TotalCross|0`change the path accordingly to your application wince folder\(if you didn't change anything it should be on target/install/wince on your app folder\).
 
-![](../../.gitbook/assets/changing_emulator_and_solution_platform%20%281%29.gif)
+![changing-emulator](../../.gitbook/assets/changing_emulator_and_solution_platform1.gif)
 
 **Step 7:** run the debug:
 
-![Running the debug!](../../.gitbook/assets/running_debug.gif)
+![Running the debug](../../.gitbook/assets/running_debug.gif)
 
-{% hint style="success" %}
+<!-- {% hint style="success" %} -->
+
 You can now debug applications for WinCE in Visual Studio 2008!
-{% endhint %}
 
+<!-- {% endhint %} -->

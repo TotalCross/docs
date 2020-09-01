@@ -1,32 +1,38 @@
 ---
-description: This article aims to show the best practices when opening an issue.
+name: Creating an Issue
+route: /developers-area/issues-guide
+menu: Developers Area
 ---
 
 # Creating an Issue
 
-Reporting an issue is one of the most important activities for the software evolution life cycle. This process helps the maintainers to define the most relevant features their product must have and find critical bugs. However, an issue badly reported can leads the maintainers to waste a great amount of time investigating the real cause of the problem reported. For instance, a not well structured will generate doubts causing the developers to waste their time with questions and waiting for the answers \(and if you know what I mean, programmers don't like interacting that much 😅\).   
-  
+This article aims to show the best practices when opening an issue.
+
+Reporting an issue is one of the most important activities for the software evolution life cycle. This process helps the maintainers to define the most relevant features their product must have and find critical bugs. However, an issue badly reported can leads the maintainers to waste a great amount of time investigating the real cause of the problem reported. For instance, a not well structured will generate doubts causing the developers to waste their time with questions and waiting for the answers \(and if you know what I mean, programmers don't like interacting that much 😅\).
+
 Thus, this guide will teach you the correct way of creating good issues by showing some examples and explaining the most required information an issue must have in order to be solved in short time.
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 We emphasize the importance of answering questions from the support team **as quickly as possible** so that neither party is left with idle time.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ## Issue Structure
 
 To avoid these situations and optimize the resolution time of the problem, we advise that the issues contain the following structure
 
-* Title; 
-* Description \(the error and the situation in which it occurs\).
-  * Visual representation \(Screenshots / GIF / Video\); 
-  * Code to reproduce the error; 
-  * Error log.
+- Title;
+- Description \(the error and the situation in which it occurs\).
+  - Visual representation \(Screenshots / GIF / Video\);
+  - Code to reproduce the error;
+  - Error log.
 
 ## Title
 
 When creating the Title, **it is necessary to define the problem in a sentence** so at the first look it is already possible to have an idea of the **severity** \(and in some cases of the **type**\) of the Issue.
 
-Example: 
+Example:
 
 > **Error opening camera to record video on Moto G Android 6.0**
 
@@ -54,7 +60,7 @@ To give more context to the problem and to accurately illustrate what is happeni
 
 Example:
 
-![](../../.gitbook/assets/exemplo-issue-550.gif)
+![issue*550](.gitbook/assets/exemplo-issue-550.gif)
 
 ### Code to reproduce the error
 
@@ -75,22 +81,22 @@ public void initUI() {
 	btnExit.paddingTop = btnExit.paddingBottom = 10;
 	btnExit.addPressListener(e -> MainWindow.exit(0));
 	add(btnExit, CENTER, CENTER);
-	
+
 	btnCameraVideoOnly = new Button("Open Camera w/o Audio");
 	btnCameraVideoOnly.paddingLeft = btnExit.paddingRight = 20;
 	btnCameraVideoOnly.paddingTop = btnExit.paddingBottom = 10;
 	add(btnCameraVideoOnly, CENTER, BEFORE-4);
-	
+
 	btnCamera = new Button("Open Camera w/ Audio");
 	btnCamera.paddingLeft = btnExit.paddingRight = 20;
 	btnCamera.paddingTop = btnExit.paddingBottom = 10;
 	add(btnCamera, CENTER, BEFORE-4);
-	
+
 	btnNativeCameraVideoOnly = new Button("Open Native Camera w/o Audio");
 	btnNativeCameraVideoOnly.paddingLeft = btnExit.paddingRight = 20;
 	btnNativeCameraVideoOnly.paddingTop = btnExit.paddingBottom = 10;
 	add(btnNativeCameraVideoOnly, CENTER, BEFORE-4);
-	
+
 	btnNativeCamera = new Button("Open Native Camera w/ Audio");
 	btnNativeCamera.paddingLeft = btnExit.paddingRight = 20;
 	btnNativeCamera.paddingTop = btnExit.paddingBottom = 10;
@@ -132,9 +138,11 @@ public <H extends EventHandler> void onEvent(Event<H> event) {
 }
 ```
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 If the code sent is **private** then just put the issue as **confidential** \(so only our team and the issue creator will have access\) or send it to us via [Slack ](https://totalcrossclients.slack.com/messages)\(Exclusive service channel for mobile clients\).
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ### Error Log
 
@@ -162,19 +170,20 @@ Exemple:
 12-16 10:15:45.305 15740 15740 I TotalCross:    at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:870)
 ```
 
-{% hint style="success" %}
+<!-- {% hint style="success" %} -->
+
 There are cases in which just by looking at the log the support team can already identify what the problem is and how to solve it.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ## References
 
 All examples were taken from real and public issues that are in our repository. Are they:
 
-* [Issue \#639](https://gitlab.com/totalcross/TotalCross/issues/639)
-* [Issue \#550](https://gitlab.com/totalcross/TotalCross/issues/550)
+- [Issue \#639](https://gitlab.com/totalcross/TotalCross/issues/639)
+- [Issue \#550](https://gitlab.com/totalcross/TotalCross/issues/550)
 
 If you don't know how to access your application's log while it runs on mobile phones then we recommend the following tutorials:
 
-* [Realtime Debugging for Unity Android Apps - ADB LogCat Tutorial](https://www.youtube.com/watch?v=eI2GOuEMGfQ)
-* [ADB ](https://www.youtube.com/watch?v=3wMlCucwGvE)[Tutorial -](https://www.youtube.com/watch?v=3wMlCucwGvE) [How to use ADB](https://www.youtube.com/watch?v=3wMlCucwGvE)
-
+- [Realtime Debugging for Unity Android Apps - ADB LogCat Tutorial](https://www.youtube.com/watch?v=eI2GOuEMGfQ)
+- [ADB ](https://www.youtube.com/watch?v=3wMlCucwGvE)[Tutorial -](https://www.youtube.com/watch?v=3wMlCucwGvE) [How to use ADB](https://www.youtube.com/watch?v=3wMlCucwGvE)

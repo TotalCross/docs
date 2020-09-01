@@ -1,3 +1,9 @@
+---
+name: SQLite Encryption
+route: /developers-area/sqlite-encryption
+menu: Developers Area
+---
+
 # SQLite Encryption
 
 ## Overview
@@ -6,8 +12,8 @@ Allows reading and writing encrypted database files. All database content, inclu
 
 The following encryption algorithms are currently supported:
 
-* AES-128 in OFB mode \(default\)
-* AES-256 in OFB mode
+- AES-128 in OFB mode \(default\)
+- AES-256 in OFB mode
 
 ## **Key Formats**
 
@@ -47,10 +53,10 @@ option, up to 256 bytes of the passphrase are hashed using RC4 and the hash valu
 
 The key may begin with a prefix to specify which algorithm to use. The prefix must be exactly one of "aes128:", or "aes256:". The prefix is not used as part of the key sent into the encryption algorithm. So the real key should begin on the first byte after the prefix. Take note of the following important details:
 
-* The prefix is case sensitive. "aes256:" is a valid prefix but "AES256:" is not.
-* If the key prefix is omitted or misspelled, then the encryption algorithm defaults to "aes128" and the misspelled prefix becomes part of the key.
-* The algorithm prefix strings work on the "see.c" variant of SEE only. For any of see-aes128-ofb.c, see-aes255-ofb.c or see-aes128-ccm.c any prefix on the key is interpreted as part of the key.
-* When using PRAGMA hexkey or PRAGMA hexrekey, the key prefix must be hex encoded just like the rest of the key.
+- The prefix is case sensitive. "aes256:" is a valid prefix but "AES256:" is not.
+- If the key prefix is omitted or misspelled, then the encryption algorithm defaults to "aes128" and the misspelled prefix becomes part of the key.
+- The algorithm prefix strings work on the "see.c" variant of SEE only. For any of see-aes128-ofb.c, see-aes255-ofb.c or see-aes128-ccm.c any prefix on the key is interpreted as part of the key.
+- When using PRAGMA hexkey or PRAGMA hexrekey, the key prefix must be hex encoded just like the rest of the key.
 
 ```java
 props.put("hexkey", new Properties.Str("'aes128:6d796b6579'"));          // Wrong!!
@@ -59,11 +65,11 @@ props.put("hexkey", new Properties.Str("'6165733132383a6d796b6579'"));   // corr
 
 ### **Limitations**
 
-* TEMP tables are not encrypted.
-* In-memory \(":memory:"\) databases are not encrypted.
-* Bytes 16 through 23 of the database file contain header information which is not encrypted.
-* Encryption is **NOT** supported on the simulator. To be able to use it, you need to remove the encryption. That can be done with a native Totalcross application like the previous example sending a empty value to rekey
-* Only supported for Pro or Enterprise users; Applications using old or free keys can´t use encryption.
+- TEMP tables are not encrypted.
+- In-memory \(":memory:"\) databases are not encrypted.
+- Bytes 16 through 23 of the database file contain header information which is not encrypted.
+- Encryption is **NOT** supported on the simulator. To be able to use it, you need to remove the encryption. That can be done with a native Totalcross application like the previous example sending a empty value to rekey
+- Only supported for Pro or Enterprise users; Applications using old or free keys can´t use encryption.
 
 ## **Usage**
 
@@ -77,9 +83,11 @@ props.put("key", new Properties.Str("'secret-password'"));
 Connection con = DriverManager.getConnection("jdbc:sqlite:" + Convert.appendPath(Settings.appPath, "database.db"), props);
 ```
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 **Attention**: the key must be between **single quotes**.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ### **Changing the encryption key**
 
@@ -102,4 +110,3 @@ props.put("key", new Properties.Str("'secret-password'"));
 props.put("rekey", new Properties.Str("''"));
 Connection con = DriverManager.getConnection("jdbc:sqlite:" + Convert.appendPath(Settings.appPath, "database.db"), props);
 ```
-

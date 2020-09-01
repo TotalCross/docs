@@ -1,3 +1,9 @@
+---
+name: Local Database - SQLite
+route: /developers-area/sqlite
+menu: Developers Area
+---
+
 # Local Database - SQLite
 
 ## Overview
@@ -6,37 +12,43 @@ To store data locally, TotalCross uses the database named SQLite. The same used 
 
 [SQLite](https://www.sqlite.org/index.html) is an open source SQL database that stores data in a text file on a device. TotalCross comes with the implementation of the SQLite database.
 
-{% hint style="success" %}
-One of the differentials of TotalCross is that it allows SQLite **to be built into** the platform so that the developer does **NOT** have to worry about the version of SQLite and the compatibility of the OS version with the database.
-{% endhint %}
+<!-- {% hint style="success" %} -->
 
-SQLite supports all relational database features. To access this database, you do not need to establish any type of connection to it, such as JDBC, ODBC and others. 
+One of the differentials of TotalCross is that it allows SQLite **to be built into** the platform so that the developer does **NOT** have to worry about the version of SQLite and the compatibility of the OS version with the database.
+
+<!-- {% endhint %} -->
+
+SQLite supports all relational database features. To access this database, you do not need to establish any type of connection to it, such as JDBC, ODBC and others.
 
 To understand how TotalCross works with SQLite, let's create a simple project in the next steps!
 
-{% hint style="success" %}
-Let's now learn how to do CRUD \(Create, Read, Update, Delete\) with SQLite in TotalCross
-{% endhint %}
+<!-- {% hint style="success" %} -->
 
-![](../../.gitbook/assets/totalcross_crud.jpg)
+Let's now learn how to do CRUD \(Create, Read, Update, Delete\) with SQLite in TotalCross
+
+<!-- {% endhint %} -->
+
+![crud-image](../.gitbook/assets/totalcross_crud.jpg)
 
 ## Creating a TotalCross Project with SQLite
 
-{% hint style="info" %}
-Remember that the link to download the source code is in the topic References at the end of this session. 
-{% endhint %}
+<!-- {% hint style="info" %} -->
 
-Let's use the Maven project we created in the chapter  "[Your Frist TotalCross App](https://learn.totalcross.com/learn-totalcross/getting-started/first-totalcross-app)" called HelloTC. If you do not have it there and you want to create a [Maven project from the start](https://learn.totalcross.com/learn-totalcross/getting-started), that's fine! 
+Remember that the link to download the source code is in the topic References at the end of this session.
+
+<!-- {% endhint %} -->
+
+Let's use the Maven project we created in the chapter "[Your Frist TotalCross App](https://learn.totalcross.com/learn-totalcross/getting-started/first-totalcross-app)" called HelloTC. If you do not have it there and you want to create a [Maven project from the start](https://learn.totalcross.com/learn-totalcross/getting-started), that's fine!
 
 ### Project Structure
 
-As you will learn better from the chapters in the suggested [Architecture ](https://learn.totalcross.com/guideline/suggested-architecture)and [Design Patterns](https://learn.totalcross.com/guideline/suggested-design-patterns), TotalCross suggests following the MVC and DAO standard in creating your applications. 
+As you will learn better from the chapters in the suggested [Architecture ](https://learn.totalcross.com/guideline/suggested-architecture)and [Design Patterns](https://learn.totalcross.com/guideline/suggested-design-patterns), TotalCross suggests following the MVC and DAO standard in creating your applications.
 
-So let's start by creating three packages: 
+So let's start by creating three packages:
 
-* **ui** - Where will all UI classes stay.
-* **util** - Here is the SQLite database creation class
-* **dao** - This is the package that will save all Data Access Object \(DB\).
+- **ui** - Where will all UI classes stay.
+- **util** - Here is the SQLite database creation class
+- **dao** - This is the package that will save all Data Access Object \(DB\).
 
 Once this is done, our project will be structured as follows:
 
@@ -47,24 +59,27 @@ Once this is done, our project will be structured as follows:
         - java
             - dao
             - ui
-            - util 
+            - util
 ```
 
 ### Creating the local database
 
-Inside the **package util** we will create a class called **DatabaseManager** and we will create a `static` object of type `SQLiteUtil` called **sqliteUtil**. 
+Inside the **package util** we will create a class called **DatabaseManager** and we will create a `static` object of type `SQLiteUtil` called **sqliteUtil**.
 
 That done, inside a static block we will initialize the sqliteUtilpassando as argument `Settings.appPath` and the name of our database in quotation marks. It is important to remember to always put "**.db**" next to the name.
 
 Now let's go to our `Statement` \(interface used to execute SQL command\) to establish the connection with our database and then pass the command to create the cpf table.
 
-{% hint style="info" %}
-Prior knowledge of SQLite is required to better work with the creation of your application's local database. We recommend this [pdf](http://sd.blackball.lv/library/The_Definitive_Guide_to_SQLite_2nd_edition.pdf) for you learn more
-{% endhint %}
+<!-- {% hint style="info" %} -->
+
+Prior knowledge of SQLite is required to better work with the creation of your application's local database. We recommend this [pdf](http://sd.blackball.lv/library/The_Definitive_Guide_to_SQLite_2nd_edition.pdf) for you to learn more
+
+<!-- {% endhint %} -->
 
 After that, we finished the first part. Here's how it went:
 
-{% code title="static" %}
+<!-- {% code title="static" %} -->
+
 ```java
 public class DatabaseManager {
 
@@ -83,21 +98,25 @@ public class DatabaseManager {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 Now let's create a static method to return our connection to the database so we can use it inside the DAO package when we manipulate data.
 
-{% code title="getConenction" %}
+<!-- {% code title="getConenction" %} -->
+
 ```java
 public static Connection getConnection() throws SQLException {
 	return sqliteUtil.con();
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 And ready. Here's how our connection class with the database below:
 
-{% code title="DatabaseManager" %}
+<!-- {% code title="DatabaseManager" %} -->
+
 ```java
 public class DatabaseManager {
 
@@ -121,15 +140,17 @@ public class DatabaseManager {
 }
 
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 #### Inserting data into the table
 
-**Inside our DAO** package we will create a **CPFDAO class**. Let's call it this because it is the name of our table in the database + DAO as the default name to say that that class corresponds to an access object to the database, in this case the CPF. 
+**Inside our DAO** package we will create a **CPFDAO class**. Let's call it this because it is the name of our table in the database + DAO as the default name to say that that class corresponds to an access object to the database, in this case the CPF.
 
 Once this is done, we will create a method for registering the CPF in the local database. For this method, just ask as an argument the CPF of type Stringe then create a connection with the bank and execute the SQLite command passing it as text in the `.executeUpdate`.
 
-{% code title="insert" %}
+<!-- {% code title="insert" %} -->
+
 ```java
 public void insertCPF(String cpf) throws SQLException {
 	boolean success = false;
@@ -149,15 +170,17 @@ public void insertCPF(String cpf) throws SQLException {
 	return success;
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Reading local data
 
-To make the data of a table not SQLite is very simple, just execute the **Select** command through a `executeQuery`to return the data from the table and then create a `While` to traverse all rows of the returned table and store that data within a `ArrayList`. 
+To make the data of a table not SQLite is very simple, just execute the **Select** command through a `executeQuery`to return the data from the table and then create a `While` to traverse all rows of the returned table and store that data within a `ArrayList`.
 
 In the code below you will be able to return all the data registered in the local database. The call and display part for the user is in the [UI topic](https://totalcross.gitbook.io/playbook/learn-totalcross/how-to-store-data-sqlite#overview).
 
-{% code title="Reading local data - getCPF" %}
+<!-- {% code title="Reading local data - getCPF" %} -->
+
 ```java
 public ArrayList<String> getCPF() throws SQLException {
 		ArrayList<String> cpfs = new ArrayList<>();
@@ -180,13 +203,15 @@ public ArrayList<String> getCPF() throws SQLException {
 		return cpfs;
 	}
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Updating Data
 
 To update the data is also very simple, just pass the SQLite command called Update with the value of the old field and the current field. If you want to better understand how this command works in SQLite, we recommend this [article](http://www.sqlitetutorial.net/sqlite-update/).
 
-{% code title="Update Data - updateCPF" %}
+<!-- {% code title="Update Data - updateCPF" %} -->
+
 ```java
 public void updateCPF(String cpf_novo, String cpf_old) throws SQLException {
 		Connection dbcon = DatabaseManager.getConnection();
@@ -194,16 +219,18 @@ public void updateCPF(String cpf_novo, String cpf_old) throws SQLException {
                 + " WHERE cpf = "+ cpf_novo;
 		PreparedStatement ps = dbcon.prepareStatement(sql);
 		ps.executeUpdate();
-		ps.close();	
+		ps.close();
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Deleting Data
 
 To delete a record, simply execute the command [Delete](http://www.sqlitetutorial.net/sqlite-delete/) and pass through the `PreparedStatement` the value to be deleted and run through the `executeUpdate`
 
-{% code title="deleteCPF" %}
+<!-- {% code title="deleteCPF" %} -->
+
 ```java
 public void deleteCPF(String cpf) throws SQLException {
 	Connection dbcon = DatabaseManager.getConnection();
@@ -213,21 +240,25 @@ public void deleteCPF(String cpf) throws SQLException {
 	ps.executeUpdate();
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ## User Interface
 
 In this chapter, our focus is not the user interface but rather learn the basics about SQLite and apply it with TotalCross. Knowing this, let's put here the interface code that we use to build this basic example. If you have any doubts about this most graphic part, we recommend giving a quick read on the [Components ](https://totalcross.gitbook.io/playbook/components/accordion-container)section in our documentation.
 
-{% hint style="info" %}
-Remembering that everything related to interfaces goes inside the **UI package**
-{% endhint %}
+<!-- {% hint style="info" %} -->
 
-### Initial Screen 
+Remembering that everything related to interfaces goes inside the **UI package**
+
+<!-- {% endhint %} -->
+
+### Initial Screen
 
 Where we call the method to register the CPF
 
-{% code title="Inicial" %}
+<!-- {% code title="Inicial" %} -->
+
 ```java
 package com.totalcross.sample.ui;
 
@@ -382,15 +413,17 @@ public class Inicial extends Container {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 1. Notice that at l**ine 69** is where we call the **CPFDAO\(\).InsertCPF** \(cpf\) and register the CPF entered in the local database.
 2. At **line 70** we call the **getCPF\(\)** method to read the database data and assign the result to the cpfs array..
-3. At **line 135** we call the **deleteCPF\(cpf\)** method to delete the CPF that was typed. 
+3. At **line 135** we call the **deleteCPF\(cpf\)** method to delete the CPF that was typed.
 
 ### Update Screen
 
-{% code title="update" %}
+<!-- {% code title="update" %} -->
+
 ```java
 package com.totalcross.sample.ui;
 
@@ -468,19 +501,19 @@ public class Update extends Container {
 
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ## Viewing local data
 
-To obtain the data registered in a SQLite database it is necessary to download a program called [DB Browser For SQLite](https://sqlitebrowser.org/). 
+To obtain the data registered in a SQLite database it is necessary to download a program called [DB Browser For SQLite](https://sqlitebrowser.org/).
 
-* After downloading and installing the program, simply run the file below to **Open the database** and then select the .**db** file that is i**nside your project**.
-* Click "**Browse Data**" and then you will be seeing all the records of your SQLite database!
+- After downloading and installing the program, simply run the file below to **Open the database** and then select the .**db** file that is i**nside your project**.
+- Click "**Browse Data**" and then you will be seeing all the records of your SQLite database!
 
-![](../../.gitbook/assets/sqlite-ver-dados.PNG)
+![sqlite-data](../.gitbook/assets/sqlite-ver-dados.PNG)
 
 ## References
 
-* The entire project can be accessed through our [GitHub](https://github.com/TotalCross/CRUD_SQLite)
-* [SQLite Tutorial](http://www.sqlitetutorial.net/)
-
+- The entire project can be accessed through our [GitHub](https://github.com/TotalCross/CRUD_SQLite)
+- [SQLite Tutorial](http://www.sqlitetutorial.net/)

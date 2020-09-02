@@ -1,3 +1,9 @@
+---
+name: Static Map
+route: /api/static-map
+menu: API
+---
+
 # Static Map
 
 The static map is an image captured by the request of a navigation REST API. This code uses the GOF build pattern.
@@ -10,7 +16,8 @@ The static map is an image captured by the request of a navigation REST API. Thi
 
 You need to add in your **pom file** within your **dependencies tag** the dependency:
 
-{% code title="Dependecy " %}
+<!-- {% code title="Dependecy " %} -->
+
 ```text
 <dependencies>
     .
@@ -21,42 +28,45 @@ You need to add in your **pom file** within your **dependencies tag** the depend
         <artifactId>tc-utilities</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </dependency>
-    
+
 </dependencies>
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 After downloading the dependency it will be necessary to generate the tcz of the dependency so that it is included in the deploy
 
-Find the folder that is located in the dependency, usually is: C:\Users\**your\_user**\.m2\repository\com\totalcross\utils\tc-utilities\0.0.1-SNAPSHOT
+Find the folder that is located in the dependency, usually is: C:\Users\*\*your_user\*\*\.m2\repository\com\totalcross\utils\tc-utilities\0.0.1-SNAPSHOT
 
-![](../../.gitbook/assets/pasta%20%281%29.PNG)
+![pasta1](../../.gitbook/assets/pasta1.PNG)
 
-To generate tcz execute the command java -cp "% TOTALCROSS 3\_HOME%" / dist / totalcross-sdk.jar tc.Deploy tc-utilities-0.0.1-SNAPSHOT.jar / r YOUR\_TC\_KEY 
+To generate tcz execute the command java -cp "% TOTALCROSS 3_HOME%" / dist / totalcross-sdk.jar tc.Deploy tc-utilities-0.0.1-SNAPSHOT.jar / r YOUR_TC_KEY
 
-![](../../.gitbook/assets/comp.PNG)
+![comp](../../.gitbook/assets/comp.PNG)
 
 After tcz is generated, rename the tc-utilities-0.0.1-SNAPSHOT.tcz file to tc-utilities-0.0.1-SNAPSHOTLib.tcz and place it at the root of the project.
 
 At the root of the project create the file named all.pkg and put \[L\] tc-utilities-0.0.1-SNAPSHOTLib.tcz so that this class is included in deploy
 
-![](../../.gitbook/assets/1.1.png)
+![1.1](../../.gitbook/assets/1.1.png)
 
 #### KEY
 
 in the example below, the class was made considering the [**API HERE**](https://developer.here.com/), to get an **APP ID** and **APP CODE** you have to register on the site and create a project, going into the details of the project you will find this information.
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 The 3 points are only to represent in a more playful way that there are other dependencies
 {% endhint %}
 
 ### Static Map Structures
 
- in the example below the class was made considering the [**API HERE**](https://developer.here.com/)\*\*\*\*
+in the example below the class was made considering the [**API HERE**](https://developer.here.com/)\*\*\*\*
 
 Create in **util** package a new class **StaticMap**
 
-{% code title="Structures" %}
+<!-- {% code title="Structures" %} -->
+
 ```text
 └── src
     └── main
@@ -67,17 +77,21 @@ Create in **util** package a new class **StaticMap**
                 .
                 └── util
                     └── StaticMap
-                
-```
-{% endcode %}
 
-{% hint style="info" %}
+```
+
+<!-- {% endcode %} -->
+
+<!-- {% hint style="info" %} -->
+
 The 3 points are only to represent in a more playful way that there are other package.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ### Static Map Code
 
-{% code title="StaticMap" %}
+<!-- {% code title="StaticMap" %} -->
+
 ```java
 package <YOUR_PACKAGE_HERE>; // com.your_company_name.your_name_app.util;
 
@@ -256,29 +270,31 @@ public class StaticMap {
 
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 #### \*\*\*\*
 
-| Atributes | Description |
-| :--- | :--- |
-| String AppID | [Key provided by API to identify APP](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeKp9rBA6-LbNYmHT6E/primary/apis/maps/static-map#key) |
-| String CodeID | [Key provided by API to identify APP](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeKp9rBA6-LbNYmHT6E/primary/apis/maps/static-map#key) |
-| String adress | It receives an address, as in the example: "Av. Washington Soares, 1321 - Edson Queiroz, Fortaleza - CE, 60811-905" |
-| double latitude | it receives a latitude  |
-| double logitude | it receives a latitude  |
-| int width | Image width |
-| int height | Image height |
-| int zoom | The zoom that is applied in the map photo, going from zero \(Vision farther\) to 21, where 21 will give the view of the whole state and between 0 to 21 it is possible to adjust how close the image is seen. |
-| int format | Indicates the format of the image received |
-| Boolean mapHeader | Remove or place the map header |
-| String mapStyle | Changes the map style received in the image |
+| Atributes         | Description                                                                                                                                                                                                   |
+| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| String AppID      | [Key provided by API to identify APP](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeKp9rBA6-LbNYmHT6E/primary/apis/maps/static-map#key)                                                          |
+| String CodeID     | [Key provided by API to identify APP](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeKp9rBA6-LbNYmHT6E/primary/apis/maps/static-map#key)                                                          |
+| String adress     | It receives an address, as in the example: "Av. Washington Soares, 1321 - Edson Queiroz, Fortaleza - CE, 60811-905"                                                                                           |
+| double latitude   | it receives a latitude                                                                                                                                                                                        |
+| double logitude   | it receives a latitude                                                                                                                                                                                        |
+| int width         | Image width                                                                                                                                                                                                   |
+| int height        | Image height                                                                                                                                                                                                  |
+| int zoom          | The zoom that is applied in the map photo, going from zero \(Vision farther\) to 21, where 21 will give the view of the whole state and between 0 to 21 it is possible to adjust how close the image is seen. |
+| int format        | Indicates the format of the image received                                                                                                                                                                    |
+| Boolean mapHeader | Remove or place the map header                                                                                                                                                                                |
+| String mapStyle   | Changes the map style received in the image                                                                                                                                                                   |
 
 ### How to use
 
 Within the InitUi \(\), you can declare an image and receive its instance by calling the StaticMap getImage method
 
-{% code title="Sample using StaticMap" %}
+<!-- {% code title="Sample using StaticMap" %} -->
+
 ```java
 public class Maps extends MainWindow {
 
@@ -330,13 +346,11 @@ public class Maps extends MainWindow {
     }
 }
 ```
-{% endcode %}
 
-![](../../.gitbook/assets/a2.png)
+<!-- {% endcode %} -->
+
+![a2](../../.gitbook/assets/a2.png)
 
 ## References
 
 See this link for more information abount [GOF patterns](http://www.w3sdesign.com/).
-
-
-

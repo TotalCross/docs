@@ -1,4 +1,4 @@
 # Control
 
-![](../../.gitbook/assets/sdds.png)
+![](../../../.gitbook/assets/sdds.png)
 

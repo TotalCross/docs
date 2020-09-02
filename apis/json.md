@@ -1,3 +1,9 @@
+---
+name: JSON
+route: /api/json
+menu: API
+---
+
 # JSON
 
 ## Overview
@@ -26,11 +32,8 @@ You can see more abount this in [REST API](https://app.gitbook.com/@totalcross/s
 JSONObject jsonObject = new JSONObject(data);
 ```
 
-You can use the variable jsonObject  like a hashmap.
+You can use the variable jsonObject like a hashmap.
 
 ## Referencies
 
-* See a project on github using[ JSON](https://github.com/TotalCross/ApiSample)
-
-
-
+- See a project on github using[ JSON](https://github.com/TotalCross/ApiSample)

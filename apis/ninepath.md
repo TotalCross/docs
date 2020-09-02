@@ -1,3 +1,9 @@
+---
+name: Ninepath
+route: /api/ninepath
+menu: API
+---
+
 # Ninepath
 
 ## Overview
@@ -12,16 +18,13 @@ But there are also sites that help to perform this work in a [simpler way as thi
 
 ## Methods
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **NinePatch** | getInstance\( \) | Returns the instance of the NinePatch |
-| **Parts** | load\(Image\) | Return the 9 ninepatch parts from a Image with the guides |
-| **Parts** | load\(Image original, int scalableAreaStartWidth, int scalableAreaEndWidth, int scalableAreaStartHeight, int scalableAreaEndHeight\) | Returns the 9 ninepatch parts of the image without the guides but with the values of the points that will cut the image |
-| **Parts** | load\(Image original, int scalableAreaWidth, int scalableAreaHeight\) | Returns the 9 parts of the ninepatch of a image without the guides but with the values that are going to be used for the borders rectangles, that are the respective width and height. All border rectangles are equals in this case. |
-| **Image** | getNormalInstance\(Parts p, int width, int height, int color, boolean rotate\) | Return the result image built from the given width and height; If the given color is different from -1, it will apply the rgb colors in every pixel from the image. If the given boolean is true, the image will be rotated 180º. |
-| **Image** | getNormalInstance\(int type, int width, int height, int color, boolean rotate\) | Return the result image from one of Totalcross standard ninepatchs. If the given color is different from -1, it will apply the rgb colors in every pixel from the image. If the given boolean is true, the image will be rotated 180º. |
-| **Image** | getPressedInstance\(Image img, int backColor, int pressColor\) | Return the given image with a pressed effect from the given color |
-| **void** | tryDrawImage\(Graphics g, Image npback, int x, int y\) | Draws on the given Graphics the given image on the x and y coordinates. |
-
-
-
+| Type          | Name                                                                                                                                 | Description                                                                                                                                                                                                                            |
+| :------------ | :----------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **NinePatch** | getInstance\( \)                                                                                                                     | Returns the instance of the NinePatch                                                                                                                                                                                                  |
+| **Parts**     | load\(Image\)                                                                                                                        | Return the 9 ninepatch parts from a Image with the guides                                                                                                                                                                              |
+| **Parts**     | load\(Image original, int scalableAreaStartWidth, int scalableAreaEndWidth, int scalableAreaStartHeight, int scalableAreaEndHeight\) | Returns the 9 ninepatch parts of the image without the guides but with the values of the points that will cut the image                                                                                                                |
+| **Parts**     | load\(Image original, int scalableAreaWidth, int scalableAreaHeight\)                                                                | Returns the 9 parts of the ninepatch of a image without the guides but with the values that are going to be used for the borders rectangles, that are the respective width and height. All border rectangles are equals in this case.  |
+| **Image**     | getNormalInstance\(Parts p, int width, int height, int color, boolean rotate\)                                                       | Return the result image built from the given width and height; If the given color is different from -1, it will apply the rgb colors in every pixel from the image. If the given boolean is true, the image will be rotated 180º.      |
+| **Image**     | getNormalInstance\(int type, int width, int height, int color, boolean rotate\)                                                      | Return the result image from one of Totalcross standard ninepatchs. If the given color is different from -1, it will apply the rgb colors in every pixel from the image. If the given boolean is true, the image will be rotated 180º. |
+| **Image**     | getPressedInstance\(Image img, int backColor, int pressColor\)                                                                       | Return the given image with a pressed effect from the given color                                                                                                                                                                      |
+| **void**      | tryDrawImage\(Graphics g, Image npback, int x, int y\)                                                                               | Draws on the given Graphics the given image on the x and y coordinates.                                                                                                                                                                |

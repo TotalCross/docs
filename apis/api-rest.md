@@ -1,21 +1,28 @@
+---
+name: API Rest
+route: /api/api-rest
+menu: API
+---
+
 # API Rest
 
 ### Verbs
 
 HTTP verbs are the request methods we use along with the endpoints to access a particular api route.
 
-| Endpoint | Verbs | Action |
-| :--- | :--- | :--- |
-| /get | GET | Retrieves new information |
-| /post | POST | Create new information |
-| /put | PUT | Change an information |
-| /delete | DELETE | Delete information |
+| Endpoint | Verbs  | Action                    |
+| :------- | :----- | :------------------------ |
+| /get     | GET    | Retrieves new information |
+| /post    | POST   | Create new information    |
+| /put     | PUT    | Change an information     |
+| /delete  | DELETE | Delete information        |
 
 ### Requisitions
 
 One of the ways to make requests is to create **PressListener** for Button, in the example below I will demonstrate how to get the response of the request in a variable and display in a Label
 
-{% code title="PressListener" %}
+<!-- {% code title="PressListener" %} -->
+
 ```java
 //String uri = Requisition URL
 //HttpMethod httpMethod = HTTP Verbs
@@ -36,10 +43,10 @@ One of the ways to make requests is to create **PressListener** for Button, in t
 
                 Response<ResponseData> response = new Response<>();
                 response.responseCode = httpStream.responseCode;
-                
+
                 if (httpStream.responseCode == 200){
                         response.data = (JSONFactory.parse(data, ResponseData.class));
-                        
+
                         //Accessing the answer and picking up the information.
                         msg += "Url: " + response.data.getUrl() + "\n";
                         msg += "Origin: " + response.data.getOrigin();
@@ -61,18 +68,20 @@ One of the ways to make requests is to create **PressListener** for Button, in t
 
         };
     }
-    
+
     public static class Response<T> {
         public T data;
         public int responseCode;
     }
 
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 Creating the packet to receive the response in order to handle the data obtained from the request
 
-{% code title="Structures" %}
+<!-- {% code title="Structures" %} -->
+
 ```text
 └── src
     └── main
@@ -85,12 +94,14 @@ Creating the packet to receive the response in order to handle the data obtained
                     └── Args
                     └── ResponseData
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 and now create the class to store the information
 
-{% tabs %}
-{% tab title="ResponseData class" %}
+<!-- {% tabs %} -->
+<!-- {% tab title="ResponseData class" %} -->
+
 ```java
 package com.totalcross.RestApi.ResponseData;
 
@@ -127,9 +138,11 @@ public class ResponseData {
 
 
 ```
-{% endtab %}
 
-{% tab title="Args class" %}
+<!-- {% endtab %} -->
+
+<!-- {% tab title="Args class" %} -->
+
 ```java
 package com.totalcross.RestApi.ResponseData;
 
@@ -149,8 +162,9 @@ public class Args {
 
 
 ```
-{% endtab %}
-{% endtabs %}
+
+<!-- {% endtab %} -->
+<!-- {% endtabs %} -->
 
 Now just put that pressListener on your button by changing only the endpoint and the verb, see the example below
 
@@ -181,7 +195,6 @@ Now just put that pressListener on your button by changing only the endpoint and
     }
 ```
 
-### References 
+### References
 
-* See the complete API code remainder with TotalCross in [GitHub](https://github.com/TotalCross/ApiSample).
-
+- See the complete API code remainder with TotalCross in [GitHub](https://github.com/TotalCross/ApiSample).

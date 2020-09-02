@@ -1,24 +1,28 @@
 ---
-description: Short description about the Totalcross API
+name: API Overview
+route: /api/api-overview
+menu: API
 ---
 
 # API Overview
+
+Short description about the Totalcross API.
 
 ## **TotalCross Packages**
 
 ### totalcross.crypto
 
-The classes used by TotalCross to work with encryption are: 
+The classes used by TotalCross to work with encryption are:
 
-* **Cipher**: AES e RSA;
-* **Digest**: MD5, SHA1, SHA256 ;
-* **Signature**: PKCS1.
+- **Cipher**: AES e RSA;
+- **Digest**: MD5, SHA1, SHA256 ;
+- **Signature**: PKCS1.
 
 ### totalcross.db e totalcross.sql
 
 The **totalcross.db** package has SQLite Java implementation, the most widely used portable database in the world. Allows you to use SQL commands to manipulate data files lightly and with low memory consumption.
 
-The t**otalcross.sql** package has JDBC implementation for use with SQLite - SQLiteUtil - as you can see in the code example below:
+The **totalcross.sql** package has JDBC implementation for use with SQLite - SQLiteUtil - as you can see in the code example below:
 
 ```java
 public class DatabaseManager {
@@ -41,92 +45,91 @@ public class DatabaseManager {
 
 To learn more about SQLite, how to implement SQLite Useful, creating applications with database and CRUD just read the link session below:
 
-{% page-ref page="../learn-totalcross/how-to-store-data-sqlite.md" %}
+<!-- {% page-ref page="../developers-area/how-to-store-data-sqlite.md" %} -->
 
 ### totalcross.io
 
 The totalcross.io package concentrates the classes used in input and output.
 
-* ByteArrayStream
-* DataStream 
-* File 
-  * BufferedStream 
-* LineReader 
-* device.bluetooth 
-* device.gps 
-* device.printer 
-* device.scanner
+- ByteArrayStream
+- DataStream
+- File
+  - BufferedStream
+- LineReader
+- device.bluetooth
+- device.gps
+- device.printer
+- device.scanner
 
 ### totalcross.json
 
 In this class we have the json library in Java, a lot used in the creation of Web Services through Rest. To understand better, visit the session below:
 
-{% page-ref page="json.md" %}
+<!-- {% page-ref page="json.md" %} -->
 
 ### totalcross.map
 
 Totalcross.map supports GoogleMaps and Waze. You can better understand by clicking on the session below:
 
-{% page-ref page="maps/" %}
+<!-- {% page-ref page="maps/" %} -->
 
-### totalcross.net 
+### totalcross.net
 
 It is in the package totalcross.net where the connection classes are. Are they:
 
-* Socket FTP;
-* HTTPStream;
-* ServerSocket;
-* mail \(pop3\);
-* SSL
+- Socket FTP;
+- HTTPStream;
+- ServerSocket;
+- mail \(pop3\);
+- SSL
 
-### totalcross.phone 
+### totalcross.phone
 
 The classes responsible for handling telephones are:
 
-* CellInfo 
-* Dial 
-* SMS
+- CellInfo
+- Dial
+- SMS
 
-### totalcross.sys 
+### totalcross.sys
 
 The totalcross.sys package contains the utility and usage classes for Virtual Machine. Are they:
 
-* Convert 
-* Setting 
-* Time 
-* VM
+- Convert
+- Setting
+- Time
+- VM
 
-### totalcross.unit 
+### totalcross.unit
 
-The classes responsible for building unit tests are in the totalcross.unit package. The classes are: 
+The classes responsible for building unit tests are in the totalcross.unit package. The classes are:
 
-* TestCase
-* TestSuite
-* UIRobot
+- TestCase
+- TestSuite
+- UIRobot
 
-### totalcross.util 
+### totalcross.util
 
 Utilities classes
 
-* Date Hashtable / Vector
-* IntHastable / IntVector 
-* Random 
-* Collections 
-* concurrent.Lock 
-* BigDecimal / BigInteger 
-* PDFWritter 
-* Regex 
-* Zip/ZLib/GZip
+- Date Hashtable / Vector
+- IntHastable / IntVector
+- Random
+- Collections
+- concurrent.Lock
+- BigDecimal / BigInteger
+- PDFWritter
+- Regex
+- Zip/ZLib/GZip
 
 ### totalcross.xml
 
 In the package totalcross.xml are the classes responsible for XML handling. They are:
 
-* XMLRPC com Axis 
-* SOAP
-* XMLTokenizer
+- XMLRPC com Axis
+- SOAP
+- XMLTokenizer
 
 ## References
 
-* For a better understanding, see the [javadoc](http://rs.totalcross.com/doc/index.html)
-
+- For a better understanding, see the [javadoc](http://rs.totalcross.com/doc/index.html)

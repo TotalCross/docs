@@ -1,3 +1,9 @@
+---
+name: Camera
+route: /api/camera
+menu: API
+---
+
 # Camera
 
 ### Overview
@@ -12,26 +18,23 @@ On iOS there’s no way to return the supported resolutions; it will take a phot
 
 **This class only has de default constructor. The other interesting fields are:**
 
-* title The title to display in the window opened for the camera. 
-* stillQuality Defines the quality of the image. It can be equal to CAMERACAPTURE\_STILLQUALITY\_DEFAULT \(default quality\), CAMERACAPTURE\_STILLQUALITY\_LOW \(low quality\), CAMERACAPTURE\_STILLQUALITY\_NORMAL \(normal quality\), or CAMERACAPTURE\_STILLQUALITY\_HIGH \(high quality\). 
-* videoType Can be one of CAMERACAPTURE\_VIDEOTYPE\_ALL \(produces video clips that match video profiles, using just the video resolution for the match criteria, the default value\) CAMERACAPTURE\_VIDEOTYPE\_STANDARD \(produces high-quality video clips used for home movies and e-mail video messaging, using a video encoder such as the Windows Media encoder\), or CAMERACAPTURE\_VIDEOTYPE\_MESSAGING \(Produces video clips used for Multimedia Messaging Service \(MMS\) video messaging, which require a video encoder that conforms to the 3rd Generation Partnership Project \(3GPP\) specification on http://go.microsoft.com/fwlink/?LinkId=32710\). 
-* videoTimeLimit Maximum time limit for recording a video. 
-* captureMode Can be one of CAMERACAPTURE\_MODE\_STILL \(only picture, the default value\), CAMERACAPTURE\_MODE\_VIDEOONLY \(no sound\), or CAMERACAPTURE\_MODE\_VIDEOWITHAUDIO \(video and sound\). 
-* allowRotation Use this on Android only. If false, the camera buttons will be on landscape. If true, the camera buttons will follow the device current rotation when the camera is opened. 
+- title The title to display in the window opened for the camera.
+- stillQuality Defines the quality of the image. It can be equal to CAMERACAPTURE_STILLQUALITY_DEFAULT \(default quality\), CAMERACAPTURE_STILLQUALITY_LOW \(low quality\), CAMERACAPTURE_STILLQUALITY_NORMAL \(normal quality\), or CAMERACAPTURE_STILLQUALITY_HIGH \(high quality\).
+- videoType Can be one of CAMERACAPTURE_VIDEOTYPE_ALL \(produces video clips that match video profiles, using just the video resolution for the match criteria, the default value\) CAMERACAPTURE_VIDEOTYPE_STANDARD \(produces high-quality video clips used for home movies and e-mail video messaging, using a video encoder such as the Windows Media encoder\), or CAMERACAPTURE_VIDEOTYPE_MESSAGING \(Produces video clips used for Multimedia Messaging Service \(MMS\) video messaging, which require a video encoder that conforms to the 3rd Generation Partnership Project \(3GPP\) specification on http://go.microsoft.com/fwlink/?LinkId=32710\).
+- videoTimeLimit Maximum time limit for recording a video.
+- captureMode Can be one of CAMERACAPTURE_MODE_STILL \(only picture, the default value\), CAMERACAPTURE_MODE_VIDEOONLY \(no sound\), or CAMERACAPTURE_MODE_VIDEOWITHAUDIO \(video and sound\).
+- allowRotation Use this on Android only. If false, the camera buttons will be on landscape. If true, the camera buttons will follow the device current rotation when the camera is opened.
 
-![](https://totalcross.com/documentation/en/api/img/xcamera.png.pagespeed.ic.fAne0JJDiH.png)
+<!-- ![image](https://totalcross.com/documentation/en/api/img/xcamera.png.pagespeed.ic.fAne0JJDiH.png) -->
 
 ### The class **Camera** only has one method:
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **String** | click\( \) | Takes a photo or records a video based on the members set. It returns a string with the file name where the image or video is located, or null if the user canceled. |
-| **static String\[ \]** | getSupportedResolutions\( \) | Gets the supported resolutions on the current device. |
+| Type                   | Name                         | Description                                                                                                                                                          |
+| :--------------------- | :--------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **String**             | click\( \)                   | Takes a photo or records a video based on the members set. It returns a string with the file name where the image or video is located, or null if the user canceled. |
+| **static String\[ \]** | getSupportedResolutions\( \) | Gets the supported resolutions on the current device.                                                                                                                |
 
 ## References
 
-* To know more details read its [JavaDocs](https://rs.totalcross.com/doc/totalcross/ui/media/Camera.html).
-* For more details, check in [Github project](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/CameraSample.java).
-
-
-
+- To know more details read its [JavaDocs](https://rs.totalcross.com/doc/totalcross/ui/media/Camera.html).
+- For more details, check in [Github project](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/CameraSample.java).

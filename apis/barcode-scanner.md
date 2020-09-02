@@ -1,3 +1,9 @@
+---
+name: Scanner
+route: /api/scanner
+menu: API
+---
+
 # Scanner
 
 ## Overview
@@ -34,15 +40,17 @@ Are you thinking in implements a barcode reader in your app? TotalCross have a s
       </td>
     </tr>
   </tbody>
-</table>## How to use
+</table>
+
+## How to use
 
 There are two ways to make the scanner.
 
 ### With Scandit:
 
- When we do a Scanner.readBarcode and we set on parameter characters "scandit:" with a String contains the scandit key and the camera be call and will capture the image and set on the label result. You will use like this:
+When we do a Scanner.readBarcode and we set on parameter characters "scandit:" with a String contains the scandit key and the camera be call and will capture the image and set on the label result. You will use like this:
 
- `scan = Scanner.readBarcode("scandit:" + YOUR_SCANDIT_KEY);`
+`scan = Scanner.readBarcode("scandit:" + YOUR_SCANDIT_KEY);`
 
 ### With ZXing:
 
@@ -52,8 +60,5 @@ In here, we have a little more work because we need find the barcode's mode, if 
 
 ## References
 
-* See more in [Javadoc](https://rs.totalcross.com/doc/totalcross/io/device/scanner/package-summary.html)
-* See a project using scanner on [github](https://github.com/TotalCross/ScanditSample)
-
-
-
+- See more in [Javadoc](https://rs.totalcross.com/doc/totalcross/io/device/scanner/package-summary.html)
+- See a project using scanner on [github](https://github.com/TotalCross/ScanditSample)

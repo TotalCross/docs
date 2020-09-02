@@ -1,3 +1,9 @@
+---
+name: Container
+route: /api/container
+menu: API
+---
+
 # Container
 
 ## Overview
@@ -6,14 +12,15 @@ The container is a control that contains child controls. It is possible to adjus
 
 If you want to know more about how differences between windows and container, how to navigate between interfaces and what are the best ways to handle containers and windows, just click on the link below:
 
-{% page-ref page="../../guideline/container-x-window.md" %}
+<!-- {% page-ref page="../../guides/app-architecture/container-x-window.md" %} -->
 
 ## Usage
 
-{% code title="Container" %}
+<!-- {% code title="Container" %} -->
+
 ```java
 class ContainerSample extends Container{
-	
+
 	@Override
     public void initUI() {
       try {
@@ -30,12 +37,13 @@ class ContainerSample extends Container{
     }
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ## Features of Container
 
-* \*\*\*\*[**How to navigate between screens**](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeSnZoHZefj9mq9OlAt/primary/faq#how-to-navigate-between-screens-containers-and-windows)\*\*\*\*
-* **Container characteristics are assigned to child controls**
+- \*\*\*\*[**How to navigate between screens**](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LeSnZoHZefj9mq9OlAt/primary/faq#how-to-navigate-between-screens-containers-and-windows)\*\*\*\*
+- **Container characteristics are assigned to child controls**
 
 ### Method
 
@@ -92,7 +100,8 @@ Some methods that are most commonly used
       <td style="text-align:left">Assigns the color of the back parameter to the container background</td>
     </tr>
   </tbody>
-</table>## Referencies
+</table>
+
+## Referencies
 
 You can see more information in [javaDoc](https://rs.totalcross.com/doc/totalcross/ui/Container.html)
-

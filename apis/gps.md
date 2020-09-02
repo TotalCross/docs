@@ -1,3 +1,9 @@
+---
+name: GPS
+route: /api/gps
+menu: API
+---
+
 # GPS
 
 ### Overview
@@ -10,7 +16,8 @@ If the GPS fails connecting to the satellites, and the phone has signal, you can
 
 Here is an example of GPS usage:
 
-{% code title="GPS\_SAMPLE" %}
+<!-- {% code title="GPS\_SAMPLE" %} -->
+
 ```java
 new Thread()
 
@@ -34,28 +41,26 @@ new Thread()
 	}
 }.start();
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Atributes
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| int | satellites | Number of satellites  |
-| double\[\]  | location | Stores the location - latitude on first index \(0\) and longitude on second index \(1\). |
-| double | direction | Stores the direction in degrees from the North. |
+| Type       | Name       | Description                                                                              |
+| :--------- | :--------- | :--------------------------------------------------------------------------------------- |
+| int        | satellites | Number of satellites                                                                     |
+| double\[\] | location   | Stores the location - latitude on first index \(0\) and longitude on second index \(1\). |
+| double     | direction  | Stores the direction in degrees from the North.                                          |
 
 ### methods
 
-| **Type** | Name | Description |
-| :--- | :--- | :--- |
-| boolean | retrieveGPSData\(\) | Call this method to retrieve the data from the GPS, true if the data was retrieved, false if low signal. |
-| void |  stop\(\) | Closes the underlying PortConnector or native api. |
-| double | getLatitude\(\) | Returns the latitude |
-| double | getLongitude\(\) | Returns the longitude |
+| **Type** | Name                | Description                                                                                              |
+| :------- | :------------------ | :------------------------------------------------------------------------------------------------------- |
+| boolean  | retrieveGPSData\(\) | Call this method to retrieve the data from the GPS, true if the data was retrieved, false if low signal. |
+| void     | stop\(\)            | Closes the underlying PortConnector or native api.                                                       |
+| double   | getLatitude\(\)     | Returns the latitude                                                                                     |
+| double   | getLongitude\(\)    | Returns the longitude                                                                                    |
 
 ## **References**
 
 For more details, check out [JavaDoc](https://rs.totalcross.com/doc/).
-
-
-

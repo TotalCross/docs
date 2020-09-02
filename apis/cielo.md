@@ -1,33 +1,41 @@
+---
+name: PrinterManager
+route: /api/printermanager
+menu: API
+---
+
 # PrinterManager
 
 ## Overview
 
-PrinterManager is the class responsible for enabling printing on Cielo machines and it uses the singleton pattern to guarantee a unique instance of PrinterManager. 
+PrinterManager is the class responsible for enabling printing on Cielo machines and it uses the singleton pattern to guarantee a unique instance of PrinterManager.
 
 ## Atributes
 
 The attributes will be inserted into the hashMap and will be used at the time of printing
 
-#### Used in alignment - KEY\_ALIGN
+#### Used in alignment - KEY_ALIGN
 
-| Name | Description |
-| :--- | :--- |
-| VAL\_ALIGN\_CENTER | Align to center  |
-| VAL\_ALIGN\_LEFT | Align to left |
-| VAL\_ALIGN\_RIGHT | Align to right |
+| Name             | Description     |
+| :--------------- | :-------------- |
+| VAL_ALIGN_CENTER | Align to center |
+| VAL_ALIGN_LEFT   | Align to left   |
+| VAL_ALIGN_RIGHT  | Align to right  |
 
 #### Other features
 
-| Name | Description |
-| :--- | :--- |
-| KEY\_TEXT\_SIZE | Text size, must be an integer value |
-| KEY\_TYPEFACE | Text font, must be an integer between 0 and 8, where each value is a different font |
-| KEY\_MARGIN\_LEFT | Left margin, must be an integer value |
-| KEY\_MARGIN\_RIGHT | Right margin, must be an integer value |
-| KEY\_MARGIN\_TOP | Top margin, must be an integer value |
-| KEY\_MARGIN\_BOTTOM | Bottom margin, must be an integer value |
-| KEY\_LINE\_SPACE | Spacing between consecutive lines, must be an integer value |
-| KEY\_WEIGHT | Used when printing multiple columns, to choose the weight of each column, must be an integer value |
+| Name                     | Description                                                               |
+| :----------------------- | :------------------------------------------------------------------------ |
+| KEY_TEXT_SIZE            | Text size, must be an integer value                                       |
+| KEY_TYPEFACE             | Text font, must be an integer between 0 and 8, where each value is a      |
+| different font           |
+| KEY_MARGIN_LEFT          | Left margin, must be an integer value                                     |
+| KEY_MARGIN_RIGHT         | Right margin, must be an integer value                                    |
+| KEY_MARGIN_TOP           | Top margin, must be an integer value                                      |
+| KEY_MARGIN_BOTTOM        | Bottom margin, must be an integer value                                   |
+| KEY_LINE_SPACE           | Spacing between consecutive lines, must be an integer value               |
+| KEY_WEIGHT               | Used when printing multiple columns, to choose the weight of each column, |
+| must be an integer value |
 
 ## Methods
 
@@ -62,9 +70,12 @@ The attributes will be inserted into the hashMap and will be used at the time of
       </td>
     </tr>
   </tbody>
-</table>## Usage
+</table>
 
-{% code title="Code Example" %}
+## Usage
+
+<!-- {% code title="Code Example" %} -->
+
 ```java
 HashMap<String, Integer> printerAttributes = new HashMap<>();
 
@@ -76,7 +87,5 @@ String textToPrint = "TEXT TO PRINT";
 PrinterManager.getInstance()
                .printText(textToPrint, printerAttributes);
 ```
-{% endcode %}
 
-
-
+<!-- {% endcode %} -->

@@ -1,18 +1,24 @@
 ---
-description: Executing background tasks in order to not lock the Main Thread.
+name: Asynchronous Task
+route: /api/asynchronous-task
+menu: API
 ---
 
 # Asynchronous Task
 
-## Using AsyncTask class to execute background tasks 
+Executing background tasks in order to not lock the Main Thread.
 
-In order to execute task that can take a few seconds to be completely executed, one must run it apart from the main thread, i.e, the thread responsible for painting components. Executing this kind of task in the main thread may cause a non-good user experience, once the application user may be unable to use and see any progress while the task is being executed. 
+## Using AsyncTask class to execute background tasks
+
+In order to execute task that can take a few seconds to be completely executed, one must run it apart from the main thread, i.e, the thread responsible for painting components. Executing this kind of task in the main thread may cause a non-good user experience, once the application user may be unable to use and see any progress while the task is being executed.
 
 To avoid such an obstacle, TotalCross provides AsyncTask class, which is a helper to execute task in an asynchronous way. By using AsyncTask, the user can easily execute asynchronous task without complex manipulation of threads and, consequently, not locking the main thread. See the example bellow to learn how to use it.
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 Copy and paste this code inside a [Container](control/container.md) instance.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ```java
 Button dldButton = new Button("download zip");
@@ -77,9 +83,6 @@ dldButton.addPressListener((c) -> {
 });
 ```
 
-Once method execute is called, before executing the asynchronous task, _onPreExecute_ method is also called adding an _UpdateListener_ to update the component [`ProgressBar` ](../components/progress-bar.md)in the adequate time interval trough the variable _progress_. The button dldButton is disabled to avoid user execute the same task many times unnecessarily.  
+Once method execute is called, before executing the asynchronous task, _onPreExecute_ method is also called adding an _UpdateListener_ to update the component [`ProgressBar`](../components/progress-bar.md) in the adequate time interval trough the variable _progress_. The button dldButton is disabled to avoid user execute the same task many times unnecessarily.
 
-When the file is completely downloaded, the function _onPostExecute_ is called removing the _UpdateListener_  and __reenabling __the button _dldButton._
-
-
-
+When the file is completely downloaded, the function _onPostExecute_ is called removing the _UpdateListener_ and **reenabling **the button _dldButton._

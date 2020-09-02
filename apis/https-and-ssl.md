@@ -1,3 +1,9 @@
+---
+name: HTTPS and SSL
+route: /api/https-ssl
+menu: API
+---
+
 # HTTPS and SSL
 
 ## Overview
@@ -6,10 +12,10 @@ The TotalCross SSL native library is a wrapper library of the great axTLS packag
 
 The original package supports:
 
-* Linux;
-* Win32;
-* Solaris; 
-* Cygwin.
+- Linux;
+- Win32;
+- Solaris;
+- Cygwin.
 
 This native library adds support for **SSL** **\(Secured Sockets Layer\)** communications to secure data transfers between authenticated devices and/or servers.
 
@@ -37,34 +43,35 @@ The root certificate is called the Google G3 Authority. Therefore, for HTTPS to 
 
 ### **Step by step**
 
-* Open the URL in the browser and click on the padlock that appears \(next to the URL\) and then on "Valid", just below "Certificate". There you will find the data, such as the name of the issuer and with this, you will, in your code, indicate the issuer as reliable. ****
+- Open the URL in the browser and click on the padlock that appears \(next to the URL\) and then on "Valid", just below "Certificate". There you will find the data, such as the name of the issuer and with this, you will, in your code, indicate the issuer as reliable. \*\*\*\*
 
 ![Step 1](../.gitbook/assets/https_ssl-1.jpg)
 
-* To find the certificate, simply go through the certification path and click on view certificate and then in detail and then copy to file.
+- To find the certificate, simply go through the certification path and click on view certificate and then in detail and then copy to file.
 
 ![Step 2.1](../.gitbook/assets/https_ssl-2.1.jpg)
 
 ![Step 2.2](../.gitbook/assets/https_ssl-2.2.jpg)
 
-* After you click Copy to File, you will see some options, click the one that has "base64 encoded".
+- After you click Copy to File, you will see some options, click the one that has "base64 encoded".
 
 ![Step 3](../.gitbook/assets/https_ssl-3.jpg)
 
-* Once saved, grab the .cer file and place it inside the Authorities class in loop execution.  
+- Once saved, grab the .cer file and place it inside the Authorities class in loop execution.
 
+  <!-- {% code title="Step 4" %} -->
 
-  {% code title="Step 4" %}
   ```java
   //Load all know cases
   for(int c = Authorities.certificates.lenght - 1; c >= 0; c++){
   }
   ```
-  {% endcode %}
+
+  <!-- {% endcode %} -->
 
 ## Generating security material
 
-We will concentrate on the more general deployment of X509 client or server certificates signed by a Certification Authority \(CA\) \(click [here](http://en.wikipedia.org/wiki/X.509%20) for more details\). 
+We will concentrate on the more general deployment of X509 client or server certificates signed by a Certification Authority \(CA\) \(click [here](http://en.wikipedia.org/wiki/X.509%20) for more details\).
 
 First we will have to create our own CA, that could be replaced by any "well known" commercial CA such as Verisign, Thawte, etc, if you have the need for a public authority.
 
@@ -153,7 +160,7 @@ bash$ openssl pkcs8 -topk8 -in mykey.pem -inform PEM -out mykey.p8
 -outform DER -v1 PBE-SHA1-RC4-128
 ```
 
-bash$ openssl pkcs8 -topk8 -in mykey.pem -inform PEM -out mykey.p8
+bash\$ openssl pkcs8 -topk8 -in mykey.pem -inform PEM -out mykey.p8
 
 -outform DER -v1 PBE-SHA1-RC4-128You will have to enter a password, that will be required to use the private key.
 
@@ -177,23 +184,22 @@ The **SSLUtil** class provides functions to get information about the TLS stack 
 
 The first class to instantiate is **SSLClient** or **SSLServer** \(not currently supported\). This class represents an SSL client or server context both inheriting from the **SSLCTX** class that provides many SSL context common services. The main feature concerns the security material loading. Use **objLoad\( \)** to load material from files or memory. The arguments of this function are the material type \(CA, X509 certificate, private keys, etc\), the filename or the memory containing the material, and finally a password for private keys loading if they are password based encrypted.
 
-To succeed the handshake with a server, you have to trust its self-signed certificate or trust the CA certificate who signed the server’s certificate. 
+To succeed the handshake with a server, you have to trust its self-signed certificate or trust the CA certificate who signed the server’s certificate.
 
 Use:
 
-* **`objLoad(SSL_OBJ_X509_CACERT, “cacert.pem”, null)`** to trust the server’s signing CA. If the server requires client authentication, you will have to send your own client certificate;
-* **`objLoad(SSL_OBJ_X509_CERT, “mycert.pem”, null)`** to load your client certificate; 
-* **`objLoad(SSL_OBJ_RSA_KEY,“mykey.pem”, “pass”`\)** to load the client certificate associated private key protected by the **pass** password.
+- **`objLoad(SSL_OBJ_X509_CACERT, “cacert.pem”, null)`** to trust the server’s signing CA. If the server requires client authentication, you will have to send your own client certificate;
+- **`objLoad(SSL_OBJ_X509_CERT, “mycert.pem”, null)`** to load your client certificate;
+- **`objLoad(SSL_OBJ_RSA_KEY,“mykey.pem”, “pass”`\)** to load the client certificate associated private key protected by the **pass** password.
 
-Next, you have to call **`connect()`** on the context instance to create an SSL instance linked with a previously created socket. 
+Next, you have to call **`connect()`** on the context instance to create an SSL instance linked with a previously created socket.
 
 The SSL handshake starts immediatly to try to establish an authenticated/ciphered communication.
 
-The SSL handshake succeeded if the `connect()` call returns an SSL instance and the **`handshakeStatus()`** function call on that instance returns **SSL\_OK**. Consequently, you may check the subject of the peer certificate with the **`getCertificateDN()`**call to identify it and the context could be used to write and read ciphered data until the “dispose” call terminates the SSL communication. The peer receives a protocol alert to signal a link shutdown.
+The SSL handshake succeeded if the `connect()` call returns an SSL instance and the **`handshakeStatus()`** function call on that instance returns **SSL_OK**. Consequently, you may check the subject of the peer certificate with the **`getCertificateDN()`**call to identify it and the context could be used to write and read ciphered data until the “dispose” call terminates the SSL communication. The peer receives a protocol alert to signal a link shutdown.
 
-The SSL write of data returns the amount of bytes written or an error if the writing failed. The SSL read of data may return **SSL\_OK** that indicates that the read is not yet terminated and may be called again to achieve the reading of a block of decipherable data.
+The SSL write of data returns the amount of bytes written or an error if the writing failed. The SSL read of data may return **SSL_OK** that indicates that the read is not yet terminated and may be called again to achieve the reading of a block of decipherable data.
 
 ## References
 
-* For more details, check out the **totalcross.net.ssl** package [JavaDocs](https://rs.totalcross.com/doc/index.html).
-
+- For more details, check out the **totalcross.net.ssl** package [JavaDocs](https://rs.totalcross.com/doc/index.html).

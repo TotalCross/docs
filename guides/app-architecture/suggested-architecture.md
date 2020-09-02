@@ -1,3 +1,9 @@
+---
+name: Suggested Architecture
+route: /app-architecture/suggested-architecture
+menu: App Architecture
+---
+
 # Suggested Architecture
 
 ## Overview
@@ -8,7 +14,7 @@ If you are not already familiar with the TotalCross framework we strongly recomm
 
 ## The mobile user experience
 
-In most cases, computer applications have a single point of entry into a desktop or quick access to programs, and then run as a single monolithic process. 
+In most cases, computer applications have a single point of entry into a desktop or quick access to programs, and then run as a single monolithic process.
 
 Mobile apps, on the other hand, have a more complex structure. A standard mobile app contains several components, including Containers, Windows, services, content providers, and calls to native components such as camera or calls.
 
@@ -16,23 +22,20 @@ And when we are developing multiplatform we still have to think more deeply, rem
 
 ## Recommended App Architecture
 
-We've separated some suggestions for the architecture of your app. 
+We've separated some suggestions for the architecture of your app.
 
 ### Why do Design Patterns help with the application's organization?
 
-{% page-ref page="suggested-design-patterns/" %}
+<!-- {% page-ref page="suggested-design-patterns/" %} -->
 
 ### Separation of concepts: What is the best way to create UI interfaces?
 
-{% page-ref page="container-x-window.md" %}
+<!-- {% page-ref page="container-x-window.md" %} -->
 
 ### Positioning
 
-{% page-ref page="relative-positioning/" %}
+<!-- {% page-ref page="relative-positioning/" %} -->
 
 ### Best Practices to improve project maintenance
 
-{% page-ref page="colors-fonts-and-images.md" %}
-
-
-
+<!-- {% page-ref page="colors-fonts-and-images.md" %} -->

@@ -1,14 +1,21 @@
+---
+name: MVC Architecture Pattern
+route: /app-architecture/mvc-architecture-pattern
+menu: App Architecture
+---
+
 # MVC Architecture Pattern
 
 This architecture pattern will assign and separate the objects into responsibilities: **Model**, **View** and **Controller**
 
-* **Model:** will represent an object, such as a person.
-* **View:** The view will represent the model data.
-* **Controller:** It controls the data of the model object and controls the visualization.
+- **Model:** will represent an object, such as a person.
+- **View:** The view will represent the model data.
+- **Controller:** It controls the data of the model object and controls the visualization.
 
 ### Structures
 
-{% code title="Structures" %}
+<!-- {% code title="Structures" %} -->
+
 ```text
 └── src
     └── main
@@ -21,10 +28,12 @@ This architecture pattern will assign and separate the objects into responsibili
                 └── controller
                     └── HomePresenter
 ```
-{% endcode %}
 
-{% tabs %}
-{% tab title="Person - Model" %}
+<!-- {% endcode %} -->
+
+<!-- {% tabs %} -->
+<!-- {% tab title="Person - Model" %} -->
+
 ```java
 package com.totalcross.mvc.model;
 
@@ -60,9 +69,11 @@ public class Person {
 }
 
 ```
-{% endtab %}
 
-{% tab title="HomeScreeen - View" %}
+<!-- {% endtab %} -->
+
+<!-- {% tab title="HomeScreeen - View" %} -->
+
 ```java
 package com.totalcross.mvc.view;
 
@@ -82,7 +93,7 @@ public class HomeScreen extends MainWindow {
     private int gap = 15;
 
 /*
-The constructor will be responsible for instantiating the HomePresenter class 
+The constructor will be responsible for instantiating the HomePresenter class
 which will link the presenter of the interface with the controller
 */
     public HomeScreen(){
@@ -124,9 +135,11 @@ which will link the presenter of the interface with the controller
 
 
 ```
-{% endtab %}
 
-{% tab title="HomePresenter  - Controller" %}
+<!-- {% endtab %} -->
+
+<!-- {% tab title="HomePresenter  - Controller" %} -->
+
 ```java
 package com.totalcross.mvc.controller;
 
@@ -137,13 +150,13 @@ import totalcross.ui.Toast;
 
 public class HomePresenter implements HomeScreen.Presenter {
 /*
-    In the constructor the Presenter link of the controller is realized 
+    In the constructor the Presenter link of the controller is realized
     with the view.
 */
     public HomePresenter(HomeScreen home){
         home.addListener(this);
     }
-    
+
     //The method that will be used on the button is implemented.
     @Override
     public void onCreate(Person[] person, Edit name, Edit gender) {
@@ -164,14 +177,10 @@ public class HomePresenter implements HomeScreen.Presenter {
 }
 
 ```
-{% endtab %}
-{% endtabs %}
 
-
-
-
+<!-- {% endtab %} -->
+<!-- {% endtabs %} -->
 
 ## Referencies
 
-* See more about MVC in [Geeks for Geeks](https://www.geeksforgeeks.org/mvc-design-pattern/). 
-
+- See more about MVC in [Geeks for Geeks](https://www.geeksforgeeks.org/mvc-design-pattern/).

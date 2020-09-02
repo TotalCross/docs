@@ -1,3 +1,9 @@
+---
+name: Device Simulator
+route: /guides/device-simulator
+menu: Developers Area
+---
+
 # Device Simulator
 
 ## Overview
@@ -20,15 +26,19 @@ public class YourAppApplication {
 }
 ```
 
-{% hint style="info" %}
-**YourApp.class** must extend MainWindow and must be the only MainWindow in your project 
-{% endhint %}
+<!-- {% hint style="info" %} -->
+
+**YourApp.class** must extend MainWindow and must be the only MainWindow in your project
+
+<!-- {% endhint %} -->
 
 Now, just run YourAppApplication like a regular Java application and the simulator will works fine =\)
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 **TotalCross Key**: Probably you will need a TotalCross Key to run your simulator. First time you open the simulator without the key as a parameter, the simulator will ask you the key and store it at your O.S. Also, take a look at the "/r" parameter
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 You may also pass arguments to the launcher to simulate different resolutions and styles, and have an idea of how your application is going to look like on a particular device.
 
@@ -47,21 +57,23 @@ The optional arguments can be any combination of the following \(not case sensit
 /scr x: sets the width and height.
 
 ```text
-// E.g.: If you need to simulate iPhone Xs Resolution you should do like this 
+// E.g.: If you need to simulate iPhone Xs Resolution you should do like this
 TotalCrossApplication.run(YourApp.class, "/scr", "1125x2436");
 ```
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 You can simulate any screen size and resolution with TotalCross Simulator. You just need to search for the specific device that you want to simulate and use the **"/scr"** parameter to configure the resolution
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ### **Usage of DP**
 
-Since TotalCross 5, the SDK supports Density-independent pixels \(DP\) for components positioning and size, following the [Material Design specs](https://material.io/design/). 
+Since TotalCross 5, the SDK supports Density-independent pixels \(DP\) for components positioning and size, following the [Material Design specs](https://material.io/design/).
 
 /scale &lt;0.1 to 4&gt;: scales the screen, magnifying the contents \(if greater than 1\) or shrinking \(if between 0 and 1\).
 
-The right way to use this parameter and simulate iPhone Xs, for example, is shown below 
+The right way to use this parameter and simulate iPhone Xs, for example, is shown below
 
 ```text
 
@@ -70,19 +82,21 @@ TotalCrossApplication.run(YourApp.class, "/scr", "1125x2436", "/scale", "0.33");
 
 ### **Font Size**
 
-Devices with different resolutions must have different font sizes too. With this parameter you can simulate different font sizes together with scale and screen configurations. 
+Devices with different resolutions must have different font sizes too. With this parameter you can simulate different font sizes together with scale and screen configurations.
 
-/fontSize  : set the default font size to the one passed as parameter
+/fontSize : set the default font size to the one passed as parameter
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 **We strongly recommend** you to set a default font size to your application directly on your MainWindow. If you let the application uses the font configuration of the device, your app can experience some differences running on different devices. Take a look at the chapter "[Colors, Fonts & Images](https://totalcross.gitbook.io/playbook/guideline/colors-fonts-and-images)" for more details.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ## **Other Parameters**
 
 ### **TotalCross Key**
 
-* /r: you can provide your TotalCross key directly through this parameter
+- /r: you can provide your TotalCross key directly through this parameter
 
 ```text
 		TotalCrossApplication.run(YourApp.class, "/r", "YOUR TC KEY");
@@ -90,41 +104,41 @@ Devices with different resolutions must have different font sizes too. With this
 
 ### **Color depth**
 
-* /bpp 8: emulates 8 bits per pixel screens. \(256 colors\). No used anymore on modern devices.
-* /bpp 16: emulates 16 bits per pixel screens. \(64K colors\).
-* /bpp 24: emulates 24 bits per pixel screens. \(16M colors\).
-* /bpp 32: emulates 32 bits per pixel screens. \(16M colors without transparency\).
+- /bpp 8: emulates 8 bits per pixel screens. \(256 colors\). No used anymore on modern devices.
+- /bpp 16: emulates 16 bits per pixel screens. \(64K colors\).
+- /bpp 24: emulates 24 bits per pixel screens. \(16M colors\).
+- /bpp 32: emulates 32 bits per pixel screens. \(16M colors without transparency\).
 
 ### **User interface style**
 
-* /uiStyle Flat: Flat user interface style.
-* /uiStyle Flat: Flat user interface style.
-* /uiStyle Android: Android user interface style.
+- /uiStyle Flat: Flat user interface style.
+- /uiStyle Flat: Flat user interface style.
+- /uiStyle Android: Android user interface style.
 
 #### **@Device characteristics**
 
-* /penlessDevice: acts as a device that has no touch screen. Note that all currently supported devices have touch screen.
-* /geofocus: uses geographical focus \(also activates penlessDevice\).
-* /fingerTouch: simulates the use of fingers \(since a finger is less precise than a pen, uses an algorithm to find the control near the finger and also activates drag and flick\).
-* /unmovableSip: specifies that the Soft Input Panel \(SIP\) is unmovable, and simulates the screen shift that’s made when an Edit or MultiEdit gains focus.
-* /virtualKeyboard: specifies that the device does not have a physical keyboard \(or it has but the keyboard is closed\).
+- /penlessDevice: acts as a device that has no touch screen. Note that all currently supported devices have touch screen.
+- /geofocus: uses geographical focus \(also activates penlessDevice\).
+- /fingerTouch: simulates the use of fingers \(since a finger is less precise than a pen, uses an algorithm to find the control near the finger and also activates drag and flick\).
+- /unmovableSip: specifies that the Soft Input Panel \(SIP\) is unmovable, and simulates the screen shift that’s made when an Edit or MultiEdit gains focus.
+- /virtualKeyboard: specifies that the device does not have a physical keyboard \(or it has but the keyboard is closed\).
 
 ### **Others**
 
-* /pos x,y: sets the opening position of the application.
-* /dataPath : sets where the PDB and media files are stored. This is also the default path for Litebase table files.
-* /cmdLine &lt;...&gt;: the rest of the arguments \(except the last one\) are passed as the command line to the application being launched.
-* /showmousepos: shows the mouse position \(only when running on JavaSE\).
+- /pos x,y: sets the opening position of the application.
+- /dataPath : sets where the PDB and media files are stored. This is also the default path for Litebase table files.
+- /cmdLine &lt;...&gt;: the rest of the arguments \(except the last one\) are passed as the command line to the application being launched.
+- /showmousepos: shows the mouse position \(only when running on JavaSE\).
 
 ## Function Keys
 
-When running the application, the emulator shows some function keys that can be used to emulate a device key. 
+When running the application, the emulator shows some function keys that can be used to emulate a device key.
 
-* F2 Take screenshot and save to current folder
-* F6 opens the application menu
-* F7 back \(escape\)
-* F9 tests the screen rotation using the launcher  
-* F11 opens the keyboard \(or calendar\) in an Edit field.
+- F2 Take screenshot and save to current folder
+- F6 opens the application menu
+- F7 back \(escape\)
+- F9 tests the screen rotation using the launcher
+- F11 opens the keyboard \(or calendar\) in an Edit field.
 
 ## Quick parameter guide in simulator
 
@@ -258,13 +272,8 @@ Possible Arguments \(in any order and case insensitive\). Default is marked as \
 
 Another way to run the simulator is calling the **totalcross.Launcher** class directly through the command line or "Run" from Eclipse IDE like the images below
 
-![](../../.gitbook/assets/screen-shot-2019-04-01-at-15.53.07.png)
+![screen-shot-2019-04-01-at-15.53.07](../.gitbook/assets/screen-shot-2019-04-01-at-15.53.07.png)
 
-![](../../.gitbook/assets/screen-shot-2019-04-01-at-15.53.51.png)
+![screen-shot-2019-04-01-at-15.53.51](../.gitbook/assets/screen-shot-2019-04-01-at-15.53.51.png)
 
 The results will be exactly the same in both ways. You can choose which one is the best for you.
-
-
-
-
-

@@ -1,26 +1,35 @@
+---
+name: Best practices to improve project maintenance
+route: /app-architecture/best-practices-to-improve-project-maintenance
+menu: App Architecture
+---
+
 # Best practices to improve project maintenance
 
 ## Overview
 
-There are a few recommended practices to improve the organization, maintenance, and performance, and consequently loading your application. Some of them are very basic, like creating a class apart to store the colors used in the application and other more complex as working with loading images that are pulled from an external bank. In this chapter we will learn about these recommendations. 
+There are a few recommended practices to improve the organization, maintenance, and performance, and consequently loading your application. Some of them are very basic, like creating a class apart to store the colors used in the application and other more complex as working with loading images that are pulled from an external bank. In this chapter we will learn about these recommendations.
 
 You can download the [Material Templates project](https://github.com/TotalCross/MaterialTemplates), which contains all the recommendations below.
 
-![](../../../.gitbook/assets/imagem.png)
+![image](../../.gitbook/assets/imagem.png)
 
 ## Colors
 
-In the development of any application it is essential to have a design to prototype the user interfaces. It turns out that when the developer takes these prototypes and starts to develop, it often ends up adding these colors in the UI classes themselves, which makes it difficult to maintain this code. 
+In the development of any application it is essential to have a design to prototype the user interfaces. It turns out that when the developer takes these prototypes and starts to develop, it often ends up adding these colors in the UI classes themselves, which makes it difficult to maintain this code.
 
-{% hint style="info" %}
-you will find free website recommendations for screen prototyping in the part of [references](https://totalcross.gitbook.io/playbook/guideline/colors-fonts-and-images#references) in the last topic of this chapter. 
-{% endhint %}
+<!-- {% hint style="info" %} -->
 
-Now let's say you have an update to your application and the background color of the APP has changed. If your project has 2 or 3 screens, is it relatively quick to change these colors but if it is a more robust design of 15 screens? The developer would have to quit by changing the background color 15 times. 
+you will find free website recommendations for screen prototyping in the part of [references](https://totalcross.gitbook.io/playbook/guideline/colors-fonts-and-images#references) in the last topic of this chapter.
+
+<!-- {% endhint %} -->
+
+Now let's say you have an update to your application and the background color of the APP has changed. If your project has 2 or 3 screens, is it relatively quick to change these colors but if it is a more robust design of 15 screens? The developer would have to quit by changing the background color 15 times.
 
 Thinking about this, TotalCross recommends that you create a class named Colors and create constants for each color that you will need to use in the application, and preferably with suggestive names such as BACKGROUND. The name of the constants must always be in upper case. Here is the standard suggested by TotalCross, feel free to adapt to the needs of your project.
 
-{% code title="Colors.class" %}
+<!-- {% code title="Colors.class" %} -->
+
 ```java
 import totalcross.ui.gfx.Color;
 
@@ -48,7 +57,7 @@ public class Colors {
 	public static int TEXT_ON_S_LIGHT = 0x000000;
 	public static int TEXT_ON_S_DARK = 0xFFFFFF;
 
-	
+
 	// Backcolor samples colors
 	public static int BACKGROUND_GRAY_01 = Color.getRGB(245, 245, 246);
 	public static int BACKGROUND_GRAY_02 = Color.getRGB(225, 225, 226);
@@ -61,19 +70,21 @@ public class Colors {
 }
 
 ```
-{% endcode %}
 
-The names we attributed to the contenders were not by chance but rather due to the Color [Material](https://blog.totalcross.com/en/material-o-layout-da-google/) standard. You can generate each of these colors and better understand this pattern through [Material Color Tools](https://material.io/tools/color/#!/). With this Material tool you select the primary and secondary color of your project and it already generates the application's color palette and font color.  
+<!-- {% endcode %} -->
 
-We also provide the source code for you to download and adapt for the project. Just click [here](https://github.com/TotalCross/MaterialTemplates). 
+The names we attributed to the contenders were not by chance but rather due to the Color [Material](https://blog.totalcross.com/en/material-o-layout-da-google/) standard. You can generate each of these colors and better understand this pattern through [Material Color Tools](https://material.io/tools/color/#!/). With this Material tool you select the primary and secondary color of your project and it already generates the application's color palette and font color.
+
+We also provide the source code for you to download and adapt for the project. Just click [here](https://github.com/TotalCross/MaterialTemplates).
 
 ## Images
 
-To facilitate code maintenance, it is also recommended that all images be instantiated in a separate class called Images and only be called in the interface classes. 
+To facilitate code maintenance, it is also recommended that all images be instantiated in a separate class called Images and only be called in the interface classes.
 
 Images class example:
 
-{% code title="Images.class" %}
+<!-- {% code title="Images.class" %} -->
+
 ```java
 import totalcross.io.IOException;
 import totalcross.ui.image.Image;
@@ -97,7 +108,8 @@ public class Images {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 Using Images.class:
 
@@ -113,9 +125,10 @@ Using Images.class:
 
 As with colors and images, it happens when we are going to edit the fonts and here the problem is even worse, because we still have to stick to the size of fonts, colors and type.
 
-So we advised that before the developer can already take with Design all these details to pass through a class with everything custom, as in the example below: 
+So we advised that before the developer can already take with Design all these details to pass through a class with everything custom, as in the example below:
 
-{% code title="Fonts" %}
+<!-- {% code title="Fonts" %} -->
+
 ```java
 import totalcross.ui.font.Font;
 
@@ -189,7 +202,8 @@ public class Fonts {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 to apply this class:
 
@@ -202,15 +216,18 @@ public void initUI() {
 }
 ```
 
-{% hint style="success" %}
-Another way would be to create an enum to stylize and only apply where you need it. To learn how to do it this way just click [here](https://totalcross.gitbook.io/playbook/guideline/suggested-design-patterns/builder). 
-{% endhint %}
+<!-- {% hint style="success" %} -->
+
+Another way would be to create an enum to stylize and only apply where you need it. To learn how to do it this way just click [here](https://totalcross.gitbook.io/playbook/guideline/suggested-design-patterns/builder).
+
+<!-- {% endhint %} -->
 
 ## Material Constants
 
-The Material recommends a series of [size and spacing patterns](https://material.io/components/), so it is ideal to create a class within the useful package and assigning these patterns to the constants, as in the example below: 
+The Material recommends a series of [size and spacing patterns](https://material.io/components/), so it is ideal to create a class within the useful package and assigning these patterns to the constants, as in the example below:
 
-{% code title="MaterialConstants" %}
+<!-- {% code title="MaterialConstants" %} -->
+
 ```java
 import totalcross.ui.Control;
 import totalcross.util.UnitsConverter;
@@ -218,7 +235,7 @@ import totalcross.util.UnitsConverter;
 /**
  * Constants of positioning and components size to make it easier to maintain
  * the app.
- * 
+ *
  * @author brunoamuniz
  *
  */
@@ -241,7 +258,8 @@ public class MaterialConstants {
 
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 to apply this class:
 
@@ -253,10 +271,7 @@ add(btn, LEFT + MaterialConstants.BORDER_SPACING, AFTER + MaterialConstants.COMP
 
 ## References
 
-* Screen prototyping tool - [Invision app](https://www.invisionapp.com/), [figma](https://www.figma.com/), [marvel app](https://marvelapp.com/) and [adobeXD](https://www.adobe.com/br/creativecloud.html?ef_id=Cj0KCQjwtr_mBRDeARIsALfBZA571eitMauX00tdmLL6ARRBAGWNYxk-hO-eTsRNi61SH1Y6RlO1y4EaArMwEALw_wcB:G:s&gclid=Cj0KCQjwtr_mBRDeARIsALfBZA571eitMauX00tdmLL6ARRBAGWNYxk-hO-eTsRNi61SH1Y6RlO1y4EaArMwEALw_wcB&mv=search&s_kwcid=AL!3085!3!301784432823!b!!g!!adobe+creative&sdid=KQPOT);
-* To better illustrate where each of them is used, you can download the [Nubank\_Sample project in GitHub](https://github.com/totalcross/Nubank_Sample);
-* Screen templates in standard Material Design made with totalcross - [Material Templates](https://github.com/TotalCross/MaterialTemplates) ;
-* [Material Standards](https://material.io/design/components/).
-
-
-
+- Screen prototyping tool - [Invision app](https://www.invisionapp.com/), [figma](https://www.figma.com/), [marvel app](https://marvelapp.com/) and [adobeXD](https://www.adobe.com/br/creativecloud.html?ef_id=Cj0KCQjwtr_mBRDeARIsALfBZA571eitMauX00tdmLL6ARRBAGWNYxk-hO-eTsRNi61SH1Y6RlO1y4EaArMwEALw_wcB:G:s&gclid=Cj0KCQjwtr_mBRDeARIsALfBZA571eitMauX00tdmLL6ARRBAGWNYxk-hO-eTsRNi61SH1Y6RlO1y4EaArMwEALw_wcB&mv=search&s_kwcid=AL!3085!3!301784432823!b!!g!!adobe+creative&sdid=KQPOT);
+- To better illustrate where each of them is used, you can download the [Nubank_Sample project in GitHub](https://github.com/totalcross/Nubank_Sample);
+- Screen templates in standard Material Design made with totalcross - [Material Templates](https://github.com/TotalCross/MaterialTemplates) ;
+- [Material Standards](https://material.io/design/components/).

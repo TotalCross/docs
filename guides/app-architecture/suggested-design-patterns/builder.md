@@ -1,10 +1,16 @@
+---
+name: Template Pattern
+route: /app-architecture/template-pattern
+menu: App Architecture
+---
+
 # Template Pattern
 
 ### What's Template Pattern
 
 In this pattern, we will use an enum that will be responsible for providing a stylization for your controls, thus making your code less coupled and more practical to be developed
 
-For example, in your application has a color pattern, font size and a particular font, you can create an enum that will represent this stylization for you and in case you need to change something in those controls you just need to change that enum. 
+For example, in your application has a color pattern, font size and a particular font, you can create an enum that will represent this stylization for you and in case you need to change something in those controls you just need to change that enum.
 
 ### How to apply this method
 
@@ -14,7 +20,8 @@ For example if in your application you have a need to create custom labels with 
 
 You can create the enum in the root of the controller package
 
-{% code title="Structures " %}
+<!-- {% code title="Structures " %} -->
+
 ```text
 └── src
     └── main
@@ -26,20 +33,22 @@ You can create the enum in the root of the controller package
                 └── controller
                     └── Template.java
 ```
-{% endcode %}
 
-{% code title="Template.java" %}
+<!-- {% endcode %} -->
+
+<!-- {% code title="Template.java" %} -->
+
 ```java
 public enum Template {
-        
+
 /*
 
 H1 to H4 will be used to stylize the controls with a font, bold style,
 font size and forecolor and will be changed between those enum only your fontsize.
- 
+
 The parameters of the getFont () method are String font_name,
 boolean boldStyle, int size in example h1 we have then:
-        "Graviola Soft-Bold": font 
+        "Graviola Soft-Bold": font
         false: boldStyle
         24: Font size
         0x363D86: forecolor
@@ -51,7 +60,7 @@ boolean boldStyle, int size in example h1 we have then:
 
     private final Font font;
     private final Integer forecolor;
-    
+
     Template(Font font, Integer forecolor) {
         this.font = font;
         this.forecolor = forecolor;
@@ -61,7 +70,7 @@ boolean boldStyle, int size in example h1 we have then:
         if (forecolor != null) {
             c.setForeColor(forecolor);
         }
-        
+
         if (font != null) {
             if (c instanceof Icon) {
                 c.setFont(Font.getFont(c.getFont().name, false, font.size));
@@ -69,13 +78,14 @@ boolean boldStyle, int size in example h1 we have then:
                 c.setFont(font);
             }
         }
-        
+
         return c;
     }
 
 
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 #### To use the template
 
@@ -88,4 +98,3 @@ add(lblHeader, CENTER, TOP);
 ```
 
 The enum template created above is just an example of how to use this pattern, you can customize it according to the needs of your application.
-

@@ -1,12 +1,19 @@
+---
+name: Relative Positioning
+route: /app-architecture/relative-positioning
+menu: App Architecture
+---
+
 # Relative Positioning
 
 At totalcross, we have two layouts ready to help you set up your application: HBox and VBox. These layouts can be described as 2 boxes where you "stack" your components, be it with a certain space between them or just simply really stacked. Both these layouts are extensions of the LinearBox class. To use them is pretty simple, all you ned to do is instantiate one of them, set its mode and add your components inside.
 
 ### Hbox
 
-This layout will group your components horizontally, 
+This layout will group your components horizontally,
 
-{% code title="How to use HBox Layout" %}
+<!-- {% code title="How to use HBox Layout" %} -->
+
 ```java
 public void initUI() {
     HBox hBox = new HBox(HBox.LAYOUT_FILL, HBox.ALIGNMENT_STRETCH);
@@ -17,19 +24,21 @@ public void initUI() {
     add(hBox, LEFT, CENTER, FILL, PREFERRED);
 }
 ```
-{% endcode %}
 
-![](../../../.gitbook/assets/hbox.PNG)
+<!-- {% endcode %} -->
+
+![hbox](../../.gitbook/assets/hbox.PNG)
 
 ### Vbox
 
 This layout will group your controllers vertically
 
-{% code title="How to use VBox layout" %}
+<!-- {% code title="How to use VBox layout" %} -->
+
 ```java
 public void initUI() {
     VBox vBox = new VBox(VBox.LAYOUT_FILL, VBox.ALIGNMENT_STRETCH);
-    
+
     for (int i = 0; i < 5; i++) {
         vBox.add(new Button(i + ""));
     }
@@ -37,9 +46,10 @@ public void initUI() {
 }
 
 ```
-{% endcode %}
 
-![](../../../.gitbook/assets/vbox.PNG)
+<!-- {% endcode %} -->
+
+![vbox](../../.gitbook/assets/vbox.PNG)
 
 ## Attributes
 
@@ -127,13 +137,10 @@ public void initUI() {
 
 ## Methods
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **void** | setInsets\(int left, int right, int top, int bottom\) | Sets the internal paddings of this component. |
-| **void** | setLayout\(int mode, int alignment\) | Sets the layout mode and alignment of this component. |
-| **void** | suspendLayout\(\) | Suspends all layout operations from 'add' calls until a 'resumeLayout' call. |
-| **void** | resumeLayout\(\) | Performs all queued layout operations and resumes the default layout behaviour of the 'add' method. |
-| **void** | setSpacing\(int spacing\) | Sets the spacing between components. |
-
-
-
+| Type     | Name                                                  | Description                                                                                         |
+| :------- | :---------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
+| **void** | setInsets\(int left, int right, int top, int bottom\) | Sets the internal paddings of this component.                                                       |
+| **void** | setLayout\(int mode, int alignment\)                  | Sets the layout mode and alignment of this component.                                               |
+| **void** | suspendLayout\(\)                                     | Suspends all layout operations from 'add' calls until a 'resumeLayout' call.                        |
+| **void** | resumeLayout\(\)                                      | Performs all queued layout operations and resumes the default layout behaviour of the 'add' method. |
+| **void** | setSpacing\(int spacing\)                             | Sets the spacing between components.                                                                |

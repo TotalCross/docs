@@ -1,8 +1,12 @@
 ---
-description: This library serves to control the digital pins of the embedded GPIO.
+name: Gpiod
+route: /components/gpiod
+menu: Components
 ---
 
 # Gpiod
+
+This library serves to control the digital pins of the embedded GPIO.
 
 ## Requirements
 
@@ -16,9 +20,9 @@ $ sudo apt-get install libgpiod-dev
 
 To activate and deactivate any external component the embedded board is to change the value of the GPIO pin that will activate it.
 
-![](../../.gitbook/assets/image%20%2812%29.png)
+![image12](../.gitbook/assets/image12.png)
 
-![](../../.gitbook/assets/image%20%28113%29.png)
+![image113](../../.gitbook/assets/image113.png)
 
 ```java
 package com.totalcross.DocRpi;
@@ -53,20 +57,20 @@ public class DocRpi extends MainWindow {
         btn.addPressListener(new PressListener(){                  // Press event listener
             @Override
             public void controlPressed(ControlEvent controlEvent) {
-                stt = 1 - stt;                                      // Invert pin state 
+                stt = 1 - stt;                                      // Invert pin state
                 pin.setValue(stt);                                  // Set value (HIGH or LOW)
             }
         });
-        add(btn, CENTER, CENTER);  
+        add(btn, CENTER, CENTER);
     }
-}                               
+}
 ```
 
 ## Input
 
 In several embedded applications, it is necessary to receive digital signal from an external component such as sensors or even to activate another component indirectly.
 
-![](../../.gitbook/assets/image%20%2872%29.png)
+![image72](../.gitbook/assets/image72.png)
 
 ```java
 package com.totalcross.DocRpi;
@@ -83,14 +87,14 @@ import totalcross.sys.Vm;
 public class DocRpi extends MainWindow{
     // Integers to store state of each LED pin, 0 (LOW) and 1 (HIGH)
     private int stt;
-    // Buttons to control 
+    // Buttons to control
     private Button btn;
     public DocRpi(){
-        setUIStyle(Settings.MATERIAL_UI);   
+        setUIStyle(Settings.MATERIAL_UI);
     }
     @Override
     public void initUI(){
-    
+
         // Board Setup
         GpiodChip gpioChip = GpiodChip.open(0); // GIPIO bus
         GpiodLine pin = gpioChip.line(21);      //
@@ -104,11 +108,11 @@ public class DocRpi extends MainWindow{
             public void run(){
                 while(true){
                     if(pinPushButton.getValue() == 1){//check pin status
-                        stt = 1 - stt;          // Invert pin state 
+                        stt = 1 - stt;          // Invert pin state
                         pin.setValue(stt);      // Set value (HIGH or LOW)
                     }
                     Vm.sleep(200);
-                 } 
+                 }
              }
          }.start();
     }
@@ -116,20 +120,15 @@ public class DocRpi extends MainWindow{
 
 ```
 
-
-
 ## Behind the Class
 
 ### Methods
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **Constructor** | open\(int chip\) | Defines which GPIO bus will be used. |
-| **Construtor** | line\(int pin\) | Defines which pin of GPIO bus will be used. |
-| **Void** | requestOutput\(String consumer, int defaultValue\) | Names the pin, defines as output and the initial value. |
-| **Void** | setValue\(int value\) | Changes pin value. |
-| **Void** | requestInput\(String consumer\) | Names the pin and defines as input. |
-| **Int** | getValue\(\) | Returns pin status |
-
-
-
+| Type            | Name                                               | Description                                             |
+| :-------------- | :------------------------------------------------- | :------------------------------------------------------ |
+| **Constructor** | open\(int chip\)                                   | Defines which GPIO bus will be used.                    |
+| **Construtor**  | line\(int pin\)                                    | Defines which pin of GPIO bus will be used.             |
+| **Void**        | requestOutput\(String consumer, int defaultValue\) | Names the pin, defines as output and the initial value. |
+| **Void**        | setValue\(int value\)                              | Changes pin value.                                      |
+| **Void**        | requestInput\(String consumer\)                    | Names the pin and defines as input.                     |
+| **Int**         | getValue\(\)                                       | Returns pin status                                      |

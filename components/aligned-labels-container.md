@@ -1,18 +1,27 @@
+---
+name: Aligned Labels
+route: /components/aligned-labels
+menu: Components
+---
+
 # Aligned Labels
 
 ### Overview
 
 Aligned Label is a Container used to align all controls to the maximum width of a set of labels.
 
-{% hint style="info" %}
-In Totalcross this component is called **`AlignedLabelContainer`**.
-{% endhint %}
+<!-- {% hint style="info" %} -->
 
-![](../.gitbook/assets/alignedlabels-sample.gif.pagespeed.ce.d4badoy8p.gif)
+In Totalcross this component is called **`AlignedLabelContainer`**.
+
+<!-- {% endhint %} -->
+
+![alignedlabels](../.gitbook/assets/alignedlabels-sample.gif.pagespeed.ce.d4badoy8p.gif)
 
 ### Source Code
 
-{% code title="AlignedLabelsSample.java" %}
+<!-- {% code title="AlignedLabelsSample.java" %} -->
+
 ```java
 import totalcross.ui.AlignedLabelsContainer;
 import totalcross.ui.Button;
@@ -132,26 +141,26 @@ public class extends ScrollContainer {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Attributes
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **Font** | childrenFont | Set this member to the font you want to set to the controls that are added to this container |
-| **int\[ \]** | foreColors | Sets an array with the same number of labels and the colors you want to show for each label |
-| **int** | labelAlign | The alignment of the labels |
+| Type         | Name         | Description                                                                                  |
+| :----------- | :----------- | :------------------------------------------------------------------------------------------- |
+| **Font**     | childrenFont | Set this member to the font you want to set to the controls that are added to this container |
+| **int\[ \]** | foreColors   | Sets an array with the same number of labels and the colors you want to show for each label  |
+| **int**      | labelAlign   | The alignment of the labels                                                                  |
 
 ### Methods
 
-| ype | Name | Description |
-| :--- | :--- | :--- |
-| **Construtor** | AlignedLabelsContainer\( \) | Creates a new AlignedLabelsContainer without labels |
-| **Construtor** | AlignedLabelsContainer\(String\[\] labels\) | Creates a new AlignedLabelsContainer with the given labels |
+| ype            | Name                                                  | Description                                                                                      |
+| :------------- | :---------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
+| **Construtor** | AlignedLabelsContainer\( \)                           | Creates a new AlignedLabelsContainer without labels                                              |
+| **Construtor** | AlignedLabelsContainer\(String\[\] labels\)           | Creates a new AlignedLabelsContainer with the given labels                                       |
 | **Construtor** | AlignedLabelsContainer\(String\[\] labels, int vgap\) | Creates a new AlignedLabelsContainer with the given labels and a vertical gap between the labels |
-| **void** | add\(Control c\) | Since this is an AlignedLabelsContainer, use this to add a label |
-| **int** | getLineY\(int line\) | Given a line \(staring from 0\), returns the y position |
-| **void** | setLabels\(String\[ \] labels, int vgap\) | Sets the labels and the extra gap between rows \(which may be 0\) |
+| **void**       | add\(Control c\)                                      | Since this is an AlignedLabelsContainer, use this to add a label                                 |
+| **int**        | getLineY\(int line\)                                  | Given a line \(staring from 0\), returns the y position                                          |
+| **void**       | setLabels\(String\[ \] labels, int vgap\)             | Sets the labels and the extra gap between rows \(which may be 0\)                                |
 
-### 
-
+###

@@ -1,3 +1,9 @@
+---
+name: Spin List
+route: /components/spin-list
+menu: Components
+---
+
 # Spin List
 
 ### Overview
@@ -6,7 +12,8 @@ Spin list is a control that has two arrows \(up and down\) to navigate between t
 
 ### Source Code
 
-{% code title="SpinList Sample" %}
+<!-- {% code title="SpinList Sample" %} -->
+
 ```java
 import totalcross.sys.InvalidNumberException;
 import totalcross.sys.Settings;
@@ -61,34 +68,34 @@ public class SpinListSample extends MainWindow {
     }
 }
 ```
-{% endcode %}
 
-### 
+<!-- {% endcode %} -->
+
+###
 
 ### Attributes
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **boolean** | isVertical | Set to true if there are only numbers in the SpinList and you want to open a NumericBox |
-| **boolean** | useNumericBox | Set to true if there are only numbers in the SpinList and you want to open a NumericBox |
-| **boolean** | useCalculatorBox | Set to false to disallow the wrap around that happens when the user is at the first or last items. |
-| **boolean** | wrapAround | By default, equals the choices' length. You can define its length and then create a single array shared  by a set of SpinLists with different lengths on each SpinList |
-| **boolean** | allowsNoneSelected | Allows -1 as selected index |
+| Type        | Name               | Description                                                                                                                                                           |
+| :---------- | :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **boolean** | isVertical         | Set to true if there are only numbers in the SpinList and you want to open a NumericBox                                                                               |
+| **boolean** | useNumericBox      | Set to true if there are only numbers in the SpinList and you want to open a NumericBox                                                                               |
+| **boolean** | useCalculatorBox   | Set to false to disallow the wrap around that happens when the user is at the first or last items.                                                                    |
+| **boolean** | wrapAround         | By default, equals the choices' length. You can define its length and then create a single array shared by a set of SpinLists with different lengths on each SpinList |
+| **boolean** | allowsNoneSelected | Allows -1 as selected index                                                                                                                                           |
 
 ### Methods
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **Constructor** | SpinList\(String\[\] choices\) | Constructs a vertical SpinList with the given choices, selecting index 0 by default. |
+| Type            | Name                                               | Description                                                                                            |
+| :-------------- | :------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| **Constructor** | SpinList\(String\[\] choices\)                     | Constructs a vertical SpinList with the given choices, selecting index 0 by default.                   |
 | **Constructor** | SpinList\(String\[\] choices, boolean isVertical\) | Constructs a SpinList with the given choices, selecting index 0 by default and can be vertical or not. |
-| **int** | getPreferredWidth\(\) | Return the width. |
-| **int** | getPreferredHeight\(\) | Return the Height. |
-| **void** | setChoices\(String\[\] choices\)  | Sets the choices to the given ones |
-| **void** | replaceChoices\(String\[\] choices\) | Just replaces the choices array. |
-| **int** | getSelectedIndex\(\) | Returns the selected index. |
-| **String** | getSelectedItem\(\) | Returns the selected item. |
+| **int**         | getPreferredWidth\(\)                              | Return the width.                                                                                      |
+| **int**         | getPreferredHeight\(\)                             | Return the Height.                                                                                     |
+| **void**        | setChoices\(String\[\] choices\)                   | Sets the choices to the given ones                                                                     |
+| **void**        | replaceChoices\(String\[\] choices\)               | Just replaces the choices array.                                                                       |
+| **int**         | getSelectedIndex\(\)                               | Returns the selected index.                                                                            |
+| **String**      | getSelectedItem\(\)                                | Returns the selected item.                                                                             |
 
 ## References
 
-* See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/SpinList.html) for more information.
-
+- See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/SpinList.html) for more information.

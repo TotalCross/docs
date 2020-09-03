@@ -1,19 +1,23 @@
 ---
-description: All notable changes to this project will be documented in this file.
+name: TotalCross Changelog
+route: /totalcross-changelog
+menu: TotalCross Changelog
 ---
 
 # TotalCross Changelog
+
+All notable changes to this project will be documented in this file.
 
 ## 6.1.0 - July 2020
 
 Welcome to the July 2020 release \(version 6.1.0\). We hope you enjoy the updates in this version. The key highlights are:
 
-* **Maven plugin new version:** your `pom.xml` file should change;
-* **KnowCode Compatibility** - It is now possible to run Android XMLs Layouts on Linux Arm;
-* **Virtual Keyboard** - New look and animations;
-* **Using external applications** - Through the runtime.exec method;
-* **Anonymous user statistics** - There is now an option to contribute by sending anonymous data;
-* **Changing the SDL implementation** - Removing the SDL code from within the TotalCross SDK and changing the static to dynamic link**.**
+- **Maven plugin new version:** your `pom.xml` file should change;
+- **KnowCode Compatibility** - It is now possible to run Android XMLs Layouts on Linux Arm;
+- **Virtual Keyboard** - New look and animations;
+- **Using external applications** - Through the runtime.exec method;
+- **Anonymous user statistics** - There is now an option to contribute by sending anonymous data;
+- **Changing the SDL implementation** - Removing the SDL code from within the TotalCross SDK and changing the static to dynamic link**.**
 
 Join our[ community on the telegram](https://t.me/totalcrosscommunity) to suggest activities and learn about development for embedded systems.
 
@@ -32,7 +36,7 @@ After the latest _Language Support for Java_ extension updates, some systems had
   <configuration>
     <name>${project.name}</name>
     <platforms>
-    
+
 ...
 ```
 
@@ -48,10 +52,10 @@ Find out how to use KnowCode by clicking [here](https://www.youtube.com/watch?v=
 
 In this milestone some improvements were implemented in the keyboard, which are:
 
-* In Linux Arm the virtual keyboard is enabled by default. To disable it just put `Settings.virtualKeyboard = false` in your `MainWindow`class; 
-* In order to improve performance and make the design cleaner, the `ripple effect` animation on the keyboard buttons was removed;
-* In order to obtain more effective responsiveness, the calculations of width and height were changed, leaving it less dependent on absolute values;
-* To make the interface richer, `sliding animation` was added to the `popup` and `unpopup` of the virtual keyboard. You can see these changes in detail in pull requests [\#40](https://github.com/TotalCross/totalcross/pull/40) and [\#65](https://github.com/TotalCross/totalcross/pull/65).
+- In Linux Arm the virtual keyboard is enabled by default. To disable it just put `Settings.virtualKeyboard = false` in your `MainWindow`class;
+- In order to improve performance and make the design cleaner, the `ripple effect` animation on the keyboard buttons was removed;
+- In order to obtain more effective responsiveness, the calculations of width and height were changed, leaving it less dependent on absolute values;
+- To make the interface richer, `sliding animation` was added to the `popup` and `unpopup` of the virtual keyboard. You can see these changes in detail in pull requests [\#40](https://github.com/TotalCross/totalcross/pull/40) and [\#65](https://github.com/TotalCross/totalcross/pull/65).
 
 In the images below you can see the visual difference:
 
@@ -71,7 +75,7 @@ To allow the use of external libraries in the simplest way possible is one of To
 TCNI is a foreign function interface programming framework that enables TotalCross/Java code running in a Java virtual machine to call and be called by native applications and libraries written in other languages ​​such as C, C ++ and assembly.
 {% endhint %}
 
-But while TCNI is not ready to be launched, we have developed a middle ground t**hat allows the use of external applications** in TotalCross, through the method `runtime.exec()`. This method creates a new process and executes the command you passed in this new process \(Pull request [\#21](https://github.com/TotalCross/totalcross/pull/21)\). 
+But while TCNI is not ready to be launched, we have developed a middle ground t**hat allows the use of external applications** in TotalCross, through the method `runtime.exec()`. This method creates a new process and executes the command you passed in this new process \(Pull request [\#21](https://github.com/TotalCross/totalcross/pull/21)\).
 
 For example, create a python script to access a temperature sensor and with the `runtime.exec()` get the return of it, as you can see in this [example](https://www.linkedin.com/posts/brunoamuniz_android-linux-linuxarm-activity-6686008251059847168-u-Sr):
 
@@ -87,30 +91,30 @@ So in 6.1.0 we went back to that and removed the activation key, including the c
 
 And to better track which users' preferences when using the TotalCross SDK, we **set up the SDK to ask if the developer wants to contribute anonymous data** and if the answer is positive, we record parameters for Deploy, timezone, launchers, operating system version and version of TotalCross used.
 
-![](.gitbook/assets/img_anonimousdata.jpg)
+![img_anonimousdata](.gitbook/assets/img_anonimousdata.jpg)
 
 You can see the details of the implementation in Pull Request [\#66](https://github.com/TotalCross/totalcross/pull/66).
 
-### Change in SDL implementation 
+### Change in SDL implementation img_anonimousdata
 
 We chose to remove SDL code from the SDK TotalCross in this version t**o improve the build organization** and allow people **to customize the build** of their facilities according to their hardware.
 
-In addition, we changed the SDL link from static to dynamic because: 
+In addition, we changed the SDL link from static to dynamic because:
 
-* Allows the distribution to have corrections and be used without having to compile the TC again but the guy needs to install the SDL before TotalCross
-* Avoids License compliance problems as [FOSSA](https://app.fossa.com/account/login?next=%2F) warns about the SDL license \(GPLv3\)
+- Allows the distribution to have corrections and be used without having to compile the TC again but the guy needs to install the SDL before TotalCross
+- Avoids License compliance problems as [FOSSA](https://app.fossa.com/account/login?next=%2F) warns about the SDL license \(GPLv3\)
 
 For details, see pull requests [\#23](https://github.com/TotalCross/totalcross/pull/23), [\#24](https://github.com/TotalCross/totalcross/pull/24), and [\#68](https://github.com/TotalCross/totalcross/pull/68).
 
 ### Other changes:
 
-* [Reverted scroll flick animation](https://github.com/TotalCross/totalcross/pull/54) back to a previous version to fix a bug that caused the content to be pulled back after a scroll; 
-* Fixed [creation of TotalCross modules\(tcz files\) using Java headless](https://github.com/TotalCross/totalcross/pull/45);
-* Fixed [round border on Container](https://github.com/TotalCross/totalcross/pull/47); 
-* Fixed [Switch Bar not being drawn](https://github.com/TotalCross/totalcross/pull/49);
-* Fixed [wrong size returned by FontMetrics.stringWidth\(String s\)](https://github.com/TotalCross/totalcross/pull/50) on devices that use skia with _.ttf_ file type fonts. 
-* Fixed [Torizon/Wayland SDL](https://github.com/TotalCross/totalcross/pull/35) initialization; 
-* Fixed [FadeAnimation](https://github.com/TotalCross/totalcross/pull/33): the animation is now working as intended.
+- [Reverted scroll flick animation](https://github.com/TotalCross/totalcross/pull/54) back to a previous version to fix a bug that caused the content to be pulled back after a scroll;
+- Fixed [creation of TotalCross modules\(tcz files\) using Java headless](https://github.com/TotalCross/totalcross/pull/45);
+- Fixed [round border on Container](https://github.com/TotalCross/totalcross/pull/47);
+- Fixed [Switch Bar not being drawn](https://github.com/TotalCross/totalcross/pull/49);
+- Fixed [wrong size returned by FontMetrics.stringWidth\(String s\)](https://github.com/TotalCross/totalcross/pull/50) on devices that use skia with _.ttf_ file type fonts.
+- Fixed [Torizon/Wayland SDL](https://github.com/TotalCross/totalcross/pull/35) initialization;
+- Fixed [FadeAnimation](https://github.com/TotalCross/totalcross/pull/33): the animation is now working as intended.
 
 ## 6.0.4 - March 2020
 
@@ -118,53 +122,53 @@ For details, see pull requests [\#23](https://github.com/TotalCross/totalcross/p
 
 #### **General**
 
-* Disabled screen shifting on Android and iOS \(when clicking on edit the keyboard would appear over edit\);
-* Added tag name to XML's ContentHandler.
+- Disabled screen shifting on Android and iOS \(when clicking on edit the keyboard would appear over edit\);
+- Added tag name to XML's ContentHandler.
 
 #### **Arm**
 
-* ~~SDL statically linked~~ SDL dynamically linked for Linux x86-64;
-* Fix Linux x86 and 64 launcher \(x-sharedlib to x-executable\).
+- ~~SDL statically linked~~ SDL dynamically linked for Linux x86-64;
+- Fix Linux x86 and 64 launcher \(x-sharedlib to x-executable\).
 
 #### **Android**
 
-* Added Skia for Android so now is supported truetype fonts
-* Fixed Android buildType
+- Added Skia for Android so now is supported truetype fonts
+- Fixed Android buildType
 
 #### **iOS**
 
-* Added iOS files on public repository;
-* Support to Metal on iOS;
+- Added iOS files on public repository;
+- Support to Metal on iOS;
 
-#### Linux 
+#### Linux
 
-* Fixed SQLite on Linux Desktop. 
+- Fixed SQLite on Linux Desktop.
 
 #### Windows
 
-* There were no changes
+- There were no changes
 
 #### WinCE
 
-* There were no changes
+- There were no changes
 
 ### Build Information
 
-* Fixed SDK and VM build for all available platform on public repository:
-  * WinCE;
-  * Windows;
-  * Android;
-  * Linux;
-  * Linux arm x86;
-  * Linux arm x64;
-* Added build.xml for Ant build \(without ProGuard\);
-* Added documentation about how to build [SDK](https://learn.totalcross.com/documentation/developers-area/how-to-build-totalcross-sdk) and [VM](https://learn.totalcross.com/documentation/developers-area/how-to-build-totalcross-vm-wip).
+- Fixed SDK and VM build for all available platform on public repository:
+  - WinCE;
+  - Windows;
+  - Android;
+  - Linux;
+  - Linux arm x86;
+  - Linux arm x64;
+- Added build.xml for Ant build \(without ProGuard\);
+- Added documentation about how to build [SDK](https://learn.totalcross.com/documentation/developers-area/how-to-build-totalcross-sdk) and [VM](https://learn.totalcross.com/documentation/developers-area/how-to-build-totalcross-vm-wip).
 
 ### Community
 
-* TotalCross is under the **LGPL v2.1**;
-* Removed the mirror from GitLab to GitHub: **GitHub** is officially the main repository;
-* New [TotalCross-Toradex Image](https://github.com/TotalCross/totalcross-toradex-demo) added on GitHub.
+- TotalCross is under the **LGPL v2.1**;
+- Removed the mirror from GitLab to GitHub: **GitHub** is officially the main repository;
+- New [TotalCross-Toradex Image](https://github.com/TotalCross/totalcross-toradex-demo) added on GitHub.
 
 ## 5.1.4 to 6.0.3
 
@@ -174,114 +178,114 @@ The remaining changelogs will be added later
 
 #### Fixed
 
-* Edit
-  * Fixed bug with masks containing two consecutive non-alphanumeric characters - [TotalCross\#581](https://gitlab.com/totalcross/TotalCross/issues/581#note_203298404)
-  * When used for dates, the calendar now properly opens at the date informed on the edit - TotalCross\#550
-  * Fixed getCopy\(\) to properly function when the Edit uses the field decimalPlaces - TotalCross\#505
-* Spinner: fixed Spinner animation repainting over previous frames - TotalCross\#568
-* OutlinedEdit: fixed NPE when using the cancel button on CalendarBox - TotalCross\#547
-* PopupMenu: fixed performance issues with Material style caused by onPaint recreating the ninepatch on every refresh. This change also affects the performance of other components that may use PopupMenu, such as ComboBox.
+- Edit
+  - Fixed bug with masks containing two consecutive non-alphanumeric characters - [TotalCross\#581](https://gitlab.com/totalcross/TotalCross/issues/581#note_203298404)
+  - When used for dates, the calendar now properly opens at the date informed on the edit - TotalCross\#550
+  - Fixed getCopy\(\) to properly function when the Edit uses the field decimalPlaces - TotalCross\#505
+- Spinner: fixed Spinner animation repainting over previous frames - TotalCross\#568
+- OutlinedEdit: fixed NPE when using the cancel button on CalendarBox - TotalCross\#547
+- PopupMenu: fixed performance issues with Material style caused by onPaint recreating the ninepatch on every refresh. This change also affects the performance of other components that may use PopupMenu, such as ComboBox.
 
 ## 5.1.2 - 2019-08-05
 
-####  Highlights
+#### Highlights
 
-* Added support for generating QR codes natively on the device - [\#540](/totalcross/TotalCross/issues/540)
+- Added support for generating QR codes natively on the device - [\#540](/totalcross/TotalCross/issues/540)
 
 {% hint style="info" %}
 **This feature is available on all supported devices, but not on the simulator yet. Refer to the documentation for more information and sample usage**
 {% endhint %}
 
-####  Fixed
+#### Fixed
 
-* Camera: Fixed `CAMERA_NATIVE_NOCOPY` - [\#554](/totalcross/TotalCross/issues/554)
-* Fixed support to listening events on Android hardware buttons, broken on version 5.1.0 - [\#557](/totalcross/TotalCross/issues/557), [\#559](/totalcross/TotalCross/issues/559), [\#560](/totalcross/TotalCross/issues/560)
-* ComboBox: Fixed support for option usePopMenu
+- Camera: Fixed `CAMERA_NATIVE_NOCOPY` - [\#554](/totalcross/TotalCross/issues/554)
+- Fixed support to listening events on Android hardware buttons, broken on version 5.1.0 - [\#557](/totalcross/TotalCross/issues/557), [\#559](/totalcross/TotalCross/issues/559), [\#560](/totalcross/TotalCross/issues/560)
+- ComboBox: Fixed support for option usePopMenu
 
 ## 5.1.1 - 2019-07-16
 
-####  Fixed
+#### Fixed
 
-* Fixed push and local notifications for Android 8+ - [\#316](/totalcross/TotalCross/issues/316)
+- Fixed push and local notifications for Android 8+ - [\#316](/totalcross/TotalCross/issues/316)
 
 ## 5.1.0 - 2019-07-04
 
 #### Highlights
 
-* YouTube Player: New API for displaying YouTube videos on Android and iOS
-* Added support for text prediction when using native keyboard on Android and iOS
+- YouTube Player: New API for displaying YouTube videos on Android and iOS
+- Added support for text prediction when using native keyboard on Android and iOS
 
 #### Fixed
 
-* ListContainer: Fixed Check on ListContainer - TotalCross [\#393](https://gitlab.com/totalcross/TotalCross/issues/393)
-* InputBox: Removed dummy mask that caused trouble when using setMode - TotalCross [\#506](https://gitlab.com/totalcross/TotalCross/issues/506) 
-* Toast: Fixed using '\n' on the String used on Toast.show - TotalCross [\#498](https://gitlab.com/totalcross/TotalCross/issues/498)
-* Button: Fixed using an image and no text position - TotalCross [\#527](https://gitlab.com/totalcross/TotalCross/issues/527)
-* Edit: Fixed base line not showing when running on devices with DP smaller than 1, such as most WinCE devices - TotalCross [\#389](https://gitlab.com/totalcross/TotalCross/issues/389)
-* PopupMenu: Fixed the Android UI style - TotalCross [\#369](https://gitlab.com/totalcross/TotalCross/issues/369)
+- ListContainer: Fixed Check on ListContainer - TotalCross [\#393](https://gitlab.com/totalcross/TotalCross/issues/393)
+- InputBox: Removed dummy mask that caused trouble when using setMode - TotalCross [\#506](https://gitlab.com/totalcross/TotalCross/issues/506)
+- Toast: Fixed using '\n' on the String used on Toast.show - TotalCross [\#498](https://gitlab.com/totalcross/TotalCross/issues/498)
+- Button: Fixed using an image and no text position - TotalCross [\#527](https://gitlab.com/totalcross/TotalCross/issues/527)
+- Edit: Fixed base line not showing when running on devices with DP smaller than 1, such as most WinCE devices - TotalCross [\#389](https://gitlab.com/totalcross/TotalCross/issues/389)
+- PopupMenu: Fixed the Android UI style - TotalCross [\#369](https://gitlab.com/totalcross/TotalCross/issues/369)
 
 #### Changed
 
-* TabbedContainer: Improved graphical performance and responsiveness
+- TabbedContainer: Improved graphical performance and responsiveness
 
 #### Added
 
-* MultiEdit: Added fields to set the text gap - TotalCross\#[489](https://gitlab.com/totalcross/TotalCross/issues/489)
-* Button: Added constant CENTRALIZE to centralize image and text buttons - TotalCross[\#498](https://gitlab.com/totalcross/TotalCross/issues/498)
-* Settings: Added field `allowBackup`, which may be used to disable Android's automate cloud backup - TotalCross[\#548](https://gitlab.com/totalcross/TotalCross/issues/548)
+- MultiEdit: Added fields to set the text gap - TotalCross\#[489](https://gitlab.com/totalcross/TotalCross/issues/489)
+- Button: Added constant CENTRALIZE to centralize image and text buttons - TotalCross[\#498](https://gitlab.com/totalcross/TotalCross/issues/498)
+- Settings: Added field `allowBackup`, which may be used to disable Android's automate cloud backup - TotalCross[\#548](https://gitlab.com/totalcross/TotalCross/issues/548)
 
 ## 5.0.1 - 2019-05-07
 
-####  Added
+#### Added
 
-* Added support for printing on Cielo Lio devices with embedded printer. Refer to the class `totalcross.cielo.sdk.printer.PrinterManager` for usage information.
+- Added support for printing on Cielo Lio devices with embedded printer. Refer to the class `totalcross.cielo.sdk.printer.PrinterManager` for usage information.
 
-####  Fixed
+#### Fixed
 
-* Grid: fixed column width sizing - [\#480](/totalcross/TotalCross/issues/480)
-* Button: fixed position of contents based on the gap value - [\#487](/totalcross/TotalCross/issues/487)
-* CalendarBox: fixed calculation of font size - [\#397](/totalcross/TotalCross/issues/397)
-* VirtualKeyboard: fixed Clear button and text input look - [\#397](/totalcross/TotalCross/issues/397)
-* Socket: fixed support for open timeout on iOS - [\#128](/totalcross/TotalCross/issues/128)
+- Grid: fixed column width sizing - [\#480](/totalcross/TotalCross/issues/480)
+- Button: fixed position of contents based on the gap value - [\#487](/totalcross/TotalCross/issues/487)
+- CalendarBox: fixed calculation of font size - [\#397](/totalcross/TotalCross/issues/397)
+- VirtualKeyboard: fixed Clear button and text input look - [\#397](/totalcross/TotalCross/issues/397)
+- Socket: fixed support for open timeout on iOS - [\#128](/totalcross/TotalCross/issues/128)
 
-##  5.0.0 - 2019-04-15
+## 5.0.0 - 2019-04-15
 
-####  Highlights
+#### Highlights
 
-* TotalCross is now aware of the device's screen pixel density and uses this information to scale UI elements uniformly on different platforms.
-* The font size is now expressed in scaleable pixels \(sp\) and will now scale uniformly on different screens. The font size should now be expressed as a constant value or based on `Settings.deviceFontHeight`, but **never** based on the screen's resolution or target platform.
+- TotalCross is now aware of the device's screen pixel density and uses this information to scale UI elements uniformly on different platforms.
+- The font size is now expressed in scaleable pixels \(sp\) and will now scale uniformly on different screens. The font size should now be expressed as a constant value or based on `Settings.deviceFontHeight`, but **never** based on the screen's resolution or target platform.
 
 > ℹ **Existing applications may require adjustments to their font sizes!**
 
-* Improved overrall UI responsiveness and reduced application start time on Android
-* Several `Vm.sleep` calls in the vm had their time reduced by 50% or more, some calls were replaced with `Thread.yield()`
-* On Android and Java, reduced overhead in the event thread to improve UI responsiveness
+- Improved overrall UI responsiveness and reduced application start time on Android
+- Several `Vm.sleep` calls in the vm had their time reduced by 50% or more, some calls were replaced with `Thread.yield()`
+- On Android and Java, reduced overhead in the event thread to improve UI responsiveness
 
- **Screen density support**
+  **Screen density support**
 
 All graphical components can now be scaled to have approximately the same physical height on any screen resolution.
 
- **Density by OS**
+**Density by OS**
 
-* Android and iOS: these devices expose a manufacturer-provided screen density value. On TotalCross 5 applications, this value is retrieved by default and used to ensure consistent component sizes across devices
-* Java: based on scale, e.g. /scale 0.5 = density 2.0, you can try different densities on the emulator by changing the scale command line argument
-* Win32 and WinCE: Most Windows devices do not natively expose screen density information and, thus, are kept at density 1.0. To improve the look and feel on smaller screens, we use a density of 0.75 on screens with width or height less than 320
-* Other platforms: nothing changed \(= density 1.0\)
+- Android and iOS: these devices expose a manufacturer-provided screen density value. On TotalCross 5 applications, this value is retrieved by default and used to ensure consistent component sizes across devices
+- Java: based on scale, e.g. /scale 0.5 = density 2.0, you can try different densities on the emulator by changing the scale command line argument
+- Win32 and WinCE: Most Windows devices do not natively expose screen density information and, thus, are kept at density 1.0. To improve the look and feel on smaller screens, we use a density of 0.75 on screens with width or height less than 320
+- Other platforms: nothing changed \(= density 1.0\)
 
- **Font**
+  **Font**
 
 The font size is now expressed in scalable pixels \(sp\), this abstracts away the actual physical dimension \(screen pixels\) of the font. This way, their actual physical size is calculated based on the screen density. e.g: A font with size of 20sp with different screen resolutions:
 
-* Density 1.0: actual size 20 pixels
-* Density 1.5: actual size 30 pixels
-* Density 2.0: actual size 40 pixels
-* Density 0.75: actual size 15 pixels This change shall render TotalCross apps ready for different screen sizes with minimal implementation effort.
+- Density 1.0: actual size 20 pixels
+- Density 1.5: actual size 30 pixels
+- Density 2.0: actual size 40 pixels
+- Density 0.75: actual size 15 pixels This change shall render TotalCross apps ready for different screen sizes with minimal implementation effort.
 
 > **Updating for 5.0**
 >
 > Using Font.getDefaultFontSize is no longer necessary, you may now use constant values and the font size will be adjusted accordingly. Applications that tried to “guess” the appropriate font size based on screen resolution may need adjustments. Applications that used Settings.uiAdjustmentsBasedOnFontHeight should have their graphical components resized more uniformly across different platforms and screen densities.
 
- **Density Independent Pixels**
+**Density Independent Pixels**
 
 Controls may now have their dimensions expressed in density independent pixels units \(dp\), which are scaled for the screen based on its pixel density. e.g:
 
@@ -292,7 +296,7 @@ add(new Button("Ok"), RIGHT, BOTTOM, PREFERRED, DP + 20);
 
 This is now the preferred way of setting the control’s dimensions.
 
- **Improved support for animations**
+**Improved support for animations**
 
 We now provide a central update event that controls can register for. This event fires periodically and is meant to be used to drive all animations in the framework. In comparison to using timer events for animations, this approach uses less CPU and memory, and behaves better under high CPU usage scenarios.
 
@@ -300,7 +304,7 @@ We now provide a central update event that controls can register for. This event
 >
 > Several classes were updated to use the new update events and the effect on them should be noticeable without any changes. In special, we would like to highlight the ScrollContainer and the ControlAnimation components. Users are encouraged to replace similar uses of threads, sleeps and timer events with update events.
 
- **Smoother scrolling**
+**Smoother scrolling**
 
 The ScrollContainer and the Flick components were updated to provide smoother and more precise scrolling. The changes include the usage of quadratic easing animation and exponential decay. The Flick also factors in the screen’s pixel density and offers the user the option of tuning the flick acceleration. Lastly, Flick also supports consecutive drags to increase the scrolling speed.
 
@@ -308,827 +312,826 @@ The ScrollContainer and the Flick components were updated to provide smoother an
 >
 > Most of the changes made are transparent to the user, but there were some breaking changes on Flick. User may have to remove the usage of fields that are no longer available.
 
- **Icon control**
+**Icon control**
 
 With the new Icon control it’s easier to add beautiful and meaningful icons to your application.
 
 This is now the preferred way of adding icons to your application and should be favored over image files. One major reason to favor icon font sets over images is that they are highly scalable and will look sharp in any resolution while using only a fraction of the system resources an image would use. Material Icons are already bundled with the sdk and the IconType interface may be used to implement more font sets.
 
- **Alpha support for Labels and Icons**
+**Alpha support for Labels and Icons**
 
 It’s now possible to change the opacity of text and icons within Label or Icon controls. This is a key feature to design beautiful applications, as it allows text to remain legible over any background color. Transparent status bar
 
 Currently only supported on Android, but iOS support will be ready soon.
 
- **Navigation Drawer**
+**Navigation Drawer**
 
 All the previously listed changes were put in use to futher develop the SideMenuContainer, complying with the Navigation Drawer pattern defined by the Material Design guidelines \([https://material.io/guidelines/patterns/navigation-drawer.html](https://material.io/guidelines/patterns/navigation-drawer.html)\):
 
-* Action bar height is now 20 dp
-* Bar title and menu items using the Roboto Medium font \(when available\)
-* Labels and icons now use the correct font size, weight and opacity
-* Keylines and margins are respected both inside and outside the side menu \(with a special exception for really small screens\)
-* Smooth slide-in and out effects, with fade effect during slide removed
-* Resting elevation over the content
-* Swipe to open support is still in its early stages, but should be functional for most applications
-* Adjusts automatically when used with transparent status bar
+- Action bar height is now 20 dp
+- Bar title and menu items using the Roboto Medium font \(when available\)
+- Labels and icons now use the correct font size, weight and opacity
+- Keylines and margins are respected both inside and outside the side menu \(with a special exception for really small screens\)
+- Smooth slide-in and out effects, with fade effect during slide removed
+- Resting elevation over the content
+- Swipe to open support is still in its early stages, but should be functional for most applications
+- Adjusts automatically when used with transparent status bar
 
-####  Added
+#### Added
 
-* SideMenuContainer.Sub, a collapsible submenu for the navigation drawer
-* MaterialWindow, a popup window that slides from the bottom to the top of the screen
+- SideMenuContainer.Sub, a collapsible submenu for the navigation drawer
+- MaterialWindow, a popup window that slides from the bottom to the top of the screen
 
-####  Changed
+#### Changed
 
-* Camera: On Android, choosing an image from the Gallery no longer creates a copy of it when not necessary \(images from a cloud service still require a local copy\) - [\#400](/totalcross/TotalCross/issues/400)
-* Java
-  * ByteArrayOutputStream: added several missing methods - [\#478](/totalcross/TotalCross/issues/478)
-  * System: added method `arraycopy`
-  * Charset: method forName now correctly validates the given charset name and may throw `IllegalCharsetNameException`
-  * String: added constructor `String(byte[] value, int offset, int count, String encoding)` to allow the creation of strings with a given supported enconding
+- Camera: On Android, choosing an image from the Gallery no longer creates a copy of it when not necessary \(images from a cloud service still require a local copy\) - [\#400](/totalcross/TotalCross/issues/400)
+- Java
+  - ByteArrayOutputStream: added several missing methods - [\#478](/totalcross/TotalCross/issues/478)
+  - System: added method `arraycopy`
+  - Charset: method forName now correctly validates the given charset name and may throw `IllegalCharsetNameException`
+  - String: added constructor `String(byte[] value, int offset, int count, String encoding)` to allow the creation of strings with a given supported enconding
 
-####  Deprecated
+#### Deprecated
 
-* Settings: deprecated field `WINDOWSPHONE`, which will be removed in a future release.
+- Settings: deprecated field `WINDOWSPHONE`, which will be removed in a future release.
 
 ## 4.4.0 - 2019-08-14
 
 #### Fixed
 
-* Android: removed compile flag that caused applications to be unbearably slow in old or low-end devices - TotalCross\#561, TotalCross\#580
-* tccodesign script: fixed script not copying pkg files - TotalCross\#572
-* Camera: partially reverted changes introduced in version 4.3.3 that caused problems on some devices - TotalCross\#574
-* Grid: fixed column width sizing - TotalCross\#480
+- Android: removed compile flag that caused applications to be unbearably slow in old or low-end devices - TotalCross\#561, TotalCross\#580
+- tccodesign script: fixed script not copying pkg files - TotalCross\#572
+- Camera: partially reverted changes introduced in version 4.3.3 that caused problems on some devices - TotalCross\#574
+- Grid: fixed column width sizing - TotalCross\#480
 
 ## 4.3.9 - 2019-08-05
 
 #### Fixed
 
-* tccodesign script: fixed support for push notification
+- tccodesign script: fixed support for push notification
 
 #### Added
 
-* Added classes [`AsyncTask`](https://learn.totalcross.com/documentation/apis/asynchronous-task) and `ThreadPool` to improve concurrency support, refer to the documentation and the PlayBook for more information and samples
+- Added classes [`AsyncTask`](https://learn.totalcross.com/documentation/apis/asynchronous-task) and `ThreadPool` to improve concurrency support, refer to the documentation and the PlayBook for more information and samples
 
-##  4.3.8 - 2019-05-31 
+## 4.3.8 - 2019-05-31
 
-#### Highlights 
+#### Highlights
 
-* Added support for Android 64 bits - TotalCross[\#515](https://gitlab.com/totalcross/TotalCross/issues/515) 
+- Added support for Android 64 bits - TotalCross[\#515](https://gitlab.com/totalcross/TotalCross/issues/515)
 
 #### Fixed
 
-* Fixed bug with large CRC or size values overflowing 32 bit integer - TotalCross[\#529](https://gitlab.com/totalcross/TotalCross/issues/529) 
+- Fixed bug with large CRC or size values overflowing 32 bit integer - TotalCross[\#529](https://gitlab.com/totalcross/TotalCross/issues/529)
 
 #### Changed
 
-* tccodesign script 
-  * Added --output parameter 
-  * Removed lined that deletes UIStoryLaunch 
-  * Fixed icon problem 
-  * Changed to use a temporary folder during the process
+- tccodesign script
+  - Added --output parameter
+  - Removed lined that deletes UIStoryLaunch
+  - Fixed icon problem
+  - Changed to use a temporary folder during the process
 
 ## 4.3.7 - 2019-05-06
 
-####  Added
+#### Added
 
-* Added support for native barcode scanning on iOS, without using any external library - [\#333](/totalcross/TotalCross/issues/333)
+- Added support for native barcode scanning on iOS, without using any external library - [\#333](/totalcross/TotalCross/issues/333)
 
-##  4.3.6 - 2019-04-13
+## 4.3.6 - 2019-04-13
 
-####  Highlights
+#### Highlights
 
-* Dropped support for Windows Phone 8
+- Dropped support for Windows Phone 8
 
-####  Changed
+#### Changed
 
-* HttpStream: Reverts change "Query parameters are now encoded to support the usage of unsafe characters" introduced in 4.3.1 - [\#482](/totalcross/TotalCross/issues/482), [\#483](/totalcross/TotalCross/issues/483)
+- HttpStream: Reverts change "Query parameters are now encoded to support the usage of unsafe characters" introduced in 4.3.1 - [\#482](/totalcross/TotalCross/issues/482), [\#483](/totalcross/TotalCross/issues/483)
 
-##  4.3.5 - 2019-04-01
+## 4.3.5 - 2019-04-01
 
-####  Fixed
+#### Fixed
 
-* Deploy: Fixed bug that would cause a method signature to be included in the constant pool as a class - [\#139](/totalcross/TotalCross/issues/139), [\#468](/totalcross/TotalCross/issues/468)
+- Deploy: Fixed bug that would cause a method signature to be included in the constant pool as a class - [\#139](/totalcross/TotalCross/issues/139), [\#468](/totalcross/TotalCross/issues/468)
 
-##  4.3.4 - 2019-03-20
+## 4.3.4 - 2019-03-20
 
-####  Fixed
+#### Fixed
 
-* Android
-  * Reverted back the change reverted on last release and finally fixed the bug that was causing the assets to touble in size - [\#358](/totalcross/TotalCross/issues/358)
-* HttpStream: Fixed read operation not retuning EOF when the correct content length is provided on the reply - [\#464](/totalcross/TotalCross/issues/464)
+- Android
+  - Reverted back the change reverted on last release and finally fixed the bug that was causing the assets to touble in size - [\#358](/totalcross/TotalCross/issues/358)
+- HttpStream: Fixed read operation not retuning EOF when the correct content length is provided on the reply - [\#464](/totalcross/TotalCross/issues/464)
 
-##  4.3.3 - 2019-03-14
+## 4.3.3 - 2019-03-14
 
-* Changed generation of the TotalCross SDK jar:
-  * Annotations `@Deprecated` and `@ReplacedByNativeOnDeploy` are no longer stripped by ProGuard - [\#411](/totalcross/TotalCross/issues/411)
-  * Argument names are no longer obfuscated
-  * The javadoc jar is now being deployed to our Maven repository - [\#391](/totalcross/TotalCross/issues/391)
+- Changed generation of the TotalCross SDK jar:
+  - Annotations `@Deprecated` and `@ReplacedByNativeOnDeploy` are no longer stripped by ProGuard - [\#411](/totalcross/TotalCross/issues/411)
+  - Argument names are no longer obfuscated
+  - The javadoc jar is now being deployed to our Maven repository - [\#391](/totalcross/TotalCross/issues/391)
 
-####  Fixed
+#### Fixed
 
-* Android
-  * Fixed deploy not being able to sign the apk when TOTALCROSS3\_HOME is set with a relative path - [\#275](/totalcross/TotalCross/issues/275)
-  * Reverts change on deploy that seems to be causing the assets to double the size in the apk
-  * Fixed Camera NATIVE support
-* iOS
-  * Fixed screen resolution for newer models such as iPhone XS - [\#308](/totalcross/TotalCross/issues/308)
+- Android
+  - Fixed deploy not being able to sign the apk when TOTALCROSS3_HOME is set with a relative path - [\#275](/totalcross/TotalCross/issues/275)
+  - Reverts change on deploy that seems to be causing the assets to double the size in the apk
+  - Fixed Camera NATIVE support
+- iOS
+  - Fixed screen resolution for newer models such as iPhone XS - [\#308](/totalcross/TotalCross/issues/308)
 
-##  4.3.2 - 2019-01-31
+## 4.3.2 - 2019-01-31
 
-####  Fixed
+#### Fixed
 
-* iOS
-  * Usage of "hide keyboard" button on the keyboard - [\#347](/totalcross/TotalCross/issues/347)
+- iOS
+  - Usage of "hide keyboard" button on the keyboard - [\#347](/totalcross/TotalCross/issues/347)
 
-##  4.3.1 - 2019-01-14
+## 4.3.1 - 2019-01-14
 
-####  Fixed
+#### Fixed
 
-* URI: Fixed parse of multibyte characters
-* Camera: Fixed regression in release 4.2.2 - [\#346](/totalcross/TotalCross/issues/346)
-* ArcChart: Fixed coloring of chart when a single series represents 100% of the data - [\#350](/totalcross/TotalCross/issues/350)
+- URI: Fixed parse of multibyte characters
+- Camera: Fixed regression in release 4.2.2 - [\#346](/totalcross/TotalCross/issues/346)
+- ArcChart: Fixed coloring of chart when a single series represents 100% of the data - [\#350](/totalcross/TotalCross/issues/350)
 
-####  Changed
+#### Changed
 
-* HttpStream: Query parameters are now encoded to support the usage of unsafe characters
+- HttpStream: Query parameters are now encoded to support the usage of unsafe characters
 
-####  Known issues
+#### Known issues
 
-* iOS
-  * Using the "hide keyboard" button on the keyboard makes it unavailable for the application - [\#347](/totalcross/TotalCross/issues/347)
+- iOS
+  - Using the "hide keyboard" button on the keyboard makes it unavailable for the application - [\#347](/totalcross/TotalCross/issues/347)
 
-##  4.3.0 - 2019-01-04
+## 4.3.0 - 2019-01-04
 
-####  Highlights
+#### Highlights
 
-* Added implementation of PBKDF2WithHmacSHA1
-* Removed SMS permissions from Android manifest when using the default deploy options, and added the new option /include\_sms to deploy including them
+- Added implementation of PBKDF2WithHmacSHA1
+- Removed SMS permissions from Android manifest when using the default deploy options, and added the new option /include_sms to deploy including them
 
-####  Fixed
+#### Fixed
 
-* iOS
-  * Fixed screen dimensions on IPhone XS
-* Resign script tccodesign:
-  * Fixed issue with provided mobileprovision not being added to the Xcode mobileprovisions folder
-  * Temp files are now removed before the script execution
-  * Fixed issue with certificate name in the following format: iPhone Distribution\|Developer: Provided Name \(Team ID\)
-* ImageList: Fixed bug introduced in version 4.2.0 with the correcion of issue [\#192](/totalcross/TotalCross/issues/192) - [\#291](/totalcross/TotalCross/issues/291)
-* DiscoveryAgend: Fixed potential leaks when using service discovery on WinCE
-* Grid: Fixed sorting different types of data in Grid - [\#297](/totalcross/TotalCross/issues/297)
+- iOS
+  - Fixed screen dimensions on IPhone XS
+- Resign script tccodesign:
+  - Fixed issue with provided mobileprovision not being added to the Xcode mobileprovisions folder
+  - Temp files are now removed before the script execution
+  - Fixed issue with certificate name in the following format: iPhone Distribution\|Developer: Provided Name \(Team ID\)
+- ImageList: Fixed bug introduced in version 4.2.0 with the correcion of issue [\#192](/totalcross/TotalCross/issues/192) - [\#291](/totalcross/TotalCross/issues/291)
+- DiscoveryAgend: Fixed potential leaks when using service discovery on WinCE
+- Grid: Fixed sorting different types of data in Grid - [\#297](/totalcross/TotalCross/issues/297)
 
-####  Changed
+#### Changed
 
-* Removed SMS permissions from Android manifest when using the default deploy options, and added the new option /include\_sms to deploy including them
+- Removed SMS permissions from Android manifest when using the default deploy options, and added the new option /include_sms to deploy including them
 
-####  Added
+#### Added
 
-* Added implementation of PBKDF2WithHmacSHA1
+- Added implementation of PBKDF2WithHmacSHA1
 
-####  Known issues
+#### Known issues
 
-* Local notifications do not work on Android 8+. This is caused by a change in the security requirements of the Android native notification API that was not listed in the platform's release changelog. This issue will be fixed on the next release of TotalCross 5, but a fix for version 4 won't be issued to maintain our current compatibility with older Android devices.
+- Local notifications do not work on Android 8+. This is caused by a change in the security requirements of the Android native notification API that was not listed in the platform's release changelog. This issue will be fixed on the next release of TotalCross 5, but a fix for version 4 won't be issued to maintain our current compatibility with older Android devices.
 
-##  4.2.7 - 2018-12-06
+## 4.2.7 - 2018-12-06
 
-####  Fixed
+#### Fixed
 
-* Camera: Added request for external storage permission - [\#304](/totalcross/TotalCross/issues/304)
-* JSONFactory
-  * Fixed processing of arrays in complex objects and added support for non-static inner classes - [\#326](/totalcross/TotalCross/issues/326)
-  * Fixes bug on json parsing caused by usage of a regex expression
+- Camera: Added request for external storage permission - [\#304](/totalcross/TotalCross/issues/304)
+- JSONFactory
+  - Fixed processing of arrays in complex objects and added support for non-static inner classes - [\#326](/totalcross/TotalCross/issues/326)
+  - Fixes bug on json parsing caused by usage of a regex expression
 
-##  4.2.6 - 2018-12-03
+## 4.2.6 - 2018-12-03
 
-####  Fixed
+#### Fixed
 
-* Vm.exec: Added permission REQUEST\_INSTALL\_PACKAGES to allow the application to install an apk on Android 8+
-* TreeMap: Fixed import of java.lang.Comparable
+- Vm.exec: Added permission REQUEST_INSTALL_PACKAGES to allow the application to install an apk on Android 8+
+- TreeMap: Fixed import of java.lang.Comparable
 
-####  Changes
+#### Changes
 
-* Scanner: Added camera permission request on Android \(ZXing/Scandit\)
+- Scanner: Added camera permission request on Android \(ZXing/Scandit\)
 
-##  4.2.5 - 2018-11-29
+## 4.2.5 - 2018-11-29
 
-####  Fixed
+#### Fixed
 
-* Fixed location permission request
+- Fixed location permission request
 
-####  Changes
+#### Changes
 
-* Camera: Removed picture rotation detection on Android - it was source of intermittent bugs on some Samsung and Motorola devices
+- Camera: Removed picture rotation detection on Android - it was source of intermittent bugs on some Samsung and Motorola devices
 
-##  4.2.4 - 2018-11-26
+## 4.2.4 - 2018-11-26
 
-####  Fixed
+#### Fixed
 
-* Fixed permission requests for File constructor, delete and getSize on Android 6+ - [\#317](/totalcross/TotalCross/issues/317)
-* Fixed permission request for Camera on Android 6+
-* Fixed Vm.exec on Android: intents were not being able to pass external files to other applications - [\#69](/totalcross/TotalCross/issues/69), [\#320](/totalcross/TotalCross/issues/320), [\#232](/totalcross/TotalCross/issues/232) fixes
+- Fixed permission requests for File constructor, delete and getSize on Android 6+ - [\#317](/totalcross/TotalCross/issues/317)
+- Fixed permission request for Camera on Android 6+
+- Fixed Vm.exec on Android: intents were not being able to pass external files to other applications - [\#69](/totalcross/TotalCross/issues/69), [\#320](/totalcross/TotalCross/issues/320), [\#232](/totalcross/TotalCross/issues/232) fixes
 
-####  Changes
+#### Changes
 
-* GPS permission is no longer requested when the application is launched, instead the permission is automatically requested when required by the application
+- GPS permission is no longer requested when the application is launched, instead the permission is automatically requested when required by the application
 
-##  4.2.3 - 2018-11-07
+## 4.2.3 - 2018-11-07
 
-####  Fixed
+#### Fixed
 
-* Fixed regression with the Android deploy that would produce an apk not acceptable by the Play Store
-* Radio
-  * Fixed autoSplit when the control width is set to PREFERRED
+- Fixed regression with the Android deploy that would produce an apk not acceptable by the Play Store
+- Radio
+  - Fixed autoSplit when the control width is set to PREFERRED
 
-##  4.2.2 - 2018-10-30
+## 4.2.2 - 2018-10-30
 
-####  Fixed
+#### Fixed
 
-* Camera
-  * Fixed CAMERA\_CUSTOM not taking pictures when the device is held on vertical position, this affected a few models, most notably Samsung tablets - [\#233](/totalcross/TotalCross/issues/233)
+- Camera
+  - Fixed CAMERA_CUSTOM not taking pictures when the device is held on vertical position, this affected a few models, most notably Samsung tablets - [\#233](/totalcross/TotalCross/issues/233)
 
-####  Changes
+#### Changes
 
-* Container
-  * Method getChildren changed to return an empty array instead of null when the container has no children.
+- Container
+  - Method getChildren changed to return an empty array instead of null when the container has no children.
 
-##  4.2.1 - 2018-10-19
+## 4.2.1 - 2018-10-19
 
-####  Fixed
+#### Fixed
 
-* Notification
-  * Fixed notification crashing on Android - [\#255](/totalcross/TotalCross/issues/255)
-  * Clicking on a notification will no longer start a new instance of the application if there's already one running on background
-* PushButtonGroup
-  * Fixed regression on PushButtonGroup that made them unclickable on Win32, affecting all dialogs - [\#263](/totalcross/TotalCross/issues/263)
+- Notification
+  - Fixed notification crashing on Android - [\#255](/totalcross/TotalCross/issues/255)
+  - Clicking on a notification will no longer start a new instance of the application if there's already one running on background
+- PushButtonGroup
+  - Fixed regression on PushButtonGroup that made them unclickable on Win32, affecting all dialogs - [\#263](/totalcross/TotalCross/issues/263)
 
-####  Changes
+#### Changes
 
-* Added a new virtual keyboard that looks more closely to the Android native keyboard and is now the default for Edit and MultiEdit.
-* HttpStream: Added support for http methods PUT, PATCH and DELETE in class HttpStream - [\#240](/totalcross/TotalCross/issues/240)
+- Added a new virtual keyboard that looks more closely to the Android native keyboard and is now the default for Edit and MultiEdit.
+- HttpStream: Added support for http methods PUT, PATCH and DELETE in class HttpStream - [\#240](/totalcross/TotalCross/issues/240)
 
-##  4.2.0 - 2018-10-01
+## 4.2.0 - 2018-10-01
 
-####  Highlights
+#### Highlights
 
-* Android
-  * Android package is now built with SDK 27 \(previous releases were built with SDK 22\) and the latest NDK r17b \(up from NDK r8b!\) - The minimum SDK level required to run TotalCross applications remains unchanged \(SDK 10\)
-  * Applied the Android recommended changes to better handle activities and contexts to prevent possible resource
-  * TotalCross now asks for the user permission to access phone state and location on startup
+- Android
+  - Android package is now built with SDK 27 \(previous releases were built with SDK 22\) and the latest NDK r17b \(up from NDK r8b!\) - The minimum SDK level required to run TotalCross applications remains unchanged \(SDK 10\)
+  - Applied the Android recommended changes to better handle activities and contexts to prevent possible resource
+  - TotalCross now asks for the user permission to access phone state and location on startup
 
 🚧 **On Android, features that require user permission during runtime may not be working. Please report if you have any trouble with permissions.**
 
-* iOS
-  * iOS package is now built with SDK 12
-  * Added permission request to use the camera
-* General
-  * Improved some Color methods to produce better results by properly weighting the RGB components according to our perception of color brightness
-  * Added support for local notifications on JDK, Android and iOS.
-  * EscPosPrintStream - New API to handle ESC/POS printer commands
-  * Added support for fast IDCT scaling on jpeg images. Combined with the usage of the new utility classes to manage scaling jpeg images, this can greatly reduce the memory footprint of jpeg images and improve graphical performance.
+- iOS
+  - iOS package is now built with SDK 12
+  - Added permission request to use the camera
+- General
+  - Improved some Color methods to produce better results by properly weighting the RGB components according to our perception of color brightness
+  - Added support for local notifications on JDK, Android and iOS.
+  - EscPosPrintStream - New API to handle ESC/POS printer commands
+  - Added support for fast IDCT scaling on jpeg images. Combined with the usage of the new utility classes to manage scaling jpeg images, this can greatly reduce the memory footprint of jpeg images and improve graphical performance.
 
 > ℹ **Using this approach to handle images of approximately 800x800 on medium sized devices can reduce memory consumption by up to 80% while doubling the image loading speed!**
 
-####  Fixed
+#### Fixed
 
-* Fixed bug during activation with some JDK versions - a FileNotFoundException could be thrown when trying to recursively create directories for a new file
-* Deploy
-  * Will now correctly package tcz dependencies that were split over multiple files - [\#214](/totalcross/TotalCross/issues/214)
-  * Added protection for unlikely \(but possible\) NPE
-  * Fixed deploy with Java 10, dependencies are now listed in the jar's Manifest
-  * Fixed NPE when deploying for Win32 without initializing Launcher.instance - [\#165](/totalcross/TotalCross/issues/165)
-  * Fixed rare \(but possible\) NPE during deploy
-  * Fix path for Win32 dll, case sensitive systems expect binaries on lowercased folders - [\#274](/totalcross/TotalCross/issues/274)
-* Scanner
-  * Fixed barcode scanning on Dolphin/Honeywell devices - value of barcode's check digit was being carried over to the calculation of the check digit on the next reading - [\#228](/totalcross/TotalCross/issues/228)
-* ComboBox
-  * Fixed vertical alignment of text - [\#192](/totalcross/TotalCross/issues/192)
-* ImageControl
-  * Removed duplicated field `effect`
-  * Fixed detection of press events
-* Toast
-  * Fixed Toast appearing relative to the `topMost` window, when it should always be relative to the MainWindow
-* MultiButton
-  * Fixed graphical bug - a transparent ComboBox arrow was being drawn on the background of the MultiButton \(!\)
-* PushButtonGroup
-  * Fixed drag event to allow "giving up" on a press event by dragging outside the button bounds after a press
-* MultiEdit
-  * Fixed text being hidden with Material style
-  * Fixed bug that made every even character to disappear when you typed and reappear when you typed the next one
-* AccordionContainer
-  * Fixed arrows not changing state when switching focus between multiple collapsible panes
-* CalculatorBox
-  * Fixed enconding error with plus-minus sign - [\#206](/totalcross/TotalCross/issues/206)
-* Grid
-  * Fixed column width wrong resize when dragging edge to before column start - [\#186](/totalcross/TotalCross/issues/186)
-* JSONFactory
-  * Fixed recursive creation of complex objects
-  * Improved JSON parser to map methods camel cased to underscored fields in the JSON object
+- Fixed bug during activation with some JDK versions - a FileNotFoundException could be thrown when trying to recursively create directories for a new file
+- Deploy
+  - Will now correctly package tcz dependencies that were split over multiple files - [\#214](/totalcross/TotalCross/issues/214)
+  - Added protection for unlikely \(but possible\) NPE
+  - Fixed deploy with Java 10, dependencies are now listed in the jar's Manifest
+  - Fixed NPE when deploying for Win32 without initializing Launcher.instance - [\#165](/totalcross/TotalCross/issues/165)
+  - Fixed rare \(but possible\) NPE during deploy
+  - Fix path for Win32 dll, case sensitive systems expect binaries on lowercased folders - [\#274](/totalcross/TotalCross/issues/274)
+- Scanner
+  - Fixed barcode scanning on Dolphin/Honeywell devices - value of barcode's check digit was being carried over to the calculation of the check digit on the next reading - [\#228](/totalcross/TotalCross/issues/228)
+- ComboBox
+  - Fixed vertical alignment of text - [\#192](/totalcross/TotalCross/issues/192)
+- ImageControl
+  - Removed duplicated field `effect`
+  - Fixed detection of press events
+- Toast
+  - Fixed Toast appearing relative to the `topMost` window, when it should always be relative to the MainWindow
+- MultiButton
+  - Fixed graphical bug - a transparent ComboBox arrow was being drawn on the background of the MultiButton \(!\)
+- PushButtonGroup
+  - Fixed drag event to allow "giving up" on a press event by dragging outside the button bounds after a press
+- MultiEdit
+  - Fixed text being hidden with Material style
+  - Fixed bug that made every even character to disappear when you typed and reappear when you typed the next one
+- AccordionContainer
+  - Fixed arrows not changing state when switching focus between multiple collapsible panes
+- CalculatorBox
+  - Fixed enconding error with plus-minus sign - [\#206](/totalcross/TotalCross/issues/206)
+- Grid
+  - Fixed column width wrong resize when dragging edge to before column start - [\#186](/totalcross/TotalCross/issues/186)
+- JSONFactory
+  - Fixed recursive creation of complex objects
+  - Improved JSON parser to map methods camel cased to underscored fields in the JSON object
 
-####  Changes
+#### Changes
 
-* Updated version of the Bouncy Castle dependency
-* On Java, Settings.appPath is now initialized even if the Launcher isn't executed - [\#165](/totalcross/TotalCross/issues/165)
-* Launcher
-  * The Launcher \(simulator\) can no longer be used without an activation key
-* Deploy
-  * Check paths from pkg file and throw more meaningful error message when a path is invalid
-  * Print Deploy exceptions on System.err instead of System.out and using the default stack trace output
-* Whiteboard
-  * No longer recreates the content image when repositioned - [\#187](/totalcross/TotalCross/issues/187), [\#196](/totalcross/TotalCross/issues/196)
-* ListBox
-  * Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
-* ComboBox
-  * Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
-* Radio
-  * Added feature autosplit - [\#180](/totalcross/TotalCross/issues/180)
+- Updated version of the Bouncy Castle dependency
+- On Java, Settings.appPath is now initialized even if the Launcher isn't executed - [\#165](/totalcross/TotalCross/issues/165)
+- Launcher
+  - The Launcher \(simulator\) can no longer be used without an activation key
+- Deploy
+  - Check paths from pkg file and throw more meaningful error message when a path is invalid
+  - Print Deploy exceptions on System.err instead of System.out and using the default stack trace output
+- Whiteboard
+  - No longer recreates the content image when repositioned - [\#187](/totalcross/TotalCross/issues/187), [\#196](/totalcross/TotalCross/issues/196)
+- ListBox
+  - Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
+- ComboBox
+  - Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
+- Radio
+  - Added feature autosplit - [\#180](/totalcross/TotalCross/issues/180)
 
-####  Added
+#### Added
 
-* EscPosPrintStream - New API which supports several ESC/POS printer commands - refer to the class documentation and samples for more information
-* Notification and NotificatonManager - Allows the creation and presentation of local notifications to the user, currently implemented for Android, iOS and Java.
-* ImageLoader - New class to help managing image resources, especially jpeg images. Currently no caching is done by the class.
-* Image
-  * Added static methods `Image.getJpegScaled` and `Image.getJpegBestFit` to load jpeg files using fast IDCT scale, more about this [here](http://jpegclub.org/djpeg/)
-* Java
-  * Added classes ByteArrayOutputStream and UncheckedIOException
-  * Added classes Charset and UnsupportedCharsetException, added also `String.getBytes(Charset)`
-* Added Cp437CharacterConverter, which supports encoding and decoding characters using the CP-437 charset \(also known as IBM437, windows-437, among others\). Especifically added to be used with EscPosPrintStream to properly support writing text to Leopardo A7.
-* Convert
-  * Added method `charsetForName(String name)`, which returns one of the registered charsets available
-  * Added method `registerCharacterConverter(AbstractCharacterConverter characterConverter)`, which allows users to create and registers their own subclass of AbstractCharacterConverter to support custom encodings
-  * Added several aliases to the existing ISO-8859-1 and UTF-8 CharacterConverter classes and changed `setDefaultConverter` to be case insensitive and support any of listed aliases.
+- EscPosPrintStream - New API which supports several ESC/POS printer commands - refer to the class documentation and samples for more information
+- Notification and NotificatonManager - Allows the creation and presentation of local notifications to the user, currently implemented for Android, iOS and Java.
+- ImageLoader - New class to help managing image resources, especially jpeg images. Currently no caching is done by the class.
+- Image
+  - Added static methods `Image.getJpegScaled` and `Image.getJpegBestFit` to load jpeg files using fast IDCT scale, more about this [here](http://jpegclub.org/djpeg/)
+- Java
+  - Added classes ByteArrayOutputStream and UncheckedIOException
+  - Added classes Charset and UnsupportedCharsetException, added also `String.getBytes(Charset)`
+- Added Cp437CharacterConverter, which supports encoding and decoding characters using the CP-437 charset \(also known as IBM437, windows-437, among others\). Especifically added to be used with EscPosPrintStream to properly support writing text to Leopardo A7.
+- Convert
+  - Added method `charsetForName(String name)`, which returns one of the registered charsets available
+  - Added method `registerCharacterConverter(AbstractCharacterConverter characterConverter)`, which allows users to create and registers their own subclass of AbstractCharacterConverter to support custom encodings
+  - Added several aliases to the existing ISO-8859-1 and UTF-8 CharacterConverter classes and changed `setDefaultConverter` to be case insensitive and support any of listed aliases.
 
 > The existing CharacterConverter class and subclasses were changed to extend AbstractCharacterConverter, which extends Charset. The actual support to Java Charset is almost none, the main goal is to allow the usage `String.getBytes(Charset)` with the existing CharacterConverter and let users encode strings with different charsets without changing the charset used by the rest of the application through Convert.setDefaultConverter.
 
-####  Deprecated
+#### Deprecated
 
-* ListBox
-  * Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
-* ComboBox
-  * Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
+- ListBox
+  - Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
+- ComboBox
+  - Deprecated method `add(Object[] moreItems, int startAt, int size)` as it was redundant and more confusing than helpful
 
-####  Known issues
+#### Known issues
 
-* iOS
-  * Applications signed for enterprise distribution cannot run on iOS 12 - apparently it fails to validate the certification chain that validates the signed application. It's not clear yet if this was an intended change or a bug, but there's no word from Apple about it yet.
-  * Applications signed for distribution through the AppStore cannot be uploaded because of changes on the way image resources are handled starting from iOS 11. We are working on a definite fix for this, in the mean time feel free to contact us to manually package the application for the AppStore.
-* Notification
-  * Android lacks support for custom images for notifications, only the default TotalCross logo is supported
-  * Notification crashing application on Android - [\#255](/totalcross/TotalCross/issues/255)
-* PushButtonGroup
-  * The fix for the drag event caused PushButtonGroup to be unclickable on Win32, affecting all dialogs - [\#263](/totalcross/TotalCross/issues/263)
+- iOS
+  - Applications signed for enterprise distribution cannot run on iOS 12 - apparently it fails to validate the certification chain that validates the signed application. It's not clear yet if this was an intended change or a bug, but there's no word from Apple about it yet.
+  - Applications signed for distribution through the AppStore cannot be uploaded because of changes on the way image resources are handled starting from iOS 11. We are working on a definite fix for this, in the mean time feel free to contact us to manually package the application for the AppStore.
+- Notification
+  - Android lacks support for custom images for notifications, only the default TotalCross logo is supported
+  - Notification crashing application on Android - [\#255](/totalcross/TotalCross/issues/255)
+- PushButtonGroup
+  - The fix for the drag event caused PushButtonGroup to be unclickable on Win32, affecting all dialogs - [\#263](/totalcross/TotalCross/issues/263)
 
-##  4.1.4 - 2018-05-17
+## 4.1.4 - 2018-05-17
 
-####  Highlights
+#### Highlights
 
-* TotalCross is now built with the iOS 11 SDK, as a side effect the minimum iOS version supported by TotalCross is now 8.0 \(up from 5.1.1\). Applications published on the Apple Store must be updated.
+- TotalCross is now built with the iOS 11 SDK, as a side effect the minimum iOS version supported by TotalCross is now 8.0 \(up from 5.1.1\). Applications published on the Apple Store must be updated.
 
-##  4.1.3 - 2018-04-12
+## 4.1.3 - 2018-04-12
 
-####  Fixed
+#### Fixed
 
-* Fixed Edit's material caption animation when navigating using the keyboard
-* Fixed `WrapInputStream.read()` - the value returned is now between the range 0-255, as specified by the `InpuStream.read()` documentation. The class `WrapInputStream` is used by `Stream.asInputStream()`
-* Fixed `MaterialEffect` to stop discarding `PEN_UP` events sent to the target Control **after** the effect is removed from the target Control
-* Implemented `ConnectionManager.getLocalHost()` for iOS
-* On iOS, fixed keyboard being closed when navigating to the next text input control using the "Done" button
-* Fixed `SideMenuContainer` - the sidemenu is no longer draggable
-* Fixed retrieval of the device's current time on newer Android devices \(and possibly other POSIX compliant platforms\) - [\#147](/totalcross/TotalCross/issues/147)
-* Fixed `BarButton` only firing a pressed event targeting itself when Material UI style is used - [\#176](/totalcross/TotalCross/issues/176)
-* Fixed redraw after the device is unlocked on Moto G5 Plus - [\#173](/totalcross/TotalCross/issues/173)
-* Fixed javadocs not being included with the SDK
+- Fixed Edit's material caption animation when navigating using the keyboard
+- Fixed `WrapInputStream.read()` - the value returned is now between the range 0-255, as specified by the `InpuStream.read()` documentation. The class `WrapInputStream` is used by `Stream.asInputStream()`
+- Fixed `MaterialEffect` to stop discarding `PEN_UP` events sent to the target Control **after** the effect is removed from the target Control
+- Implemented `ConnectionManager.getLocalHost()` for iOS
+- On iOS, fixed keyboard being closed when navigating to the next text input control using the "Done" button
+- Fixed `SideMenuContainer` - the sidemenu is no longer draggable
+- Fixed retrieval of the device's current time on newer Android devices \(and possibly other POSIX compliant platforms\) - [\#147](/totalcross/TotalCross/issues/147)
+- Fixed `BarButton` only firing a pressed event targeting itself when Material UI style is used - [\#176](/totalcross/TotalCross/issues/176)
+- Fixed redraw after the device is unlocked on Moto G5 Plus - [\#173](/totalcross/TotalCross/issues/173)
+- Fixed javadocs not being included with the SDK
 
-####  Changes
+#### Changes
 
-* Usage of `Vm.sleep(1)` in the SDK replaced with `Thread.yield()` for clarity sake
-* Changes `LineReader` to use `Thread.yield()` between read attempts instead of stoping the Vm for 100 ms
-* Spinner's implementation changed to use TimerEvent instead of threads perform the animation
-* Edit's material caption animation is faster and will no longer get mixed with the blinking cursor
-*  `WrapInputStream.read(B[], I, I)` no longer rethrows `totalcross.io.IOException` as `java.io.IOException`
-*  `WrapOutputStream.write(B[], I, I)` no longer rethrows `totalcross.io.IOException` as `java.io.IOException`
-*  `WrapInputStream.close()` will now properly close the underlying stream
-*  `WrapOutputStream.close()` will now properly close the underlying stream
-* Changed the way we obtain the current device orientation and screen dimensions on Android, the previous implementations were deprecated
+- Usage of `Vm.sleep(1)` in the SDK replaced with `Thread.yield()` for clarity sake
+- Changes `LineReader` to use `Thread.yield()` between read attempts instead of stoping the Vm for 100 ms
+- Spinner's implementation changed to use TimerEvent instead of threads perform the animation
+- Edit's material caption animation is faster and will no longer get mixed with the blinking cursor
+- `WrapInputStream.read(B[], I, I)` no longer rethrows `totalcross.io.IOException` as `java.io.IOException`
+- `WrapOutputStream.write(B[], I, I)` no longer rethrows `totalcross.io.IOException` as `java.io.IOException`
+- `WrapInputStream.close()` will now properly close the underlying stream
+- `WrapOutputStream.close()` will now properly close the underlying stream
+- Changed the way we obtain the current device orientation and screen dimensions on Android, the previous implementations were deprecated
 
-##  4.1.2 - 2018-02-20
+## 4.1.2 - 2018-02-20
 
-####  Fixed
+#### Fixed
 
-* Fixed support for WinCE based scanners that use OpticonH16.dll
+- Fixed support for WinCE based scanners that use OpticonH16.dll
 
-####  Added
+#### Added
 
-* Added support for native laser scanning for Android based Symbol/Motorola scanners
+- Added support for native laser scanning for Android based Symbol/Motorola scanners
 
-##  4.1.1 - 2018-02-06
+## 4.1.1 - 2018-02-06
 
-####  Highlights
+#### Highlights
 
-* Launcher default color depth changed from 16 bpp to 24 bpp
+- Launcher default color depth changed from 16 bpp to 24 bpp
 
-####  Fixed
+#### Fixed
 
-* Fixed `Switch` disappearing on Android - calculation of alpha channel applied to the switch was wrong
-* Fixed `Socket` and `HttpStream` to properly handle EOF during read operation
-* Fixed screen not being shifted when device is in landscape
-* Fixed issue where a focused `Edit` would not receive keypress events
-* Fixed bug in `Edit` on Android - backspace events would not be issued when the Edit had text but had not received any typing events
+- Fixed `Switch` disappearing on Android - calculation of alpha channel applied to the switch was wrong
+- Fixed `Socket` and `HttpStream` to properly handle EOF during read operation
+- Fixed screen not being shifted when device is in landscape
+- Fixed issue where a focused `Edit` would not receive keypress events
+- Fixed bug in `Edit` on Android - backspace events would not be issued when the Edit had text but had not received any typing events
 
-####  Added
+#### Added
 
-* Added `Edit.canMoveFocus` to disable focus change
-* Added `Stream.write(int)`, convenience method to write a single byte to the stream
-* Added `ScrollContainer.setScrollBars` to allow subclasses to add or remove scrollbars after its creation
-* On Android, Chrome no longer supports using the scheme prefix to display local files. Added workaround to `Vm.exec` to keep backwards compatibility - [\#148](/totalcross/TotalCross/issues/148)
-* Added `Settings.ANDROID_ID`, refer to the Android [documentation](https://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) for more details
-* Added limited support for running Intents through Vm.exec on Android - [\#155](/totalcross/TotalCross/issues/155)
+- Added `Edit.canMoveFocus` to disable focus change
+- Added `Stream.write(int)`, convenience method to write a single byte to the stream
+- Added `ScrollContainer.setScrollBars` to allow subclasses to add or remove scrollbars after its creation
+- On Android, Chrome no longer supports using the scheme prefix to display local files. Added workaround to `Vm.exec` to keep backwards compatibility - [\#148](/totalcross/TotalCross/issues/148)
+- Added `Settings.ANDROID_ID`, refer to the Android [documentation](https://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID) for more details
+- Added limited support for running Intents through Vm.exec on Android - [\#155](/totalcross/TotalCross/issues/155)
 
-####  Changes
+#### Changes
 
-*  `Whiteboard` now supports usage of `transparentBackground` to ignore the background color and generate images with transparent background - [\#153](/totalcross/TotalCross/issues/153)
-* Pressing ENTER in a set of `Edit` inside a `ScrollContainer` will now automatically scroll to the next control
-* Improved `Control.setRect` error messages, it will now throw distinct messages for invalid width or height
+- `Whiteboard` now supports usage of `transparentBackground` to ignore the background color and generate images with transparent background - [\#153](/totalcross/TotalCross/issues/153)
+- Pressing ENTER in a set of `Edit` inside a `ScrollContainer` will now automatically scroll to the next control
+- Improved `Control.setRect` error messages, it will now throw distinct messages for invalid width or height
 
-##  4.1.0 - 2018-01-15
+## 4.1.0 - 2018-01-15
 
-####  Highlights
+#### Highlights
 
-* [Firebase for iOS](https://gitlab.com/totalcross/TotalCross/wikis/Features/Post-Notification---Firebase)
-* [SMS changes](https://gitlab.com/totalcross/TotalCross/wikis/Features/sms-manager)
-* Implementation for sending and receiving data SMS also disables changing the state of the receiver when the application is paused and resumed
-* \[Fade transition\]\([https://gitlab.com/totalcross/TotalCross/wikis/Features/fade](https://gitlab.com/totalcross/TotalCross/wikis/Features/fade) transition\)
-* Font support
-* Improved FontGenerator to create better looking fonts. Regenerate your fonts to make them look smoother on device.
-* Spacing between characters was also improved.
-* Fixed support for some unicode characters and handling of the ranges passed to the command line.
+- [Firebase for iOS](https://gitlab.com/totalcross/TotalCross/wikis/Features/Post-Notification---Firebase)
+- [SMS changes](https://gitlab.com/totalcross/TotalCross/wikis/Features/sms-manager)
+- Implementation for sending and receiving data SMS also disables changing the state of the receiver when the application is paused and resumed
+- \[Fade transition\]\([https://gitlab.com/totalcross/TotalCross/wikis/Features/fade](https://gitlab.com/totalcross/TotalCross/wikis/Features/fade) transition\)
+- Font support
+- Improved FontGenerator to create better looking fonts. Regenerate your fonts to make them look smoother on device.
+- Spacing between characters was also improved.
+- Fixed support for some unicode characters and handling of the ranges passed to the command line.
 
-####  Fixed
+#### Fixed
 
-* Fixed `ScrollContainer` to properly display the controls if the order is changed
-* Fixed MaterialEffect on a `ListBox` that was scrolled up
-* Fixed Radio not being correctly painted when checked is set to true within the same event that changed it to false
-* Fixed `MaterialEffect` fade out duration - alpha is now computed based on remaining time instead of using a constant decreasing value
-* Fixed `ScrollPosition`'s handle not being hidden when released
-* Fixed Check and Radio sending PRESSED event when `setChecked` is called, even when `Settings.sendPressEventOnChange` is set to false
-* Fixed Launcher to better handle missing or bogus font files when running on desktop
-* On Graphics, fixed `NullPointerException` and `ArrayIndexOutOfBoundsException` when repaint is called from a thread
-* Fixed `ProgressBar` to retain the z-order when its value is updated [\#80](/totalcross/TotalCross/issues/80)
-* Fixed iOS icons by adding method `colorDist (int rgb1, int rgb2)` and `addFillPoint (int x, int y)`
-* Fixed `ImageControl` zooming with poor quality, it was scaling the resized image displayed in the control instead of the original image
-* Fixed usage of internal scanners on Android devices
-* Fixed bug where screen was not being shifted when changing focus between Edits using `PEN_UP` or ENTER
-* Fixed barcode reading with Motorola scanners when the digits of both halves of the barcode were the same \(such as 10161016 or 10201020\) - [\#106](/totalcross/TotalCross/issues/106)
-* Fixed `NullPointerException` in `Graphics.drawText` that would occur under some situations when the UI is loaded from a thread
-* Fixed Window incorrectly calling `onClickedOutside` when a two-finger movement is performed
-* Fixed `MaterialEffect` to not apply effects during a flick
+- Fixed `ScrollContainer` to properly display the controls if the order is changed
+- Fixed MaterialEffect on a `ListBox` that was scrolled up
+- Fixed Radio not being correctly painted when checked is set to true within the same event that changed it to false
+- Fixed `MaterialEffect` fade out duration - alpha is now computed based on remaining time instead of using a constant decreasing value
+- Fixed `ScrollPosition`'s handle not being hidden when released
+- Fixed Check and Radio sending PRESSED event when `setChecked` is called, even when `Settings.sendPressEventOnChange` is set to false
+- Fixed Launcher to better handle missing or bogus font files when running on desktop
+- On Graphics, fixed `NullPointerException` and `ArrayIndexOutOfBoundsException` when repaint is called from a thread
+- Fixed `ProgressBar` to retain the z-order when its value is updated [\#80](/totalcross/TotalCross/issues/80)
+- Fixed iOS icons by adding method `colorDist (int rgb1, int rgb2)` and `addFillPoint (int x, int y)`
+- Fixed `ImageControl` zooming with poor quality, it was scaling the resized image displayed in the control instead of the original image
+- Fixed usage of internal scanners on Android devices
+- Fixed bug where screen was not being shifted when changing focus between Edits using `PEN_UP` or ENTER
+- Fixed barcode reading with Motorola scanners when the digits of both halves of the barcode were the same \(such as 10161016 or 10201020\) - [\#106](/totalcross/TotalCross/issues/106)
+- Fixed `NullPointerException` in `Graphics.drawText` that would occur under some situations when the UI is loaded from a thread
+- Fixed Window incorrectly calling `onClickedOutside` when a two-finger movement is performed
+- Fixed `MaterialEffect` to not apply effects during a flick
 
-####  Added
+#### Added
 
-* Added support to Bematech scanner back to the SDK - [\#100](/totalcross/TotalCross/issues/100)
-* Added `Settings.showUIErrors`, which can be set to false to disable UI errors that are shown in desktop only.
-* Added `Flick.dontPropagate`, which can be useful if you have two or more intrinsic `ScrollContainers` and dont want to propagate the scroll among them
-* Added `ScrollContainer.canShowScrollBar`s, which gives child classes finer control on whether scrollbars should be displayed or not
-* Added `ComboBox.getArrowColor` and now you can change the arrow color at runtime
-* Added classes `java.awt.Dimension` and its dependencies - `java.awt.geom.Dimension2D`, `java.lang.InternalError`, `java.lang.VirtualMachineError`
-* Added method `Long.toString(long i, int radix)` to `java.lang.Long`
-* Added method `ConnectionManager.getLocalHostName` to retrieve the host name of the local host - [\#41](/totalcross/TotalCross/issues/41)
+- Added support to Bematech scanner back to the SDK - [\#100](/totalcross/TotalCross/issues/100)
+- Added `Settings.showUIErrors`, which can be set to false to disable UI errors that are shown in desktop only.
+- Added `Flick.dontPropagate`, which can be useful if you have two or more intrinsic `ScrollContainers` and dont want to propagate the scroll among them
+- Added `ScrollContainer.canShowScrollBar`s, which gives child classes finer control on whether scrollbars should be displayed or not
+- Added `ComboBox.getArrowColor` and now you can change the arrow color at runtime
+- Added classes `java.awt.Dimension` and its dependencies - `java.awt.geom.Dimension2D`, `java.lang.InternalError`, `java.lang.VirtualMachineError`
+- Added method `Long.toString(long i, int radix)` to `java.lang.Long`
+- Added method `ConnectionManager.getLocalHostName` to retrieve the host name of the local host - [\#41](/totalcross/TotalCross/issues/41)
 
-####  Changes
+#### Changes
 
-* The tcvm.dll no longer requires elevated privileges to be run on Windows desktop
-* Changes `Spinner` to have transparent background by default
-* Changes `Spinner` to not mess with the colors when created using an `Image`
-* On iOS, the application now receives an ENTER key event when the keyboard is closed
-* A `RuntimeException` is no longer raised in JavaSE when you add a control to an `AccordionContainer`, and its height reaches zero during animation
-* Changed `ImageControl` to paint material effects only if there is an image and `setPressedEventsEnabled` was called
-* Now `Edit.autoSelect` puts cursor at end of line instead of begining, matching the behaviour of `MultiEdit`
-* Now if you press ENTER in a set of Edits that are inside a `ScrollContainer`, it scrolls automatically to the next control.
-* Increased cursor thickness on `Edit` for devices with high resolution
-* Changed `Time(char[] sqlTime)` to also parse the milliseconds value \(`SQLite.getTime()` now includes milliseconds\)
+- The tcvm.dll no longer requires elevated privileges to be run on Windows desktop
+- Changes `Spinner` to have transparent background by default
+- Changes `Spinner` to not mess with the colors when created using an `Image`
+- On iOS, the application now receives an ENTER key event when the keyboard is closed
+- A `RuntimeException` is no longer raised in JavaSE when you add a control to an `AccordionContainer`, and its height reaches zero during animation
+- Changed `ImageControl` to paint material effects only if there is an image and `setPressedEventsEnabled` was called
+- Now `Edit.autoSelect` puts cursor at end of line instead of begining, matching the behaviour of `MultiEdit`
+- Now if you press ENTER in a set of Edits that are inside a `ScrollContainer`, it scrolls automatically to the next control.
+- Increased cursor thickness on `Edit` for devices with high resolution
+- Changed `Time(char[] sqlTime)` to also parse the milliseconds value \(`SQLite.getTime()` now includes milliseconds\)
 
-####  Deprecated
+#### Deprecated
 
 The following fields and methods were deprecated and should no longer be used
 
-* `File`
-* `readAndClose`
-* `eadAndDelete`
-* `writeAndClose`
-* `read()`
-* UIControls
-* `spinnerFore`
-* `spinnerBack`
+- `File`
+- `readAndClose`
+- `eadAndDelete`
+- `writeAndClose`
+- `read()`
+- UIControls
+- `spinnerFore`
+- `spinnerBack`
 
-##  4.0.2 - 2017-09-01
+## 4.0.2 - 2017-09-01
 
-####  Fixed
+#### Fixed
 
-* Methods annotated with `@ReplacedByNativeOnDeploy` and array arguments were not being replaced by their native counterpart on deploy
-* Fixed deploy to iOS in Linux without X11 display
-* Android binaries are now compiled in release mode, because the Play Store no longer allows debug binaries
-* TotalCross should no longer require elevated user access to run on Windows desktop
-* Fixed pressed event not being fired when the re-selecting the same item on a `ComboBox`
-* Fixed crash on WinCE, invalid function references would make the application crash on startup on some devices
+- Methods annotated with `@ReplacedByNativeOnDeploy` and array arguments were not being replaced by their native counterpart on deploy
+- Fixed deploy to iOS in Linux without X11 display
+- Android binaries are now compiled in release mode, because the Play Store no longer allows debug binaries
+- TotalCross should no longer require elevated user access to run on Windows desktop
+- Fixed pressed event not being fired when the re-selecting the same item on a `ComboBox`
+- Fixed crash on WinCE, invalid function references would make the application crash on startup on some devices
 
-####  Changes
+#### Changes
 
-* Applied annotation `@ReplacedByNativeOnDeploy` on classes of package `totalcross.crypto`, stack trace line numbers should now be the same either on Java or device
+- Applied annotation `@ReplacedByNativeOnDeploy` on classes of package `totalcross.crypto`, stack trace line numbers should now be the same either on Java or device
 
-##  4.0.1 - 2017-08-04
+## 4.0.1 - 2017-08-04
 
-####  Fixed
+#### Fixed
 
-* Fixed crash on `File.listFiles` when crawling very big paths
-* Fixed support for WinCE devices without the aygshell library, like the Compex PM200
-* Fixed `IOException` hierarchy
-* Fixed algorithm for `ImageControl.scaleToFit`
-* Fixed pressed event not being fired when using a popup with `ComboBox`
+- Fixed crash on `File.listFiles` when crawling very big paths
+- Fixed support for WinCE devices without the aygshell library, like the Compex PM200
+- Fixed `IOException` hierarchy
+- Fixed algorithm for `ImageControl.scaleToFit`
+- Fixed pressed event not being fired when using a popup with `ComboBox`
 
-####  Changes
+#### Changes
 
-* Added `CLOSED` state to `File`, which allows it to be properly used in a try-with-resources
-* Updated dependency dd-plist.jar to version 1.19
+- Added `CLOSED` state to `File`, which allows it to be properly used in a try-with-resources
+- Updated dependency dd-plist.jar to version 1.19
 
-##  4.0.0 - 2017-07-31
+## 4.0.0 - 2017-07-31
 
-####  Highlights
+#### Highlights
 
-* Familiar with the Material design User Experience? Well, you can now give it to your user!
-*  `@ReplacedByNativeOnDeploy` annotation to denote every method that runs with a native implementation on device
-  * The Java implementation is replaced by a native call during the deploy
-*  `java.util.function.*` functional interfaces of Java 8 to provide a deeper dive into functional programming
-  * The project needs to be compiled with Java 8 to works, even if it has been downtargeted by RetroLambda
-  *  **NOTE**: no default methods nor static methods yet
-* Wish to add your dependencies dynamically? Take a look at [`tc-compiler-help`](https://github.com/TotalCross/tc-compiler-help)
-  * The file `all.pkg` is dynamically updated with your dependencies and restored to it's original state
-  * See build examples:
+- Familiar with the Material design User Experience? Well, you can now give it to your user!
+- `@ReplacedByNativeOnDeploy` annotation to denote every method that runs with a native implementation on device
+- The Java implementation is replaced by a native call during the deploy
+- `java.util.function.*` functional interfaces of Java 8 to provide a deeper dive into functional programming
+- The project needs to be compiled with Java 8 to works, even if it has been downtargeted by RetroLambda
+- **NOTE**: no default methods nor static methods yet
+- Wish to add your dependencies dynamically? Take a look at [`tc-compiler-help`](https://github.com/TotalCross/tc-compiler-help)
+  - The file `all.pkg` is dynamically updated with your dependencies and restored to it's original state
+  - See build examples:
     1. Build to multiple platforms [here](https://github.com/TotalCross/IFoodUI/blob/c0e96ade3d24539fb2e96cae2637989c6aea5418/src/main/java/tc/samples/like/ifood/IFoodCompile.java#L12)
     2. Must compile with dependenceis `magical-utils`, `tc-utilities` and `tc-components` [here](https://github.com/TotalCross/totalcross-big-file/blob/master/src/main/java/com/totalcross/sample/bigfile/BigFileCompile.java#L11)
 
-####  Fixed
+#### Fixed
 
-* Prevents null pointer when resizing `ScrollContainer`
-* Fixed deploy issue with `java.lang.System` while running with Java 8
-* Fixed deploy issue with `java.lang.Character` while running in a headless environment
+- Prevents null pointer when resizing `ScrollContainer`
+- Fixed deploy issue with `java.lang.System` while running with Java 8
+- Fixed deploy issue with `java.lang.Character` while running in a headless environment
 
-####  Changes
+#### Changes
 
-*  `totalcross.io.Connection` implements `AutoCloseable`, so you may use `try-with-resources` with any `totalcross.io.Stream`, like `HttpStream` or `File`
-  * It also warns _Resource leak_ when the compiler detects that you are not releasing a opened resource
+- `totalcross.io.Connection` implements `AutoCloseable`, so you may use `try-with-resources` with any `totalcross.io.Stream`, like `HttpStream` or `File`
+- It also warns _Resource leak_ when the compiler detects that you are not releasing a opened resource
 
-##  3.44.3483 - 2017-07-17
+## 3.44.3483 - 2017-07-17
 
-####  Highlights
+#### Highlights
 
-* Launcher no longer requires an activation key to run, instead it shows a dismissible popup to input the activation key to be stored on the user's AppData system equivalent directory.
-* The stored activation key is used by default for both Launcher and Deploy if the activation key is not provided as a command line argument.
+- Launcher no longer requires an activation key to run, instead it shows a dismissible popup to input the activation key to be stored on the user's AppData system equivalent directory.
+- The stored activation key is used by default for both Launcher and Deploy if the activation key is not provided as a command line argument.
 
-####  Fixed
+#### Fixed
 
-*  `AccordionContainer.collapseAll` not using `showAnimation` when set to false.
-* AccordionContainer expand/collapse not resizing the parent window.
-* Fixed not being able to set focus to a Window under the current top one.
-* ImageControl not using the alphaMask that may have been assigned to the Image.
-*  `Graphics.getAnglePoint` implementation fixed by using the same algorithm of `Graphics.drawPie`.
+- `AccordionContainer.collapseAll` not using `showAnimation` when set to false.
+- AccordionContainer expand/collapse not resizing the parent window.
+- Fixed not being able to set focus to a Window under the current top one.
+- ImageControl not using the alphaMask that may have been assigned to the Image.
+- `Graphics.getAnglePoint` implementation fixed by using the same algorithm of `Graphics.drawPie`.
 
-####  Added
+#### Added
 
-* Added missing qsort methods to Vector to allow sorting in ascending or descending order.
+- Added missing qsort methods to Vector to allow sorting in ascending or descending order.
 
-##  3.43.3452 - 2017-06-29
+## 3.43.3452 - 2017-06-29
 
-####  Highlights
+#### Highlights
 
-* Now you can get Firebase identity token to send a unicast message to a single Android device
-  * Check the [wiki page](https://gitlab.com/totalcross/TotalCross/wikis/features/firebase-token) for more details;
-  * Also check the [GitHub example](https://github.com/TotalCross/totalcross-firebase-token/);
-  * Any news, we will keep updating the post and the source
+- Now you can get Firebase identity token to send a unicast message to a single Android device
+  - Check the [wiki page](https://gitlab.com/totalcross/TotalCross/wikis/features/firebase-token) for more details;
+  - Also check the [GitHub example](https://github.com/TotalCross/totalcross-firebase-token/);
+  - Any news, we will keep updating the post and the source
 
-####  Fixed
+#### Fixed
 
-* Deploy with absolute path in Unix system, it isn't anymore mistakenly recognized as a slash argument
-* Fixed `ScrollBar.recomputeParams` to ensure the values calculated are within a valid range.
-* Fixed TotalCross.apk deploy, which was not including Litebase libraries.
-* This affected only applications that used Litebase without packaging TotalCross \(option `/p`\) on Android.
+- Deploy with absolute path in Unix system, it isn't anymore mistakenly recognized as a slash argument
+- Fixed `ScrollBar.recomputeParams` to ensure the values calculated are within a valid range.
+- Fixed TotalCross.apk deploy, which was not including Litebase libraries.
+- This affected only applications that used Litebase without packaging TotalCross \(option `/p`\) on Android.
 
-####  Added
+#### Added
 
-* Added missing constructor `Throwable(String, Throwable, boolean, boolean)`
-* Added missing constructor `Exception(String, Throwable, boolean, boolean)`
-* Added missing constructor `RuntimeException(String, Throwable, boolean, boolean)`
-* Added method `Image.resizeJpeg(String inputPath, String outputPath, int maxPixelSize)` to resize images on the file system with a smaller memory footprint.
-* On iOS, this method has a native implementation that does not require loading the image on memory, greatly improving performance and memory consumption.
-* On every other platform this method will still load the image on memory to perform the resize, but it should still be preferred over other resize methods as we intend to also add native implementation for other platforms in the future.
-* Added `Toast.show(final String message, final int delay, final Window parentWindow)`, where you can pass the window where the tooltip will be shown.
-* Added `Font.percentBy` which returns a font resized based on the given percentage.
+- Added missing constructor `Throwable(String, Throwable, boolean, boolean)`
+- Added missing constructor `Exception(String, Throwable, boolean, boolean)`
+- Added missing constructor `RuntimeException(String, Throwable, boolean, boolean)`
+- Added method `Image.resizeJpeg(String inputPath, String outputPath, int maxPixelSize)` to resize images on the file system with a smaller memory footprint.
+- On iOS, this method has a native implementation that does not require loading the image on memory, greatly improving performance and memory consumption.
+- On every other platform this method will still load the image on memory to perform the resize, but it should still be preferred over other resize methods as we intend to also add native implementation for other platforms in the future.
+- Added `Toast.show(final String message, final int delay, final Window parentWindow)`, where you can pass the window where the tooltip will be shown.
+- Added `Font.percentBy` which returns a font resized based on the given percentage.
 
-####  Changes
+#### Changes
 
-*  `SmsManager.sendTextMessage` asks the SMS composer application to automatically exit after the message is sent, switching back to the TotalCross application
-* Set the `MessageBox` default colors in the constructor instead of `onPopup`
-*  `MessageBox` colors will no longer change if the `UIColors` constants are changed after the object is created
-*  `ImageControl` resizes and pans the background image with the foreground image.
-*  `Vm.exec` on Android should now properly execute any video type supported by the viewer, using the MIME type associated with the file extension.
-* Unsupported or wrong file extensions may not work, so make sure the file is ok if this method fails to play it.
+- `SmsManager.sendTextMessage` asks the SMS composer application to automatically exit after the message is sent, switching back to the TotalCross application
+- Set the `MessageBox` default colors in the constructor instead of `onPopup`
+- `MessageBox` colors will no longer change if the `UIColors` constants are changed after the object is created
+- `ImageControl` resizes and pans the background image with the foreground image.
+- `Vm.exec` on Android should now properly execute any video type supported by the viewer, using the MIME type associated with the file extension.
+- Unsupported or wrong file extensions may not work, so make sure the file is ok if this method fails to play it.
 
-####  Deprecated
+#### Deprecated
 
-* Those classes are no longer used:
-* `totalcross.phone.PushNotification`
-* `totalcross.ui.event.PushNotificationEvent`
+- Those classes are no longer used:
+- `totalcross.phone.PushNotification`
+- `totalcross.ui.event.PushNotificationEvent`
 
-##  3.42.3362 - 2017-05-25
+## 3.42.3362 - 2017-05-25
 
-####  Highlights
+#### Highlights
 
-* New class `SmsManager` to handle sms messages, only on Android for now.
-* New component `SideMenuContainer`, a template to make creating applications using a navbar and a sidemenu. This is an incubating feature, therefore backwards compatibility is not guaranteed for future releases.
+- New class `SmsManager` to handle sms messages, only on Android for now.
+- New component `SideMenuContainer`, a template to make creating applications using a navbar and a sidemenu. This is an incubating feature, therefore backwards compatibility is not guaranteed for future releases.
 
-####  Fixed
+#### Fixed
 
-* Fixed saving photo on portrait [\#47](/totalcross/TotalCross/issues/47)
-* Fixed `AccordionContainer` when `showAnimation` is `false`
-* Fixed support for Samsung's default keyboard on Android which has a bug related to single character event handling and text prediction [\#35](/totalcross/TotalCross/issues/35)
+- Fixed saving photo on portrait [\#47](/totalcross/TotalCross/issues/47)
+- Fixed `AccordionContainer` when `showAnimation` is `false`
+- Fixed support for Samsung's default keyboard on Android which has a bug related to single character event handling and text prediction [\#35](/totalcross/TotalCross/issues/35)
 
-####  Added
+#### Added
 
-* Added support for Compex scanners
-* Added `java.sql` exceptions that were being replaced by their equivalents on `totalcross.sql` [\#40](/totalcross/TotalCross/issues/40)
-* Added `SmsManager` to send and listen to incoming sms messages, only supported on Android now [\#25](/totalcross/TotalCross/issues/25)
-* Added property `Bar.drawBorders` to remove the component's borders
-* Added constructor for `TopMenu` to allow using other borders type besides the default `ROUND_BORDER`
+- Added support for Compex scanners
+- Added `java.sql` exceptions that were being replaced by their equivalents on `totalcross.sql` [\#40](/totalcross/TotalCross/issues/40)
+- Added `SmsManager` to send and listen to incoming sms messages, only supported on Android now [\#25](/totalcross/TotalCross/issues/25)
+- Added property `Bar.drawBorders` to remove the component's borders
+- Added constructor for `TopMenu` to allow using other borders type besides the default `ROUND_BORDER`
 
-####  Changes
+#### Changes
 
-* Fixed `Edit.clipboardMenu` so that it uses the same font from its parent's Window
-* Increased wait time for bluetooth read and write operations on Android [\#18](/totalcross/TotalCross/issues/18)
-* Additional check when drawing `TopMenu` to avoid NPE when there are no items to show
-* Deprecated method `Image.setTransparentColor` - use images with alpha channel instead
+- Fixed `Edit.clipboardMenu` so that it uses the same font from its parent's Window
+- Increased wait time for bluetooth read and write operations on Android [\#18](/totalcross/TotalCross/issues/18)
+- Additional check when drawing `TopMenu` to avoid NPE when there are no items to show
+- Deprecated method `Image.setTransparentColor` - use images with alpha channel instead
 
-##  3.41.3331 - 2017-05-10
+## 3.41.3331 - 2017-05-10
 
-####  Fixed
+#### Fixed
 
-* Fixed deploy for Android, which was broken on the last release
-  * There were some issues with the CI on the last release that could make the deployed application fail to start on Android, but this was fixed and new tests added to the CI to prevent this problem from happening again
+- Fixed deploy for Android, which was broken on the last release
+  - There were some issues with the CI on the last release that could make the deployed application fail to start on Android, but this was fixed and new tests added to the CI to prevent this problem from happening again
 
-##  3.41.3327 - 2017-05-09
+## 3.41.3327 - 2017-05-09
 
-####  Highlights
+#### Highlights
 
 With this new release, TotalCross now supports [Dagger](https://google.github.io/dagger/). A lightweight DI \(dependency injection\) framework, maintained by Google and with focus on high performance, low startup and better maintainability, which makes it perfect for mobile applications!
 
 Instructions for usage are available on the [wiki](https://gitlab.com/totalcross/TotalCross/wikis/dagger)
 
-####  Added
+#### Added
 
-* Added `Vector.ensureCapacity(int)` method
-* Added `AccordionContainer.expand(boolean)` and `AccordionContainer.collapse(boolean)`
-* Whether one wish to show an animation, just pass `true` as the argument
-* Added initial support to some classes and interfaces to provides better Java compliance:
-* `java.io.FilterOutputStream`
-* `java.io.PrintStream`
-* `java.lang.Appendable`
-* `java.lang.AssertionError`
-* `java.lang.CharSequence`
-*  `java.lang.System`: only the attributes `out` and `err`; both `out` and `err` prints to the `DebugConsole`
-* Deploy time support to referencing `java.lang.ref.Reference` and `java.lang.ref.WeakReference`; no semantics **yet**
-* Deploy time support to referencing `java.util.concurrent.ConcurrentLinkedQueue`; no semantics **yet**
-* `java.inject.Provider`
-*  `java.lang.Class.desiredAssertionStatus()` method, returning `false`
-*  `java.lang.Error(String, Throwable)` constructor
-*  `java.lang.String.contains(CharSequence)` method
-*  `java.lang.String.replaceFirst(String, String)` method
-*  `java.lang.String.subsequence(int, int)` method
-*  `java.lang.StringBuffer.append(CharSequence)` and `java.lang.StringBuffer.append(CharSequence, int, int)` methods
-*  `totalcross.ui.font.Font.toString()` method returns the font name and some other properties
-* like `TCFont$N12`
-* Added `ImageControl.setImage(Image, boolean)`, where one may tells that it is desired \(or not\) to reset positions
-*  `OpticonH16.dll` DLL to run proper scanner on WinCE devices
+- Added `Vector.ensureCapacity(int)` method
+- Added `AccordionContainer.expand(boolean)` and `AccordionContainer.collapse(boolean)`
+- Whether one wish to show an animation, just pass `true` as the argument
+- Added initial support to some classes and interfaces to provides better Java compliance:
+- `java.io.FilterOutputStream`
+- `java.io.PrintStream`
+- `java.lang.Appendable`
+- `java.lang.AssertionError`
+- `java.lang.CharSequence`
+- `java.lang.System`: only the attributes `out` and `err`; both `out` and `err` prints to the `DebugConsole`
+- Deploy time support to referencing `java.lang.ref.Reference` and `java.lang.ref.WeakReference`; no semantics **yet**
+- Deploy time support to referencing `java.util.concurrent.ConcurrentLinkedQueue`; no semantics **yet**
+- `java.inject.Provider`
+- `java.lang.Class.desiredAssertionStatus()` method, returning `false`
+- `java.lang.Error(String, Throwable)` constructor
+- `java.lang.String.contains(CharSequence)` method
+- `java.lang.String.replaceFirst(String, String)` method
+- `java.lang.String.subsequence(int, int)` method
+- `java.lang.StringBuffer.append(CharSequence)` and `java.lang.StringBuffer.append(CharSequence, int, int)` methods
+- `totalcross.ui.font.Font.toString()` method returns the font name and some other properties
+- like `TCFont$N12`
+- Added `ImageControl.setImage(Image, boolean)`, where one may tells that it is desired \(or not\) to reset positions
+- `OpticonH16.dll` DLL to run proper scanner on WinCE devices
 
-####  Changed
+#### Changed
 
-* Project files/folder structure ressembles a Maven/Gradle project
-*  `AccordionContainer.expand()` and `AccordionContainer.collapse()` calls `AccordionContainer.expand/collapse(true)`
-* If the deploy process does not end happily, it will throw an exception and return code will be non-zero
-*  `ImageControl.setImage(Image)` calls `ImageControl.setImage(Image, boolean)` requesting to reset positions
-* Default background color components changed to white
-* The Win32 deploy now also copies TotalCross files \(dll and tcz\) to the application folder
+- Project files/folder structure ressembles a Maven/Gradle project
+- `AccordionContainer.expand()` and `AccordionContainer.collapse()` calls `AccordionContainer.expand/collapse(true)`
+- If the deploy process does not end happily, it will throw an exception and return code will be non-zero
+- `ImageControl.setImage(Image)` calls `ImageControl.setImage(Image, boolean)` requesting to reset positions
+- Default background color components changed to white
+- The Win32 deploy now also copies TotalCross files \(dll and tcz\) to the application folder
 
-####  Fixed
+#### Fixed
 
-*  `ComboBox.clear()` now may default to `clearValueInt` when `clearValueStr` is set but not available on the options
-* Fixed possible stack overflor on `Throwable` constructors calls
-* Fixed `Throwable.toString()` result to match the format used by the JDK
-* Pressing enter on iOS devices fires a `SpecialEvent.ENTER` key
+- `ComboBox.clear()` now may default to `clearValueInt` when `clearValueStr` is set but not available on the options
+- Fixed possible stack overflor on `Throwable` constructors calls
+- Fixed `Throwable.toString()` result to match the format used by the JDK
+- Pressing enter on iOS devices fires a `SpecialEvent.ENTER` key
 
-##  3.40.3256 - 2017-04-25
+## 3.40.3256 - 2017-04-25
 
-####  Added
+#### Added
 
-* Added support to Java 8 Lambda through the usage of [Retrolambda](https://github.com/orfjackal/retrolambda)!
-  *  [Documentation](https://gitlab.com/totalcross/TotalCross/wikis/retrolambda) on how to use it and [sample](https://github.com/TotalCross/HelloTC) are available.
-* Added support to refer to a non-TotalCross-recognized HTTP method and forces to send the data
-* Added class `totalcross.TotalCrossApplication` which can be used as a main entry point for the application. Check example at [GitHub](https://github.com/TotalCross/HelloTC)
-* Added `FONTSIZE` on relative positioning constants
-* Added `AccordionContainer.collapseNoAnim`
+- Added support to Java 8 Lambda through the usage of [Retrolambda](https://github.com/orfjackal/retrolambda)!
+  - [Documentation](https://gitlab.com/totalcross/TotalCross/wikis/retrolambda) on how to use it and [sample](https://github.com/TotalCross/HelloTC) are available.
+- Added support to refer to a non-TotalCross-recognized HTTP method and forces to send the data
+- Added class `totalcross.TotalCrossApplication` which can be used as a main entry point for the application. Check example at [GitHub](https://github.com/TotalCross/HelloTC)
+- Added `FONTSIZE` on relative positioning constants
+- Added `AccordionContainer.collapseNoAnim`
 
-####  Changed
+#### Changed
 
-*  `totacross.sql.ResultSet` and `totalcross.sql.Statement` interfaces extends `Autocloseable`
-*  `LineReader` now uses the current `CharacterConverter`
-* Increased height of `ControlBox` to add a few more distance between the message, the control and the buttons
-*  `TopMenu.setRect` visibility changed to protected
-* Now if you set `minH` to a negative value, the value will be computed as `-minH * fmH` \(font height\); this is useful when the font changes dynamically
+- `totacross.sql.ResultSet` and `totalcross.sql.Statement` interfaces extends `Autocloseable`
+- `LineReader` now uses the current `CharacterConverter`
+- Increased height of `ControlBox` to add a few more distance between the message, the control and the buttons
+- `TopMenu.setRect` visibility changed to protected
+- Now if you set `minH` to a negative value, the value will be computed as `-minH * fmH` \(font height\); this is useful when the font changes dynamically
 
-####  Fixed
+#### Fixed
 
-* SQLite handling correctly UTF8 \(if asked to\)
-* Added `Sound.fromText` \(Android only\)
-  * Check the snippet [$1657156](/totalcross/TotalCross/snippets/1657156)
-*  `Socket` open timeout in Java working properly
-* Fixed `LineReader` reading of a single non-`\n`-terminanted string
-* Fixed `Settings.showMousePosition` not taking into account the scale
-* Fixed `TopMenu` when the `widthInPixels` is computed dynamically and in a rotation the old value is used instead
-* Fixed item's height when a single control is used
-* Fixed issue when you set `ScrollContainer.uiAdjustmentsBasedOnFontHeightIsSupported` to false and then the ScrollContainer reseta it to true
-* Fixed some issues with Honeywell and Dolphin scanner
+- SQLite handling correctly UTF8 \(if asked to\)
+- Added `Sound.fromText` \(Android only\)
+  - Check the snippet [\$1657156](/totalcross/TotalCross/snippets/1657156)
+- `Socket` open timeout in Java working properly
+- Fixed `LineReader` reading of a single non-`\n`-terminanted string
+- Fixed `Settings.showMousePosition` not taking into account the scale
+- Fixed `TopMenu` when the `widthInPixels` is computed dynamically and in a rotation the old value is used instead
+- Fixed item's height when a single control is used
+- Fixed issue when you set `ScrollContainer.uiAdjustmentsBasedOnFontHeightIsSupported` to false and then the ScrollContainer reseta it to true
+- Fixed some issues with Honeywell and Dolphin scanner
 
-##  3.30.3206 - 2017-03-16
+## 3.30.3206 - 2017-03-16
 
-####  Added
+#### Added
 
-* Support for IPV6 on iOS
+- Support for IPV6 on iOS
 
-####  Changed
+#### Changed
 
-* Refactored basic HTTP authentication so that `Proxy Authentication` and `Authentication` uses the same logic int `HttpStream`
-* Treating gracefully cancelled photo
-* TotalCross VM is now built with Android API level 23
+- Refactored basic HTTP authentication so that `Proxy Authentication` and `Authentication` uses the same logic int `HttpStream`
+- Treating gracefully cancelled photo
+- TotalCross VM is now built with Android API level 23
 
-####  Fixed
+#### Fixed
 
-* Fixed basic authentication in `HttpStream`
-* Do not deploy placeholder icon, but icon informed icon \(Android\)
-* Workaround to get mac address in Android 6+
-* Fixed possible invalid access when freeing a OpenGL texture
-* Fixed issue with scanners:
-  * Honeywell \(Android\)
-  * Dolphin \(WinCE\)
-* Fixed opening Gallery photo
+- Fixed basic authentication in `HttpStream`
+- Do not deploy placeholder icon, but icon informed icon \(Android\)
+- Workaround to get mac address in Android 6+
+- Fixed possible invalid access when freeing a OpenGL texture
+- Fixed issue with scanners:
+  - Honeywell \(Android\)
+  - Dolphin \(WinCE\)
+- Fixed opening Gallery photo
 
-##  3.30.3098 - 2017-02-14
+## 3.30.3098 - 2017-02-14
 
-####  Added
+#### Added
 
-* Implemented base 64 decode stream
-  * Check example at [GitHub](https://github.com/totalcross/totalcross-big-file)
-    * [Use it like a stream](https://github.com/TotalCross/totalcross-big-file/blob/master/src/main/java/com/tc/sample/bigfile/ui/Utils.java#L15)
-* Using [Firebase](https://firebase.google.com/) for push messages in Android
-  * Download _google-services.json_ and include within your project and it will automagically work
+- Implemented base 64 decode stream
+  - Check example at [GitHub](https://github.com/totalcross/totalcross-big-file)
+    - [Use it like a stream](https://github.com/TotalCross/totalcross-big-file/blob/master/src/main/java/com/tc/sample/bigfile/ui/Utils.java#L15)
+- Using [Firebase](https://firebase.google.com/) for push messages in Android
+  - Download _google-services.json_ and include within your project and it will automagically work
 
-####  Deprecated
+#### Deprecated
 
-* GCM is [deprecated by Google itself](https://developers.google.com/cloud-messaging/)
-* There is no longer use for `totalcross.sys.Settings.pushTokenAndroid`
+- GCM is [deprecated by Google itself](https://developers.google.com/cloud-messaging/)
+- There is no longer use for `totalcross.sys.Settings.pushTokenAndroid`
 
-####  Known issue
+#### Known issue
 
-* There is no reliable way _yet_ to treat Firebase notifications in the app
+- There is no reliable way _yet_ to treat Firebase notifications in the app
 
-##  3.30.3071 - 2017-01-23
+## 3.30.3071 - 2017-01-23
 
-####  Added
+#### Added
 
-* Implemented `Class.getCanonicalName()`
-* Added `java.lang.Autocloseable` interface
-* Added `Window.isSipShown()` to check if the keyboard is currently showing
-* Added `java.io.InputStream`
-* Added `totalcross.io.Stream.asInputStream()`, which returns a `java.io.InputStream` that wraps the original `totalcross.io.Stream`
-* Added `java.io.Reader`
-* Added `java.io.InputStreamReader`
-* Added `java.io.StringReader`
-* Added `java.io.Closeable` interface
-* Added `java.io.Flushable` interface
-* Added `java.io.Writer`
-* Added `java.io.StringWriter`
-* Added `StringBuffer.append(String, int, int)`
-*  [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) statement supported
-* Added a SAX-like compiler for JSON, based on [JSON-Simple](https://github.com/fangyidong/json-simple) and its [Cliftonlabs fork](https://github.com/cliftonlabs/json-simple)
-* Added instance method `Control.showTip`
+- Implemented `Class.getCanonicalName()`
+- Added `java.lang.Autocloseable` interface
+- Added `Window.isSipShown()` to check if the keyboard is currently showing
+- Added `java.io.InputStream`
+- Added `totalcross.io.Stream.asInputStream()`, which returns a `java.io.InputStream` that wraps the original `totalcross.io.Stream`
+- Added `java.io.Reader`
+- Added `java.io.InputStreamReader`
+- Added `java.io.StringReader`
+- Added `java.io.Closeable` interface
+- Added `java.io.Flushable` interface
+- Added `java.io.Writer`
+- Added `java.io.StringWriter`
+- Added `StringBuffer.append(String, int, int)`
+- [try-with-resources](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html) statement supported
+- Added a SAX-like compiler for JSON, based on [JSON-Simple](https://github.com/fangyidong/json-simple) and its [Cliftonlabs fork](https://github.com/cliftonlabs/json-simple)
+- Added instance method `Control.showTip`
 
-####  Fixed
+#### Fixed
 
-* Avoiding overflow operations within `Long.compareTo(Long)`
-* End of stream treated properly in zlib, returns `-1` instead of throwing an exception
-* Fixed deploy for in-house distribution \(iOS\)
+- Avoiding overflow operations within `Long.compareTo(Long)`
+- End of stream treated properly in zlib, returns `-1` instead of throwing an exception
+- Fixed deploy for in-house distribution \(iOS\)
 
-####  Deprecated
+#### Deprecated
 
-* Trying to get mac address on Android 6+ will return a constant `02:00:00:00:00:00` due [to provide users with greater data protection](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id)
+- Trying to get mac address on Android 6+ will return a constant `02:00:00:00:00:00` due [to provide users with greater data protection](https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id)
 
-####  Known issues
+#### Known issues
 
-*  `Class.getCanonicalName()` doesn't return the canonical name, but defaults to `Class.getName()`
-
+- `Class.getCanonicalName()` doesn't return the canonical name, but defaults to `Class.getName()`

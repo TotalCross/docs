@@ -1,3 +1,9 @@
+---
+name: FAQ
+route: /faq
+menu: FAQ
+---
+
 # FAQ
 
 ## How to solve "Could not find the file jarsigner.exe. Make sure you have installed a JDK than has this file in the bin folder" error?
@@ -5,32 +11,32 @@
 this error normally occurs in two situations:
 
 1. A **%JavaHome% environment variable** is using JRE instead of JDK. In this case you can see how to configure by **clicking** [**here**](https://www.ntu.edu.sg/home/ehchua/programming/howto/environment_variables.html).
-2. Eclipse itself is pointing erroneously at the JRE. In this case, just go to the top bar in **Windows &gt; Preferences**.  Then it will open a window and you click on **Java &gt; Installed JREs &gt; add**.  Another window will appear, just click "**Next**" and then click "**Directory**" and **select the JDK folder that is inside the java folder**, where you installed it \(usually C: \Program Files\Java\).  Finally, just click select **folder&gt; finish**. **Confirm that JDK is selected** and then just click "**Apply and Close**" and then **restart** eclipse. 
+2. Eclipse itself is pointing erroneously at the JRE. In this case, just go to the top bar in **Windows &gt; Preferences**. Then it will open a window and you click on **Java &gt; Installed JREs &gt; add**. Another window will appear, just click "**Next**" and then click "**Directory**" and **select the JDK folder that is inside the java folder**, where you installed it \(usually C: \Program Files\Java\). Finally, just click select **folder&gt; finish**. **Confirm that JDK is selected** and then just click "**Apply and Close**" and then **restart** eclipse.
 
 See step-by-step from item 2 below:
 
-![1. Windows &amp;gt; Preferences](.gitbook/assets/1.png)
+![1. Windows > Preferences](.gitbook/assets/1.png)
 
-![2.  click on Java &amp;gt; Installed JREs &amp;gt; add. ](.gitbook/assets/2.png)
+![2.  click on Java > Installed JREs > add. ](.gitbook/assets/2.png)
 
-![3.  just click &quot;Next&quot;](.gitbook/assets/3.png)
+![3.  just click "Next"](.gitbook/assets/3.png)
 
-![4. click &quot;Directory&quot; and select the JDK folder](.gitbook/assets/4.png)
+![4. click "Directory" and select the JDK folder](.gitbook/assets/4.png)
 
 ![5. Just click Finish  ](.gitbook/assets/6.png)
 
-![6. Confirm that JDK is selected and then just click &quot;Apply and Close&quot;](.gitbook/assets/7.png)
+![6. Confirm that JDK is selected and then just click "Apply and Close"](.gitbook/assets/7.png)
 
 ## How to develop for RPI using TotalCross?
 
-Just add in pom.xml instead of the totalcross SDK version, the following command: 
+Just add in pom.xml instead of the totalcross SDK version, the following command:
 
 ```markup
 <scope>system</scope>
 <systemPath>caminho\TotalCross\dist\tc.jar</systemPath>
 ```
 
-That done, you can deploy it. Already to develop, is the same way that develops for mobile. 
+That done, you can deploy it. Already to develop, is the same way that develops for mobile.
 
 ## We have a proxy and it is blocking the compilation of our app what do you suggest?
 
@@ -53,9 +59,11 @@ Just add iso to pom.xml:
 </dependency>
 ```
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 Attention: Please be aware if the version indicated on the pom is the same as your machine.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 ## How to disable backup / restore in TotalCross?
 
@@ -65,8 +73,8 @@ To disable backup just add `Settings.allowBackup = true` within the constructor 
 
 This may be happening because you are using the `pendown` instead of the `penup`. To better understand, follow the definitions:
 
-* **`pendown` is triggered when there is a touch on the screen.**
-* **`penup` is triggered when finger flips the screen** \(or mouse/key, depending on the platform\).
+- **`pendown` is triggered when there is a touch on the screen.**
+- **`penup` is triggered when finger flips the screen** \(or mouse/key, depending on the platform\).
 
 To find out if there was a click, it can be detected through the **`pendrag`**, and if it is positive, do not trigger the `penup`.
 
@@ -82,19 +90,19 @@ if (!this.hadParentScrolled()) {
 
 In the case of **Containers**:
 
-* `swap(new InitialScreen());` - If you are in the Main Window and want to call a Container, simply use the `swap()` command.
-* `MainWindow.getMainWindow().Swap(new SecondScreen());` - If you are in a container or Window and want to call a Container just use the command.
+- `swap(new InitialScreen());` - If you are in the Main Window and want to call a Container, simply use the `swap()` command.
+- `MainWindow.getMainWindow().Swap(new SecondScreen());` - If you are in a container or Window and want to call a Container just use the command.
 
-In the case of **Windows**: 
+In the case of **Windows**:
 
-* `.popup()` - The execution **stops** after the `popup()`command is executed.
-* `.popupNonBlocking()` - the execution **continues** right after the popup command, even with the window still open
+- `.popup()` - The execution **stops** after the `popup()`command is executed.
+- `.popupNonBlocking()` - the execution **continues** right after the popup command, even with the window still open
 
 To understand more in depth how best to use and other ways to navigate between user interfaces, click [here](https://totalcross.gitbook.io/playbook/guideline/container-x-window)
 
 ## Is it possible for the buttons to be round?
 
-Yes, if it is an FAB we have a component of its own, the `FloatingButton`. In other cases, you can change using NinePatch or do the most recommended: use an ImageButton as in the following example: 
+Yes, if it is an FAB we have a component of its own, the `FloatingButton`. In other cases, you can change using NinePatch or do the most recommended: use an ImageButton as in the following example:
 
 ```java
 Image original = Images.getTotalCrossLogo();
@@ -108,7 +116,7 @@ try {
 	// Finally, take a default button border and ninepatch
 	btn.setBorder(Button.BORDER_NONE);
 	btn.setNinePatch(null);
-	
+
 	add(btn, CENTER, CENTER);
 } catch (ImageException e) {
 	e.printStackTrace();
@@ -128,20 +136,20 @@ I checked it here, Vm.getFile looks for the file in the TCZs. An embedded file i
 
 First, the main function of each is different:
 
-* **Container**: A control capable of containing other controls. It is primarily a form of organization.
-* **Window**: it is a control capable of overlapping others, creating an illusion of depth. In addition, Windows is also containers, as they can accommodate several components within them.
+- **Container**: A control capable of containing other controls. It is primarily a form of organization.
+- **Window**: it is a control capable of overlapping others, creating an illusion of depth. In addition, Windows is also containers, as they can accommodate several components within them.
 
 To better understand the difference between them in specific cases and how to use both in the most appropriate way, access the [Windows X Container session](https://learn.totalcross.com/guideline/container-x-window).
 
 ## Is it possible to search for GPS position through Triangulation?
 
-By default the **GPS class** performs location **only via GPS**, but on Android, you can change your behavior to use Google Play Services to get the location. To do this, change the **field precision** value to to **`LOW_GPS_PRECISION`**. 
+By default the **GPS class** performs location **only via GPS**, but on Android, you can change your behavior to use Google Play Services to get the location. To do this, change the **field precision** value to to **`LOW_GPS_PRECISION`**.
 
 Location by Google Play Services is based on a _variety of information_, including **Wifi and Bluetooth**. If you specifically want information about the network location used, you can use the CellInfo class in WinCE or Android.
 
 ## How to use the DecimalFormat on TotalCross?
 
-Totalcross doesn't have the `java.text`  so the DecimalFormat is not on our SDK.
+Totalcross doesn't have the `java.text` so the DecimalFormat is not on our SDK.
 
 ## How to ativate the OK \(ENTER\) button on Android
 
@@ -160,6 +168,3 @@ Edit edtExit = new Edit();
     });
 add(edtExit, CENTER, AFTER  + 40, PARENTSIZE, PREFERRED);
 ```
-
-
-

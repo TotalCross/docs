@@ -1,3 +1,9 @@
+---
+name: Progress Bar
+route: /components/progress-bar
+menu: Components
+---
+
 # Progress Bar
 
 ### Overview
@@ -6,7 +12,8 @@ It is a bar that can demonstrate the progress of a particular request or a loadi
 
 ### Source code
 
-{% code title="ProgressBarSample" %}
+<!-- {% code title="ProgressBarSample" %} -->
+
 ```java
 import totalcross.sys.Convert;
 import totalcross.sys.Settings;
@@ -104,18 +111,19 @@ public class ProgressBarSample extends MainWindow {
     }
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Attributes
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **int** | max | Progress Bar maximum value. |
-| **int** | value | Current value of progress Bar. |
-| **String** | prefix | It is the text that appears to the left of the value, remembering that the text output is prefix + value + sufix |
-| **String** | suffix | It is the text that appears to the right of the value, remembering that the text output is prefix + value + suffix |
-| **boolean** | drawText | It will indicate if the text will be displayed in progress bar or not, by default it comes as false. |
-| **boolean** | drawValue | It will indicate if the value will be displayed in the progress bar. |
+| Type        | Name      | Description                                                                                                        |
+| :---------- | :-------- | :----------------------------------------------------------------------------------------------------------------- |
+| **int**     | max       | Progress Bar maximum value.                                                                                        |
+| **int**     | value     | Current value of progress Bar.                                                                                     |
+| **String**  | prefix    | It is the text that appears to the left of the value, remembering that the text output is prefix + value + sufix   |
+| **String**  | suffix    | It is the text that appears to the right of the value, remembering that the text output is prefix + value + suffix |
+| **boolean** | drawText  | It will indicate if the text will be displayed in progress bar or not, by default it comes as false.               |
+| **boolean** | drawValue | It will indicate if the value will be displayed in the progress bar.                                               |
 
 ### Methods
 
@@ -167,8 +175,9 @@ public class ProgressBarSample extends MainWindow {
       </td>
     </tr>
   </tbody>
-</table>## References
+</table>
 
-* See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/ProgressBar.html) for more information.
-* You can check the example contained in the SDK, in tc.samples.api.ui ProgressBarSample.
+## References
 
+- See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/ProgressBar.html) for more information.
+- You can check the example contained in the SDK, in tc.samples.api.ui ProgressBarSample.

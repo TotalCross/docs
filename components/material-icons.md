@@ -1,22 +1,31 @@
+---
+name: Material Icons
+route: /components/material-icons
+menu: Components
+---
+
 # Material Icons
 
 ### Overview
 
-Material Icons are the patterns of icons created by [Google - Material Design](https://blog.totalcross.com/en/material-o-layout-da-google/). They are designed to be used in your Web/iOS/Android projects.   
-  
+Material Icons are the patterns of icons created by [Google - Material Design](https://blog.totalcross.com/en/material-o-layout-da-google/). They are designed to be used in your Web/iOS/Android projects.
+
 Material Icons are available in a wide variety of densities and sizes, with more than **900 icons**, as well as being Open Code.
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 To use the icons, import the _**`MaterialIcons`**_ class:
 
 `import totalcross.ui.icon.MaterialIcons; Icon icon = new Icon(MaterialIcons.values());`
-{% endhint %}
 
-![](../.gitbook/assets/materialicons-sample.gif)
+<!-- {% endhint %} -->
+
+![materialicons-sample](../.gitbook/assets/materialicons-sample.gif)
 
 ### Source Code
 
-{% code title="MaterialIconSample.java" %}
+<!-- {% code title="MaterialIconSample.java" %} -->
+
 ```java
 import totalcross.sys.Settings;
 import totalcross.ui.Container;
@@ -53,11 +62,11 @@ public class MaterialIconSample extends MainWindow {
 
 
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### **References**
 
-* Learn more about Material Design with [our Blog Post](https://blog.totalcross.com/en/material-o-layout-da-google/).
-* Learn more about how [Material Icons](https://material.io/tools/icons/) works.
-* See the [TotalCross JavaDocs ](https://rs.totalcross.com/doc/index.html)for more information.
-
+- Learn more about Material Design with [our Blog Post](https://blog.totalcross.com/en/material-o-layout-da-google/).
+- Learn more about how [Material Icons](https://material.io/tools/icons/) works.
+- See the [TotalCross JavaDocs ](https://rs.totalcross.com/doc/index.html)for more information.

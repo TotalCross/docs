@@ -1,3 +1,9 @@
+---
+name: Scroll Container
+route: /components/scroll-container
+menu: Components
+---
+
 # Scroll Container
 
 ## Overview
@@ -68,8 +74,7 @@ public class ScrollContainerSample extends MainWindow {
 
 ## References
 
-* To know more details read its [JavaDocs](https://rs.totalcross.com/doc/totalcross/ui/ScrollContainer.html).
+- To know more details read its [JavaDocs](https://rs.totalcross.com/doc/totalcross/ui/ScrollContainer.html).
 
 [  
 ](https://app.gitbook.com/@totalcross/s/playbook/~/drafts/-LfzE7W6V32fHcj-QL-S/primary/apis/visao-geral-da-api)
-

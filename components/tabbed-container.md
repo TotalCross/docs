@@ -1,3 +1,9 @@
+---
+name: Tabbed Container
+route: /components/tabbed-container
+menu: Components
+---
+
 # Tabbed Container
 
 ### Overview
@@ -36,24 +42,24 @@ public class TabbedContainerSample extends ScrollContainer {
 	}
 
 	private void CreateImageAndTextTabbedContainer() throws ImageException, IOException {
-		String[] caps = { 
-			"Social 1", 
-			"Social 2", 
-			"Social 3" 
+		String[] caps = {
+			"Social 1",
+			"Social 2",
+			"Social 3"
 		};
-		Image[] icons = { 
-			new Image("images/fb_icon_40.png"), 
+		Image[] icons = {
+			new Image("images/fb_icon_40.png"),
 			new Image("images/gmail_icon_40.png"),
-			new Image("images/insta_icon_40.png") 
+			new Image("images/insta_icon_40.png")
 		};
 
 		Label sampleTitle = new Label("This is a icon and text Tabbed Container", CENTER);
 		sampleTitle.autoSplit = true;
 		add(sampleTitle, LEFT + gap, TOP + gap, FILL - gap, PREFERRED);
-		
+
 		Container spacing = new Container();
 		add(spacing, LEFT + gap*2, AFTER + gap/2, FILL - gap*2, (int) (Settings.screenHeight * 0.3));
-		
+
 		final TabbedContainer tc = new TabbedContainer(caps);
 		tc.setBackColor(Color.DARK);
 		tc.getContainer(0).setBackColor(Colors.P_300);
@@ -74,15 +80,15 @@ public class TabbedContainerSample extends ScrollContainer {
 		caps[0] = "Home";
 		caps[1] = "Photos";
 		caps[2] = "Profile";
-		
-		
+
+
 		Label sampleTitle = new Label("This is a text only Tabbed Container", CENTER);
 		sampleTitle.autoSplit = true;
 		add(sampleTitle, LEFT + gap, AFTER + gap*2, FILL - gap, PREFERRED);
-		
+
 		Container spacing = new Container();
 		add(spacing, LEFT + gap*2, AFTER + gap/2, FILL - gap*2, (int) (Settings.screenHeight * 0.3));
-		
+
 		final TabbedContainer tc = new TabbedContainer(caps);
 		tc.setType(TabbedContainer.TABS_BOTTOM);
 		tc.setBackColor(Color.DARK);
@@ -106,11 +112,11 @@ public class TabbedContainerSample extends ScrollContainer {
 		for (int i = images.length; --i >= 0;) {
 			images[i] = empty;
 		}
-		
+
 		Label sampleTitle = new Label("This is a image-only Tabbed Container", CENTER);
 		sampleTitle.autoSplit = true;
 		add(sampleTitle, LEFT + gap, AFTER + gap*2, FILL - gap, PREFERRED);
-		
+
 		Container spacing = new Container();
 		add(spacing, LEFT + gap*2, AFTER + gap/2, FILL - gap*2, (int) (Settings.screenHeight * 0.3));
 
@@ -177,10 +183,9 @@ public class TabbedContainerSample extends ScrollContainer {
       </td>
     </tr>
   </tbody>
-</table>### References
+</table>
 
-* See a example on [github](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/TabbedContainerSample.java) .
-* See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Grid.html) for more information.
+### References
 
-
-
+- See a example on [github](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/TabbedContainerSample.java) .
+- See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Grid.html) for more information.

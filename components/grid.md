@@ -1,3 +1,9 @@
+---
+name: Grid
+route: /components/grid
+menu: Components
+---
+
 # Grid
 
 ### Overview
@@ -22,7 +28,7 @@ public class GridSample extends MainWindow {
     private Grid grid;
     private Button loadButton;
     private int GAP = UnitsConverter.toPixels(DP + 8);
-    
+
     public GridSample(){
         setUIStyle(Settings.Material);
     }
@@ -112,8 +118,6 @@ public class GridSample extends MainWindow {
 
 ### Methods
 
-
-
 <table>
   <thead>
     <tr>
@@ -176,10 +180,11 @@ public class GridSample extends MainWindow {
       <td style="text-align:left">Add a new line at the given index position of the grid.</td>
     </tr>
   </tbody>
-</table>‌
+</table>
+
+‌
 
 ### References <a id="references"></a>
 
-* See the [github](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/GridSample.java) sample.
-* See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Grid.html) for more information.
-
+- See the [github](https://github.com/TotalCross/TCSample/blob/master/src/main/java/totalcross/sample/components/ui/GridSample.java) sample.
+- See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Grid.html) for more information.

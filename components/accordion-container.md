@@ -1,18 +1,27 @@
+---
+name: Accordion
+route: /components/accordion
+menu: Components
+---
+
 # Accordion
 
 ### Overview
 
 Accordions are used to show and hide text through user interaction.
 
-{% hint style="info" %}
-In Totalcross this component is called **`AccordionContainer`**
-{% endhint %}
+<!-- {% hint style="info" %} -->
 
-![](../.gitbook/assets/accordion-sample.gif.pagespeed.ce.wfbmtgt3hy.gif)
+In Totalcross this component is called **`AccordionContainer`**
+
+<!-- {% endhint %} -->
+
+![accordion-sample](../.gitbook/assets/accordion-sample.gif.pagespeed.ce.wfbmtgt3hy.gif)
 
 ### Source Code
 
-{% code title="AccordionSample.java" %}
+<!-- {% code title="AccordionSample.java" %} -->
+
 ```java
 import totalcross.sys.Settings;
 import totalcross.ui.AccordionContainer;
@@ -78,31 +87,31 @@ public class AccordionSample extends MainWindow {
 	}
 }
 ```
-{% endcode %}
+
+<!-- {% endcode %} -->
 
 ### Attributes
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
+| Type    | Name     | Description                            |
+| :------ | :------- | :------------------------------------- |
 | **int** | **minH** | Minimum height of the closed accordion |
 
 ### Methods
 
-| Type | Name | Description |
-| :--- | :--- | :--- |
-| **Constructor** | AccordionContainer\( \) | Creates a empty accordion |
-| **Constructor** | AccordionContainer\(AccordionContainer.Group g\) | Creates a list of accordions from the accordion group. |
-| **void** | collapse\( \) | Closes the accordion |
-| **void** | collapse\(boolean showAnimation\) | Closes the accordion with animation\(depending on the parameter\) |
-| **void** | expand\( \) | Open the accordion |
-| **void** | expand\(boolean showAnimation\) | Open the accordion with animation\(depending on the parameter\) |
-| **int** | getPreferredHeight\( \) | Returns the accordion´s minimum height |
-| **boolean** | isExpanded\( \) | Retorna true if the accordion is open |
-| **void** | onAnimationFinished\(ControlAnimation anim\) | This method is called after the animation is finished |
-| **void** | setPos\(int x, int y\) | Set the accordion´s x and y position |
+| Type            | Name                                             | Description                                                       |
+| :-------------- | :----------------------------------------------- | :---------------------------------------------------------------- |
+| **Constructor** | AccordionContainer\( \)                          | Creates a empty accordion                                         |
+| **Constructor** | AccordionContainer\(AccordionContainer.Group g\) | Creates a list of accordions from the accordion group.            |
+| **void**        | collapse\( \)                                    | Closes the accordion                                              |
+| **void**        | collapse\(boolean showAnimation\)                | Closes the accordion with animation\(depending on the parameter\) |
+| **void**        | expand\( \)                                      | Open the accordion                                                |
+| **void**        | expand\(boolean showAnimation\)                  | Open the accordion with animation\(depending on the parameter\)   |
+| **int**         | getPreferredHeight\( \)                          | Returns the accordion´s minimum height                            |
+| **boolean**     | isExpanded\( \)                                  | Retorna true if the accordion is open                             |
+| **void**        | onAnimationFinished\(ControlAnimation anim\)     | This method is called after the animation is finished             |
+| **void**        | setPos\(int x, int y\)                           | Set the accordion´s x and y position                              |
 
 ### References
 
-* See also our [quick video tutorial](https://www.youtube.com/watch?v=7fl1GfuKSOw) on how to add other components within an accordion.
-* See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Button.html) for more information.
-
+- See also our [quick video tutorial](https://www.youtube.com/watch?v=7fl1GfuKSOw) on how to add other components within an accordion.
+- See the [Java Docs](https://rs.totalcross.com/doc/totalcross/ui/Button.html) for more information.

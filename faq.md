@@ -15,17 +15,17 @@ this error normally occurs in two situations:
 
 See step-by-step from item 2 below:
 
-![1. Windows > Preferences](.gitbook/assets/1.png)
+![1Windows](.gitbook/assets/1.png)
 
-![2.  click on Java > Installed JREs > add. ](.gitbook/assets/2.png)
+![2Java](.gitbook/assets/2.png)
 
-![3.  just click "Next"](.gitbook/assets/3.png)
+![3Next](.gitbook/assets/3.png)
 
-![4. click "Directory" and select the JDK folder](.gitbook/assets/4.png)
+![4Directory](.gitbook/assets/4.png)
 
-![5. Just click Finish  ](.gitbook/assets/6.png)
+![5Finish](.gitbook/assets/6.png)
 
-![6. Confirm that JDK is selected and then just click "Apply and Close"](.gitbook/assets/7.png)
+![6Confirm](.gitbook/assets/7.png)
 
 ## How to develop for RPI using TotalCross?
 

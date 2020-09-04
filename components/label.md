@@ -36,7 +36,7 @@ public class LabelSample extends MainWindow  {
 
 ## Label shape
 
-![image92](../../.gitbook/assets/image92.png)
+![image92](../.gitbook/assets/image92.png)
 
 Modify the shape of the component.
 

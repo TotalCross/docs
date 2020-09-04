@@ -76,7 +76,7 @@ public class HelloWorld extends MainWindow {
 
 ## Button shapes
 
-![image47](../../.gitbook/assets/image47.png)
+![image47](../.gitbook/assets/image47.png)
 
 Modify the button edges.
 

@@ -1,6 +1,6 @@
 ---
 name: Relative Positioning
-route: /app-architecture/relative-positioning
+route: /docs/app-architecture/relative-positioning
 menu: App Architecture
 ---
 
@@ -27,7 +27,7 @@ public void initUI() {
 
 <!-- {% endcode %} -->
 
-![hbox](../../.gitbook/assets/hbox.PNG)
+<!-- ![hbox](../../.gitbook/assets/hbox.PNG) -->
 
 ### Vbox
 
@@ -49,7 +49,7 @@ public void initUI() {
 
 <!-- {% endcode %} -->
 
-![vbox](../../.gitbook/assets/vbox.PNG)
+<!-- ![vbox](../../.gitbook/assets/vbox.PNG) -->
 
 ## Attributes
 

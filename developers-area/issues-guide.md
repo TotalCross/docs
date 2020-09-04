@@ -60,7 +60,7 @@ To give more context to the problem and to accurately illustrate what is happeni
 
 Example:
 
-![issue*550](.gitbook/assets/exemplo-issue-550.gif)
+![issue*550](../.gitbook/assets/exemplo-issue-550.gif)
 
 ### Code to reproduce the error
 

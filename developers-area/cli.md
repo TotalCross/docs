@@ -32,11 +32,11 @@ You will need to have installed on your computer:
 
 **Step 1:** Open your Terminal/CMD/Powershell and type `npm install --global totalcross-npm-cli`.
 
-![Install TotalCross CLI using npm](../../.gitbook/assets/totalcrossinstall.png)
+![Install TotalCross CLI using npm](../.gitbook/assets/totalcrossinstall.png)
 
 **Step 2:** Verify your installation by typing `totalcross --version`.
 
-![Verifying your installation](../../.gitbook/assets/totalcrossinstallverif.png)
+![Verifying your installation](../.gitbook/assets/totalcrossinstallverif.png)
 
 <!-- {% hint style="success" %} -->
 
@@ -52,7 +52,7 @@ To have access to all features you need a TotalCross account. Create and verify 
 
 **Step 2:** Type `totalcross register` and fill in your information.
 
-![Registration on CLI](../../.gitbook/assets/register3.png)
+![Registration on CLI](../.gitbook/assets/register3.png)
 
 Step 3: Your account will be created when you fill in all fields. You will receive an email shortly asking you to verify your account.
 
@@ -68,7 +68,7 @@ Your TotalCross account has been created.
 
 **Step 2:** Type `totalcross login` and enter your email and password used during registration.
 
-![Login on CLI](../../.gitbook/assets/image132.png)
+![Login on CLI](../.gitbook/assets/image132.png)
 
 {% hint style="success" %}
 Ready! You are logged in.
@@ -86,7 +86,7 @@ Write your first program.
 
 **Step 3:** After answering the questions, your project will be created and ready to be developed. Type ls to check if your project was created in a folder with the name of the project \(what you entered as project artifactID\).
 
-![image133](../../.gitbook/assets/image133.png)
+![image133](../.gitbook/assets/image133.png)
 
 ### Package
 
@@ -96,11 +96,11 @@ Write your first program.
 
 **Step 3:** Run `totalcross package`
 
-![image127](../../.gitbook/assets/image127.png)
+![image127](../.gitbook/assets/image127.png)
 
 Step 4: Wait a minute or so. The result of the package will be in the folder `target/install/<platform>`
 
-![image104](../../.gitbook/assets/image104.png)
+![image104](../.gitbook/assets/image104.png)
 
 ### Deploy & Run
 
@@ -128,7 +128,7 @@ In the version, TotalCross CLI v1.1.2 \(Alpha\), the deploy has been disabled fo
 
 **Step 4:** In `You want to run after deploy ?`, check `yes`, if you just want to deploy choose the `no`.
 
-![image96](../../.gitbook/assets/image96.png)
+![image96](../.gitbook/assets/image96.png)
 
 **Step 5:** see the result on the screen or with VNC
 

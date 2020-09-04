@@ -1,6 +1,6 @@
 ---
 name: Using Development certificate to test your apps
-route: /package-your-app-from-scratch/using-development-certificate-to-test-your-apps
+route: /docs/package-your-app-from-scratch/using-development-certificate-to-test-your-apps
 menu: Package your app from scratch
 ---
 

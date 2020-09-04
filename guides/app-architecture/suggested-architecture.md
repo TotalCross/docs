@@ -1,6 +1,6 @@
 ---
 name: Suggested Architecture
-route: /app-architecture/suggested-architecture
+route: /docs/app-architecture/suggested-architecture
 menu: App Architecture
 ---
 

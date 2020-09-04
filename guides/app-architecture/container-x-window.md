@@ -1,6 +1,6 @@
 ---
 name: Separation of concepts
-route: /app-architecture/separation-of-concepts
+route: /docs/app-architecture/separation-of-concepts
 menu: App Architecture
 ---
 

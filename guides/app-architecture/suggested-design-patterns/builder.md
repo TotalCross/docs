@@ -1,6 +1,6 @@
 ---
 name: Template Pattern
-route: /app-architecture/template-pattern
+route: /docs/app-architecture/template-pattern
 menu: App Architecture
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: Manual Positioning
-route: /app-architecture/manual-positioning
+route: /docs/app-architecture/manual-positioning
 menu: App Architecture
 ---
 

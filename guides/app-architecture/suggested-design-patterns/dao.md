@@ -1,6 +1,6 @@
 ---
 name: Data Persistence
-route: /app-architecture/data-persistence
+route: /docs/app-architecture/data-persistence
 menu: App Architecture
 ---
 

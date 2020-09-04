@@ -1,6 +1,6 @@
 ---
 name: Best practices to improve project maintenance
-route: /app-architecture/best-practices-to-improve-project-maintenance
+route: /docs/app-architecture/best-practices-to-improve-project-maintenance
 menu: App Architecture
 ---
 

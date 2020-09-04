@@ -1,6 +1,6 @@
 ---
 name: MVC Architecture Pattern
-route: /app-architecture/mvc-architecture-pattern
+route: /docs/app-architecture/mvc-architecture-pattern
 menu: App Architecture
 ---
 

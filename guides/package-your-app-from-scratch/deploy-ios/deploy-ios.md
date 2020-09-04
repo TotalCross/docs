@@ -1,17 +1,23 @@
+---
+name: Deploy iOS
+route: /docs/package-your-app-from-scratch/deploy-ios
+menu: Package your app from scratch
+---
+
 # Deploy iOS
 
 ### Generating key store and certificate
 
 #### You need to have openssl installed in your computer.
 
-* If you use Mac OS, this should be installed as default
-* If you use Linux, we recomend to install your distro binaries
-* If you use Windows, you should install OpenSSL for Windows
-* If you use Windows, you may install a git-bash \(like the one embedded within SourceTree\)
+- If you use Mac OS, this should be installed as default
+- If you use Linux, we recomend to install your distro binaries
+- If you use Windows, you should install OpenSSL for Windows
+- If you use Windows, you may install a git-bash \(like the one embedded within SourceTree\)
 
 First, you need to create your RSA 2048 key-pair with the following command:
 
- `openssl req -nodes -newkey rsa:2048 -keyout request.key -out request.csr`
+`openssl req -nodes -newkey rsa:2048 -keyout request.key -out request.csr`
 
 You will be prompted with some questions, which you need to supply the answers. You may want to configure the `openssl req` with predefined data. To do so, create a `config` file like the template below:
 
@@ -40,12 +46,11 @@ Optionally, you can call openssl without passing a config file using the interac
 ```text
 openssl req -nodes -newkey rsa:2048 -keyout request.key -out request.csr
 ```
-{% endhint %}
 
+<!-- {% endhint %} -->
 
-
-*  `request.key` is the private key
-*  `request.csr` is the public key
+- `request.key` is the private key
+- `request.csr` is the public key
 
 Never share your private key `request.key` in a non-secure media. If you must transfer it from your trusted computer to another, do it safely. Some suggestions are:
 
@@ -63,13 +68,13 @@ Now go to the [Apple Developer Page](https://developer.apple.com/account/ios/cer
 
 You should now see this screen:
 
-![](../../../../.gitbook/assets/image%20%28110%29.png)
+![image110](../../../.gitbook/assets/image110.png)
 
-As I need a production certificate for an Enterprise account, I choosed the `In-House and Ad-Hoc`. 
+As I need a production certificate for an Enterprise account, I choosed the `In-House and Ad-Hoc`.
 
- And then finally to the screen where I now shall upload the generated `.csr`file \(it is the public key, so therefore no worry\):
+And then finally to the screen where I now shall upload the generated `.csr`file \(it is the public key, so therefore no worry\):
 
-![](../../../../.gitbook/assets/image%20%2854%29.png)
+![image54](../../../.gitbook/assets/image54.png)
 
 Now you can download the certificate at any time. This file is commonly named as `ios_distribution.cer`.
 
@@ -77,37 +82,38 @@ Now you can download the certificate at any time. This file is commonly named as
 
 To generate the provisioning profile, one must have before-hand to register new Apple ID in `Register a new Identifier`:
 
-![](../../../../.gitbook/assets/image%20%2850%29.png)
+![image50](../../../.gitbook/assets/image50.png)
 
-![](../../../../.gitbook/assets/image%20%28125%29.png)
+![image125](../../../.gitbook/assets/image125.png)
 
- In the sample above, I have choosen to go with the `Explicit App ID`, `com.totalcross.tcguide`. 
+In the sample above, I have choosen to go with the `Explicit App ID`, `com.totalcross.tcguide`.
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 You cannot enable **Push Notification** service using **Wildcard Apple ID**.
-{% endhint %}
 
-{% hint style="danger" %}
+<!-- {% endhint %} -->
+
+<!-- {% hint style="danger" %} -->
+
 You shall not use **Wildcard Apple ID** if you want to distribute your application with **Enterprise Distribution**. This may leads to trouble when your client tries to upgrade the app you have provided.
 {% endhint %}
-
- 
 
 ### Provisioning profile
 
 Now we must generate the provisioning profile:
 
-![](../../../../.gitbook/assets/screenshot-2017-11-29_ios_provisioning_profiles__distribution__-_apple_developer.png)
+![screenshot-2017-11-29](../../../.gitbook/assets/screenshot-2017-11-29_ios_provisioning_profiles__distribution__-_apple_developer.png)
 
 As I want an enterprise distribution, I must choose the `In-House` provisioning profile:
 
-{% hint style="info" %}
+<!-- {% hint style="info" %} -->
+
 If you want to test your app in specific iOS devices, you must create a `Development` provisioning file. To do so follow the tutorial: [Using Development certificate to test your application.](using-development-certificate-to-test-your-apps.md)
-{% endhint %}
 
+<!-- {% endhint %} -->
 
-
-![](../../../../.gitbook/assets/image%20%2832%29.png)
+![image32](../../../.gitbook/assets/image32.png)
 
 Now the system will ask you about the App ID, then the certificate, and finally you are prompted with a Profile Name. It can be arbitrary:
 
@@ -117,11 +123,11 @@ You end this step downloading a `.mobileprovision` file.
 
 You have created in your own machine this files:
 
-*  `config (optional)`, so that it will be easy to create your public/private keys
-*  `request.key`, your private key
-*  `request.csr`, your public key
-*  `ios_distribution.cer`, your Apple certificate
-*  `.mobileprovision`, one of the most important files so that you can indeed embed this in your app to distribute
+- `config (optional)`, so that it will be easy to create your public/private keys
+- `request.key`, your private key
+- `request.csr`, your public key
+- `ios_distribution.cer`, your Apple certificate
+- `.mobileprovision`, one of the most important files so that you can indeed embed this in your app to distribute
 
 ### Finishing the basis to compile to iOS with TotalCross
 
@@ -137,11 +143,11 @@ openssl x509 -in ios_distribution.cer -inform DER -out ios_distribution.pem -out
 
 Where:
 
-*  `x509`  is the cryptography standard
-*  `-in ios_distribution.cer`  indicates that the input certificate file is named `ios_distribution.cer`
-*  `-inform DER`  indicates that the format of the input file is `DER`, so that OpenSSL can do its conversion  AKA _translate from `DER`_
-*  `-out ios_distribution.pem`  indicates that the output file name is named `ios_distribution.pem`
-*  `-outform PEM`  indicates that the output format is `PEM`  AKA _translate to `PEM`_
+- `x509` is the cryptography standard
+- `-in ios_distribution.cer` indicates that the input certificate file is named `ios_distribution.cer`
+- `-inform DER` indicates that the format of the input file is `DER`, so that OpenSSL can do its conversion AKA _translate from `DER`_
+- `-out ios_distribution.pem` indicates that the output file name is named `ios_distribution.pem`
+- `-outform PEM` indicates that the output format is `PEM` AKA _translate to `PEM`_
 
 With the `.pem` file created, we just need to create the `.p12` file:
 
@@ -151,41 +157,47 @@ openssl pkcs12 -export -inkey request.key -in ios_distribution.pem -out ios_dist
 
 Where:
 
-*  `pkcs12`  is the cryptography standard
-* `-export`
-*  `-inkey request.key`  which file is the private key? It is `request.key`
-*  `-in ios_distribution.pem`  which file is the container for your certificate? `ios_distribution.pem`
-*  `-out ios_distribution.p12`  which file I want to save as my PKCS 12 file? `ios_distribution.p12`
+- `pkcs12` is the cryptography standard
+- `-export`
+- `-inkey request.key` which file is the private key? It is `request.key`
+- `-in ios_distribution.pem` which file is the container for your certificate? `ios_distribution.pem`
+- `-out ios_distribution.p12` which file I want to save as my PKCS 12 file? `ios_distribution.p12`
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 **For TotalCross SDK 4.4.1 or earlier and 5.1.3 or earlier:**
 
-You must create two **.p12 files**. The first one **with password** to be added in your keychain \(you can name it ios\_distribution\_with\_password.p12\). The second one **without password** to be used in your **tc.Deploy** through the `/m` parameter.
+You must create two **.p12 files**. The first one **with password** to be added in your keychain \(you can name it ios_distribution_with_password.p12\). The second one **without password** to be used in your **tc.Deploy** through the `/m` parameter.
 
 **For later versions:**
 
-You can create just one **.p12 file with password**  to be added in your keychain. For later versions, we no longer require parameter /m \(Deprecated\) to build your TotalCross ipa.
-{% endhint %}
+You can create just one **.p12 file with password** to be added in your keychain. For later versions, we no longer require parameter /m \(Deprecated\) to build your TotalCross ipa.
+
+<!-- {% endhint %} -->
 
 ### Adding your certificate to your Keychain in your macOS
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 Requires a **p12 file with password**.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 Click twice in p12 file. A box with password field will be shown, type your p12 file password in the **field passwor**d and your certificate will be added to your macOS Keychain.
 
-![](../../../../.gitbook/assets/keychain.png)
+![keychain](../../../.gitbook/assets/keychain.png)
 
 ### iOS deployments
 
 #### GENERATING YOUR IPA FILE BY USING TOTALCROSS DEPLOYER
 
-{% hint style="warning" %}
+<!-- {% hint style="warning" %} -->
+
 **For TotalCross SDK 4.4.1 or earlier and 5.1.3 or earlier:**
 
 Before executing the following steps, copy your certificate file, `ios_certificate.p12`, and your mobileprovision file, `profile.mobileprovision,` to a separate folder inside workspace directory.
-{% endhint %}
+
+<!-- {% endhint %} -->
 
 #### Maven
 
@@ -196,7 +208,7 @@ Execute command `mvn package` using the following pom.xml as example:
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<totalcross.activation_key>place holder</totalcross.activation_key>
 </properties>
-	
+
 <build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
@@ -240,7 +252,7 @@ Execute command `mvn package` using the following pom.xml as example:
 								<argument>/p</argument>
 								<argument>/r</argument>
 								<argument>${totalcross.activation_key}</argument>
-								<!-- 
+								<!--
 									Parameter /m is just required for versions 4.4.1 or ealier
 									and 5.1.3 or ealier.
 								 -->
@@ -292,7 +304,7 @@ If you rather the old style way of deploying:
 >      2 valid identities found
 > ```
 
-####  Preparing environment
+#### Preparing environment
 
 1. Install **Imagemagick** by entering command \(if you don't have brew installed visit [this page](https://brew.sh/) and install it. Its pretty easy!\):
 
@@ -312,7 +324,7 @@ If you rather the old style way of deploying:
 > sudo chmod +x tccodesign.sh xcassetsGenerator.sh
 > ```
 
-####  Resigning your app.ipa
+#### Resigning your app.ipa
 
 > Artifacts needed for this step:
 >
@@ -378,7 +390,8 @@ Having all of those parameters, you will be able to run the following command:
   </tbody>
 </table>
 
-{% hint style="success" %}
-Now you're ready to properly install or upload to the apple store your application.
-{% endhint %}
+<!-- {% hint style="success" %} -->
 
+Now you're ready to properly install or upload to the apple store your application.
+
+<!-- {% endhint %} -->

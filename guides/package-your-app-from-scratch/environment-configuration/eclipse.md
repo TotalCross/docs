@@ -1,6 +1,6 @@
 ---
 name: Eclipse
-route: /package-your-app-from-scratch/eclipse
+route: /docs/package-your-app-from-scratch/eclipse
 menu: Package your app from scratch
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: IntelliJ
-route: /package-your-app-from-scratch/intellij
+route: /docs/package-your-app-from-scratch/intellij
 menu: Package your app from scratch
 ---
 

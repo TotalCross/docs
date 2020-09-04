@@ -1,6 +1,6 @@
 ---
 name: Web Services
-route: /guides/web-services
+route: /docs/guides/web-services
 menu: Developers Area
 ---
 

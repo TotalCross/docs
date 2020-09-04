@@ -1,6 +1,6 @@
 ---
 name: TotalCross SDK
-route: /package-your-app-from-scratch/totalcross-sdk
+route: /docs/package-your-app-from-scratch/totalcross-sdk
 menu: Package your app from scratch
 ---
 

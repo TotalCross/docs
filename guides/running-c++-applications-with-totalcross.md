@@ -1,6 +1,6 @@
 ---
 name: Running C++ applications with TotalCross
-route: /guides/running-c++-applications-with-totalCross
+route: /docs/guides/running-c++-applications-with-totalCross
 menu: Developers Area
 ---
 
@@ -54,7 +54,7 @@ It's a simple application to get an I/O input and shortly thereafter return it a
 
 **Step 3:** compile \(something like this\):
 
-![image29](../../.gitbook/assets/image29.png)
+![image29](../.gitbook/assets/image29.png)
 
 **Step 4:** inside `initUI` method at `RunningCpp` class, create a label to show the results:
 
@@ -115,7 +115,7 @@ add(label, CENTER, CENTER);
 
 **Step 9:** copy C++ binary to target folder \(something like\):
 
-![image39](../../.gitbook/assets/image39.png)
+![image39](../.gitbook/assets/image39.png)
 
 **Step 10:** run your program!!!
 

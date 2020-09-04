@@ -1,6 +1,6 @@
 ---
 name: Deploy your app with a dependecy TC
-route: /package-your-app-from-scratch/deploy-your-app-with-a-dependecy-tc
+route: /docs/package-your-app-from-scratch/deploy-your-app-with-a-dependecy-tc
 menu: Package your app from scratch
 ---
 

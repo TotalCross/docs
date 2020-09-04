@@ -1,6 +1,6 @@
 ---
 name: Device Simulator
-route: /guides/device-simulator
+route: /docs/guides/device-simulator
 menu: Developers Area
 ---
 

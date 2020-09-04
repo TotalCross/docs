@@ -1,7 +1,7 @@
 ---
 name: Running C++ applications with TotalCross
 route: /docs/guides/running-c++-applications-with-totalCross
-menu: Developers Area
+menu: Guides
 ---
 
 # Running C++ applications with TotalCross

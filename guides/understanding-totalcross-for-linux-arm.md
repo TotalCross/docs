@@ -1,7 +1,7 @@
 ---
 name: Understanding TotalCross for Linux ARM
 route: /docs/guides/understanding-totalcross-for-linux-arm
-menu: Developers Area
+menu: Guides
 ---
 
 # Understanding TotalCross for Linux ARM

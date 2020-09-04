@@ -1,7 +1,7 @@
 ---
 name: Web Services
 route: /docs/guides/web-services
-menu: Developers Area
+menu: Guides
 ---
 
 # Web Services

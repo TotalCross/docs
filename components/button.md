@@ -115,7 +115,7 @@ public class HelloWorld extends MainWindow{
 
 ## Sizes
 
-![image101](../../.gitbook/assets/image101.png)
+![image101](../.gitbook/assets/image101.png)
 
 Change the buttons sizes.
 

@@ -511,7 +511,7 @@ To obtain the data registered in a SQLite database it is necessary to download a
 - After downloading and installing the program, simply run the file below to **Open the database** and then select the .**db** file that is i**nside your project**.
 - Click "**Browse Data**" and then you will be seeing all the records of your SQLite database!
 
-![sqlite-data](../.gitbook/assets/sqlite-ver-dados.PNG)
+<!-- ![sqlite-data](../.gitbook/assets/sqlite-ver-dados.PNG) -->
 
 ## References
 

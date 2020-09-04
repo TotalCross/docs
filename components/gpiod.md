@@ -22,7 +22,7 @@ To activate and deactivate any external component the embedded board is to chang
 
 ![image12](../.gitbook/assets/image12.png)
 
-![image113](../../.gitbook/assets/image113.png)
+![image113](../.gitbook/assets/image113.png)
 
 ```java
 package com.totalcross.DocRpi;

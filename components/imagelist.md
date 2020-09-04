@@ -10,7 +10,7 @@ menu: Components
 
 This control will have a list of images that will be displayed
 
-![imagelist](../.gitbook/assets/imagelist.PNG)
+<!-- ![imagelist](../.gitbook/assets/imagelist.PNG) -->
 
 ### Source Code
 

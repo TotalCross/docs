@@ -113,7 +113,7 @@ If you are deploying to Android and TotalCross can't find google-servoces.json, 
 
 <!-- {% endhint %} -->
 
-![captura-de-tela-86](../../.gitbook/assets/captura-de-tela-86.png)
+![captura-de-tela-86](../.gitbook/assets/captura-de-tela-86.png)
 
 - Step 3 is just to Gradle, so we can **click next**
 - Step 4 will only be possible when we test, so we can click the "**Skip step**" option.
